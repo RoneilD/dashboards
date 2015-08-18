@@ -1,0 +1,8 @@
+Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
+T141,"",T24 - Revenue - Hfts AdHoc,"",2015-08-16,"R6,805.01","R1,224.90",550,No
+T142,"",T24 - Timber24,"",2015-08-16,"R6,805.01","R1,224.90",550,No
+T143,"",T24 - Timber24,"",2015-08-16,"R6,805.01","R1,224.90",550,No
+T144,"",T24 - Revenue - Sappi KZN,"",2015-08-16,"R6,805.01","R1,224.90",550,No
+T145,"",T24 - Revenue - Sappi KZN,"",2015-08-16,"R6,805.01","R1,224.90",550,Yes
+T146,"",T24 - Revenue - Sappi KZN,"",2015-08-16,"R6,805.01","R1,224.90",550,Yes
+T147,146,T24 - Timber24,"",2015-08-16,"R6,805.01","R1,224.90",550,Yes

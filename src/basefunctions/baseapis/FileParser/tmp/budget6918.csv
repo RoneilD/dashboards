@@ -1,0 +1,26 @@
+Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
+143001,5261,EHL - Gauteng,337,2015-08-18,"R7,852.05","R1,413.37",516,Yes
+143002,5262,EHL - Gauteng,337,2015-08-18,"R7,852.05","R1,413.37",516,Yes
+143004,5264,EHL - P.E,336,2015-08-18,"R7,852.05","R1,413.37",516,No
+DS12,1060,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS13,1053,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS14,1058,Premier Pietermaritzburg,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS15,1061,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS16,1054,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS21,1207,Premier Durban,"",2015-08-18,"R1,728.72",R311.17,64,Yes
+DS23,1208,Premier Durban,"",2015-08-18,"R1,728.72",R311.17,64,Yes
+DS25,1206,Premier Durban,"",2015-08-18,"R1,728.72",R311.17,64,Yes
+DS39,208,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS41,209,Premier Pietermaritzburg,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS43,210,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS44,217,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS45,214H,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS579,"",Premier Durban,"",2015-08-18,"R1,728.75",R311.18,64,Yes
+DS66,233,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,No
+DS67,215I,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS68,234J,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS70,216K,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS71,218L,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS72,229M,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS73,235N,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes
+DS75,236IJ,Premier Durban,"",2015-08-18,"R2,641.28",R475.43,94,Yes

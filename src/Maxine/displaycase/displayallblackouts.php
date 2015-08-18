@@ -1,0 +1,100 @@
+<?PHP
+	// Prep {
+		// Groundwork {
+			$conf		= $_POST;
+			
+			// Defines and includes {
+				$times				= substr_count($_SERVER['PHP_SELF'],"/");
+				$rootaccess		= "";
+				$i						= 1;
+				
+				while ($i < $times) {
+					$rootaccess .= "../";
+					$i++;
+				}
+				
+				define("BASE", $rootaccess);
+				
+				include_once(BASE."/basefunctions/localdefines.php");
+				include_once(BASE."/basefunctions/dbcontrols.php");
+				include_once(BASE."/basefunctions/baseapis/manapi.php");
+				include_once(BASE."Maxine/api/maxineapi.php");
+				
+				require_once(BASE."basefunctions/baseapis/fleetDayHandler.php");
+				
+				$link					= mysql_connect(DB_HOST, DB_USER, DB_PASS) or die(mysql_error());
+				$db_selected	= mysql_select_db(DB_SCHEMA, $link);
+				
+				$fleetdayobj = new fleetDayHandler;
+			// }
+		// }
+		
+		$fleetlist	= $fleetdayobj->getIncomeFleets();
+		$today			= date("j");
+		
+		foreach ($fleetlist as $fleetkey=>$fleetval) {
+			$fleetdetails	= $fleetdayobj->getFleetScoreDay($fleetval["id"]);
+			
+			$blackoutlist[$fleetval["id"]]["name"]			= $fleetlist[$fleetkey]["name"];
+			$blackoutlist[$fleetval["id"]]["blackouts"]	= $fleetdetails[$today]["blackouts"];
+			if(($fleetval["id"]!=29) && ($fleetval["id"]!=42) && ($fleetval["id"]!=47) && ($fleetval["id"]!=53) && ($fleetval["id"]!=32)) {
+				$totalblackouts	+= $fleetdetails[$today]["blackouts"];
+			}
+		}
+		$count	= 0;
+	// }
+	
+	print("<table width=100% height=100% cellpadding=10 cellspacing=2 border=0>");
+	
+	print("<tr><td align='center'>");
+	print("<embed src='".BASE."/images/Heading_Blackouts.swf'
+		FlashVars=''
+		quality='high'
+		width='680px'
+		height='552px'
+		name='number'
+		wmode='transparent'
+		allowScriptAccess='sameDomain'
+		allowFullScreen='false'
+		type='application/x-shockwave-flash'
+		pluginspage='http://www.macromedia.com/go/getflashplayer' / >");
+	
+	print("</td><td>");
+	
+	print("<embed src='".BASE."/images/Blackouts_Total.swf'
+		FlashVars='b_title=Total&blackouts_total=".$totalblackouts."'
+		quality='high'
+		width='1100px'
+		height='714px'
+		name='number'
+		wmode='transparent'
+		allowScriptAccess='sameDomain'
+		allowFullScreen='false'
+		type='application/x-shockwave-flash'
+		pluginspage='http://www.macromedia.com/go/getflashplayer' / >");
+	print("</td></tr>");
+	
+	print("<tr><td colspan=2>");
+	print("<table width=100% cellpadding=0 cellspacing=0 border=0><tr>");
+	foreach ($blackoutlist as $boutkey=>$boutval) {
+		if(($boutkey!=29) && ($boutkey!=42) && ($boutkey!=47) && ($boutkey!=53) && ($boutkey!=32)) {
+			print("<td align='center'>");
+			
+			print("<embed src='".BASE."/images/Blackouts.swf'
+				FlashVars='b_title=".$boutval["name"]."&blackouts=".$boutval["blackouts"]."'
+				quality='high'
+				width='330px'
+				height='299px'
+				name='number'
+				wmode='transparent'
+				allowScriptAccess='sameDomain'
+				allowFullScreen='false'
+				type='application/x-shockwave-flash'
+				pluginspage='http://www.macromedia.com/go/getflashplayer' / >");
+			print("</td>");
+		}
+	}
+	print("</tr></table>");
+	print("</td></tr>");
+	print("</table>");
+?>

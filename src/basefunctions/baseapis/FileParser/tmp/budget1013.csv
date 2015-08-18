@@ -1,0 +1,10 @@
+Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
+2,34,Energy - Buckman,204,2015-08-13,"R2,386.00",R512.20,117,Yes
+236,373,Energy - Buckman,204,2015-08-13,"R4,959.22","R1,064.58",310,Yes
+237,374,Energy - Buckman,204,2015-08-13,"R4,959.22","R1,064.58",310,No
+238,375,Energy - Buckman,204,2015-08-13,"R4,959.22","R1,064.58",310,Yes
+D-06,75,Energy - Buckman,204,2015-08-13,"R2,117.99",R454.66,97,Yes
+E54,1120,Energy - Buckman,204,2015-08-13,"R4,959.22","R1,064.58",310,Yes
+E55,1246,Energy - Buckman,204,2015-08-13,"R5,741.42","R1,232.49",194,Yes
+E57,1245,Energy - Buckman,204,2015-08-13,"R4,959.22","R1,064.58",310,No
+E78,1301,Energy - Buckman,204,2015-08-13,"R4,959.22","R1,064.58",310,Yes

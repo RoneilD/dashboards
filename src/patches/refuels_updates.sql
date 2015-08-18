@@ -1,0 +1,1 @@
+ALTER TABLE `refuels` ADD COLUMN `total_open_count` INT(150) NOT NULL DEFAULT 0;

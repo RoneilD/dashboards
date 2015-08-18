@@ -1,0 +1,1 @@
+ALTER TABLE `fleet_scores` ADD COLUMN `subbie_income` DOUBLE(50,2) NOT NULL DEFAULT 0.00, ADD COLUMN `subbie_kms` INT(50) NOT NULL DEFAULT 0;

@@ -1,0 +1,533 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+
+ol, ul {list-style: none;}
+
+.clear {width:100%;height:0;overflow:hidden;clear:both;}
+
+/********************************************************** body + fonts */
+
+html{}
+
+body {background:;color:#666;font-size:100%; font-family:Arial, Helvetica, sans-serif; overflow-x: hidden;}
+p{margin-bottom:15px;line-height:150%; font-family:"gotham_medium", Helvetic, Arial; font-weight:normal; font-size:13px; }
+
+a {text-decoration: none;color:#000; outline:none;}
+a:hover {text-decoration:none;}
+
+h1{margin-bottom:20px; padding-top:20px;}
+h1 a {width:68px;height:99px;display:block;overflow:hidden;text-indent:-9999px;background: url(../img/logo.gif) no-repeat;}
+h2{font-family:"gotham_medium", Helvetic, Arial; font-size:24px; color:#888888; font-weight:normal;}
+h3{font-family:"gotham_medium", Helvetic, Arial; font-size:11px; color:#888888; font-weight:normal; line-height:100%;}
+
+input[type=text], input[type=password]{display: block; border: 1px #e9e9eb solid; padding: 9px; font-family:"frutiger_roman", Helvetic, Arial; font-size:13px; border-radius: 2px; color: #293042; box-shadow:none;}
+
+/********************************************************** containers */
+
+html, body, #page{height: 100%; overflow: hidden;}
+
+/********************************************************** header */
+
+header{padding: 0; background: #293042; height: 5%; position: relative; right: 0; -webkit-transition: .3s ease right; -moz-transition: .3s ease right; transition: .3s ease right;}
+
+header .controlsWrapper{text-align: right; padding-right: 30px;}
+header .controlsWrapper span{display: inline-block; vertical-align: top; background-image:url(../images/controls_sprite.png); background-repeat: no-repeat; cursor: pointer; margin: 0 5px; padding: 10px 5px;}
+header .controlsWrapper span.rewind{width: 30px; height: 44px; background-position: 0 10px;}
+header .controlsWrapper span.play{width: 16px; height: 44px; background-position: -28px 10px; display: none;}
+header .controlsWrapper span.forward{width: 25px; height: 44px; background-position: -48px 10px;}
+header .controlsWrapper span.pause{font-size: 17px; color:#47567a ; background: none; position: relative; top: -1px;}
+
+header a.menu{display: inline-block; width: 19px; height: 44px; background:url(../images/icon_menu.png) no-repeat; background-position: 0 13px; margin-left: 15px;}
+
+/********************************************************** nav */
+
+nav{position: fixed; top:0; right: -250px; width: 250px; height: 100%; background: #212735; padding: 20px; z-index: 1000; -webkit-transition: .3s ease right; -moz-transition: .3s ease right; transition: .3s ease right;}
+nav li{border-bottom:1px #323a4f solid;}
+nav a{color: #fff; font-family: 'gotham_medium', Arial; font-size: 13px; display: block; padding: 13px 15px; -webkit-transition: .3s ease all; transition: .3s ease all;}
+
+#datepicker{background: #293042;}
+
+#page.menu nav{right: 0;}
+#page.menu header{right: 250px;}
+#page.menu #canvassdiv, #page.menu #fakecanvasdiv{right: 238px;}
+
+/********************************************************** main */
+
+#page{background: #293042;}
+
+#canvassdiv{height: 95%; position: relative; right: 0; -webkit-transition: .3s ease right; -moz-transition: .3s ease right; transition: .3s ease right;}
+
+#fakecanvasdiv{height: 95%; width: 100%; left: 0; top: 5%; position: absolute; display: none; -webkit-transition: .3s ease right; -moz-transition: .3s ease right; transition: .3s ease right;}
+
+
+#page h2{color: #fff; font-family: 'gotham_medium', Arial; font-size: 24px; margin-bottom: 10px; margin-top: 0;}
+#page p.datetime{color: #fff; font-family: 'gotham_book'; font-size: 16px;margin-bottom: 0;}
+
+/*************** login */
+
+#login{height: 100%; background: #212735; position: relative;}
+#login h2{margin-bottom: 15px;}
+#login .formWrapper{position: absolute; top: 50%; left: 50%; margin-left: -185px; margin-top: -120px; width: 370px; background: #293042;}
+#login .formWrapper .inner{padding: 25px;}
+
+#login .formWrapper li{margin-top: 15px;}
+#login .formWrapper li:first-child{margin-top: 0;}
+#login .formWrapper li input[type=text], #login .formWrapper li input[type=password]{width: 100%;}
+
+#login .formWrapper li input.submit{float: right;}
+
+#login .formWrapper li p.error{margin-bottom: 0; color: #ef4024;}
+
+#page #login .formWrapper .button{background:#21a9e1; -webkit-transition: .3s ease all; transition: .3s ease all;}
+#page #login .formWrapper .button:hover{background: #1fa0d5;}
+
+/*************** dashboard main */
+
+
+#dashboardMain{height: 100%;}
+#dashboardMain .graphUpper{position: relative; height: 55%; width: 100%; background: #293042;}
+#dashboardMain .graphLower{position: relative; height: 45%; width: 100%; background: #212735;}
+
+#dashboardMain .graphUpper .mainGraph{position: relative; width: 100%; height: 79%; padding: 25px;}
+#dashboardMain .graphUpper .mainGraph #graph{height: 100%; position: relative; width:100%; opacity: 0;}
+#dashboardMain .graphUpper .mainGraph #graph .flot-text{color: #7281a4 !important;}
+#dashboardMain .graphUpper .graphInfo{position: relative; width: 100%; height: 21%;}
+
+#dashboardMain .graphUpper .title{float: left; padding: 15px 25px; padding-top: 0;}
+
+
+#dashboardMain .graphUpper .graphStats{float: right;padding:0 25px; padding-left: 0}
+#dashboardMain .graphUpper .graphStats li{float: left;}
+#dashboardMain .graphUpper .graphStats li span{display: block; color: #fff; font-family: 'gotham_medium', Arial; font-size: 12px; text-align: left;}
+#dashboardMain .graphUpper .graphStats li span.label{padding: 0 50px;}
+#dashboardMain .graphUpper .graphStats li span.value{font-size: 37px; padding: 0 50px; border-left: 1px #515e7f solid; text-align: center;}
+#dashboardMain .graphUpper .graphStats li:first-child span.value{border-left: 0;}
+
+#dashboardMain .graphUpper .graphStats li span.value.income{color: #b2cb35;}
+#dashboardMain .graphUpper .graphStats li span.value.actual{color: #21a9e1;}
+#dashboardMain .graphUpper .graphStats li span.value.variance{}
+#dashboardMain .graphUpper .graphStats li span.varianceDiff{padding: 0 50px; color:#49a604;}
+#dashboardMain .graphUpper .graphStats li span.varianceDiff.red{color: #ef4024;}
+
+#dashboardMain .graphLower .infoBlock{float: left; width: 33.3%; height: 100%; position: relative; background: #212735; margin-bottom: 0;}
+#dashboardMain .graphLower .infoBlock .inner{margin: 0; height: 100%; width: 100%; position: relative; background: #293042; padding:25px; border: 10px #212735 solid;border-left: 0;}
+#dashboardMain .graphLower .infoBlock:first-child .inner{border-left: 10px #212735 solid;}
+#dashboardMain .graphLower .infoBlock .inner .wrap{padding: 2%;  position: relative; background: #293042;}
+
+#dashboardMain .graphLower .infoBlock h3{color: #fff; font-family: 'gotham_medium', Arial; font-size: 16px; text-transform: uppercase;}
+
+#dashboardMain .graphLower .infoBlock .stat{position: absolute;}
+#dashboardMain .graphLower .infoBlock .stat.daily{bottom: 25px; left: 25px;}
+#dashboardMain .graphLower .infoBlock .stat.budget{bottom: 25px; right: 25px;}
+#dashboardMain .graphLower .infoBlock .stat span{display: block; text-align: center;}
+#dashboardMain .graphLower .infoBlock .stat span.label{color: #fff; font-family: 'gotham_medium', Arial; font-size: 12px; text-transform: uppercase;}
+#dashboardMain .graphLower .infoBlock .stat span.value{color: #fff; font-family: 'gotham_medium', Arial; font-size: 20px; text-transform: uppercase;}
+#dashboardMain .graphLower .infoBlock .stat.day, #dashboardMain .graphLower .infoBlock .stat.tot{position: relative;}
+
+#dashboardMain .graphLower .infoBlock.table .inner{padding: 0;}
+#dashboardMain .graphLower .infoBlock.table table{width: 100%;border-collapse: collapse; border-spacing: 0;}
+
+#dashboardMain .graphLower .infoBlock.table th, #dashboardMain .graphLower .infoBlock.table td{text-align: center; padding: 22px 10px; font-family: 'gotham_medium', Arial; font-size: 14px;}
+
+#dashboardMain .graphLower .infoBlock.table th{color: #fff;  }
+#dashboardMain .graphLower .infoBlock.table td{color: #21a9e1;}
+
+#dashboardMain .graphLower .infoBlock.table .tableWrap{padding:0 25px;}
+
+#dashboardMain .graphLower .infoBlock.table .tableWrap.headers{background: #2e364a;}
+
+#dashboardMain .graphLower .infoBlock.table .tableWrap.content table{}
+#dashboardMain .graphLower .infoBlock.table .tableWrap.content table tr{border-top:1px #323a4f solid;}
+#dashboardMain .graphLower .infoBlock.table .tableWrap.content table tr:first-child{border-top: 0;}
+#dashboardMain .graphLower .infoBlock.table .tableWrap.content table td{}
+#dashboardMain .graphLower .infoBlock.table .tableWrap table th:first-child, #dashboardMain .graphLower .infoBlock.table .tableWrap table td:first-child{color: #fff; text-align: left;}
+
+#dashboardMain .graphLower .infoBlock.table table .kms{width: 30%;}
+#dashboardMain .graphLower .infoBlock.table table .day{width: 30%;}
+#dashboardMain .graphLower .infoBlock.table table .mtd{width: 15%}
+#dashboardMain .graphLower .infoBlock.table table .forecast{width: 25%;}
+
+#dashboardMain .graphLower .infoBlock.cpk .stat.budget{right: 0; left: 0;}
+
+#dashboardMain .graphLower .infoBlock.cpk .today, #dashboardMain .graphLower .infoBlock.cpk .month{float: left; width: 50%; position: relative;}
+
+
+#dashboardMain .graphLower .infoBlock.cpk .cpkGraphWrapper{position: relative; margin-top: 30px;}
+
+#dashboardMain .graphLower .infoBlock.cpk .today .stat, #dashboardMain .graphLower .infoBlock.cpk .month .stat{width: 100%;}
+
+#incomeGraph{position: relative;}
+
+body .radial-progress.small{width: 150px; height: 150px;margin-left: -75px;margin-top: 60px; position: relative;}
+
+body .radial-progress.small .circle .mask{clip: rect(0px, 150px, 150px, 75px);}
+body .radial-progress.small .circle .mask .fill{clip: rect(0px, 75px, 150px, 0px);}
+body .radial-progress.small .circle .mask, body .radial-progress.small .circle .fill, body .radial-progress.small .circle .shadow{width: 150px; height: 150px}
+body .radial-progress.small .inset{width: 120px; height: 120px; margin-left: 15px; margin-top: 15px;}
+body .radial-progress.small .inset .percentage{top: 50px; left: 35px;}
+
+
+.graph{position: relative; padding-top: 20px;}
+.graph canvas{width: 50%;display: block;margin: auto;max-width: 282px;}
+.graph.small canvas{max-width: 180px; width: 52%;}
+.graph .percentage {width: 100%;position: absolute;top: 50%;left: 0;line-height: 1;text-align: center;font-family: "gotham_medium", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #fff;font-weight: 800;font-size: 22px;}
+.graph.small .percentage{font-size: 18px;}
+
+
+
+.graph .percentage.up i{color: #49a604;}
+.graph .percentage.down i{color:#ef4024;}
+
+.graph.smaller{position: absolute; top: 8%; width: 100%; height: 92%;}
+.graph.smaller canvas{width: 42.3%;}
+
+.flot-text{font-family: 'frutigerlt_light', Arial; font-size: 12px !important; color: #7281a4 !important;}
+
+.graphWrapper{position: relative;}
+
+/*************** comparison */
+
+#comparison{height: 100%; position: relative;}
+
+#comparison .upper{height: 50%; position: relative; background: #293042;}
+#comparison .lower{height: 50%; position: relative; background: #212735;}
+
+
+#comparison .upper .left{float: left; position: relative; height: 100%; width: 30%;}
+#comparison .upper .right{float: right; position: relative; height: 100%; width: 70%;}
+
+#comparison .upper p.comparisonTotal{color: #fff; color: #fff; font-family: 'gotham_medium', Arial; font-size: 24px; text-align: center; margin-bottom: 0;}
+#comparison #comparisonRoundGraph{position: relative; height: 80%;}
+#comparison #comparisonRoundGraph .graph{margin-bottom: 30px;}
+#comparison #comparisonRoundGraph .graph canvas{width: 43%;}
+#comparison .radial-progress{position: relative; top: 0; left: 0; margin:25px auto;}
+#comparison .upper .title{padding: 20px; padding-top: 0; position: relative; height: 20%;}
+#comparison #comparisonGraph{position: relative; height: 85%; width: 100%; opacity: 0;}
+
+#comparison .lower .inner{padding:15px 20px;}
+#comparison .lower .inner ul{}
+#comparison .lower .inner ul li{background: #293042; position: relative; margin-bottom: 10px;}
+#comparison .lower .inner ul li .percBar{position: absolute; top: 0; left: 0; height: 100%; background: #21a9e1; z-index: 9;}
+#comparison .lower .inner ul li span{display: block; color: #fff; font-family: 'gotham_medium', Arial; line-height: 100%; font-size: 14px; padding: 5px; position: relative; z-index: 10;}
+#comparison .lower .inner ul li span.name{float: left;}
+#comparison .lower .inner ul li span.percValue{float: right;}
+
+/*************** blackouts */
+
+#blackouts{height: 100%; position: relative;}
+
+#blackouts .title{position: relative; padding: 25px;}
+
+#blackouts .upper{position: relative; height: 70%; background: #293042; position: relative;}
+#blackouts .fleetWrapper{position: relative; height: 30%; background: #212735;}
+
+#blackouts .upper .large{position: absolute; top: 50%; left: 0; width: 100%; margin-top: -120px;}
+#blackouts .upper .large p{font-family: 'gotham_medium', Arial; color: #fff; line-height: 100%; text-align: center;}
+#blackouts .upper .large p.largeText{font-size: 250px; line-height: 200px;}
+#blackouts .upper .large p.caption{font-size: 35px;}
+#blackouts .upper .large p.stat{font-size: 32px;}
+#blackouts .upper .large p.stat.red{color: #ef4024;}
+
+#blackouts .fleetWrapper ul{display: table; width: 100%; vertical-align: middle; height: 100%; padding: 3% 0; display: block;}
+#blackouts .fleetWrapper li{display: table-cell; padding: 0 30px; vertical-align: middle; display: block; width: 14%; padding: 0 2%; float: left;}
+#blackouts .fleetWrapper li span{display: block; color: #fff; font-family: 'gotham_medium', Arial; text-align: center; line-height: 100%;}
+#blackouts .fleetWrapper li span.value{font-size: 80px; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 2px #fff solid;}
+#blackouts .fleetWrapper li span.label{font-size: 20px;}
+#blackouts .fleetWrapper table{width: 100%;border-collapse: collapse; border-spacing: 0;}
+#blackouts .fleetWrapper tr td {text-align: center; padding: 15px 10px; font-family: 'gotham_medium', Arial; font-size: 14px;}
+#blackouts .fleetWrapper thead tr, #blackouts .fleetWrapper tbody tr:nth-child(even){background: #2e364a;}
+
+
+#dashboardBuilder, #dashboardBuilder .builderForm{height: 100%;}
+#dashboardBuilder .dashboardOptions{background: #fff; padding: 25px 0; width: 100%; position: relative; z-index: 500;text-align: center;box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+-webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+-moz-shadow: 1px 1px 4px rgba(0,0,0,0.2);}
+#dashboardBuilder .dashboardBuilderMain{background: #212735; position: relative; height: 100%; overflow: auto;}
+
+#page .button{display: inline-block; position: relative; z-index: 10; cursor: pointer; letter-spacing: 1px;  background: #293042; text-transform: uppercase; color: #fff; font-family: 'gotham_medium', Arial; text-align: center; font-size: 13px; padding: 12px 15px 9px; border-radius: 3px;}
+#page .button{-webkit-transition: .2s ease all; transition: .2s ease all; }
+#page .button:hover{background:#08b5a5 ;}
+
+
+
+#dashboardBuilder .dashboardOptions .inner{display: inline-block;}
+#dashboardBuilder .dashboardOptions .control{position: relative; margin: 0 10px;float: left;}
+
+#dashboardBuilder .dashboardOptions .button.white{background: #fff; color: #000; border:1px #cccccc solid; text-transform: none;}
+
+#dashboardBuilder .dashboardOptions .dropdown{position: absolute; max-height: 0;  left: 0; z-index: 1000; margin-top: 0; display: block; background: #fff; border:1px #cccccc solid; width: 100%; border-top: 0; max-height: 0; overflow: hidden; margin-top: -1px;}
+#dashboardBuilder .dashboardOptions .dropdown{-webkit-transition: .2s ease all; transition: .2s ease all; }
+#dashboardBuilder .dashboardOptions .dropdown li{ font-family: 'gotham_medium', Arial; text-align: left; font-size: 13px; cursor: pointer; padding: 12px 13px 10px; color: #000; border-top: 1px #ccc solid;}
+#dashboardBuilder .dashboardOptions .dropdown li:hover{background: #f1f3f8;}
+#dashboardBuilder .dashboardOptions .dropdown li:active{background: #08b5a5; color: #fff;}
+
+#dashboardBuilder .dashboardOptions .control.open .dropdown{max-height: 500px; overflow: auto; border:1px #cccccc solid; border-top: 0;}
+#dashboardBuilder .dashboardOptions .control.open .button{background:#08b5a5 ; color: #fff; border-bottom-left-radius:0; border-bottom-right-radius: 0;}
+#dashboardBuilder .dashboardOptions .control.active .button{background:#08b5a5 ; color: #fff;}
+
+
+
+#addComparison{min-width: 220px;}
+
+#dashboardBuilder .dashboardOptions input.submit, #dashboardBuilder .comparisonSelector a.submit{background: #21a9e1; -webkit-transition: .3s ease all; transition: .3s ease all;}
+#dashboardBuilder .dashboardOptions input.submit:hover, #dashboardBuilder .comparisonSelector a.submit:hover{background: #1fa0d5;}
+
+#dashboardBuilder .comparisonSelector{background: #fff; padding: 70px 0; width: 100%; height: 500px; position: absolute; top: -500px;}
+
+#dashboardBuilder .dashboardArea{position: relative; height: auto; padding-top: 50px; top:0;}
+
+#dashboardBuilder .dashboardArea h2{text-align: center; color: #fff; font-family: 'gotham_medium', Arial; font-size: 16px;  text-transform: uppercase; margin-bottom: 50px; letter-spacing: 1px;}
+
+#dashboardBuilder .dashboardList{padding: 0 1%;}
+#dashboardBuilder .dashboardList .inner{position: relative;}
+
+#dashboardBuilder .dashboard{display: block; width: 18%; margin: 1%; float: left; background: #293042; position: relative;}
+#dashboardBuilder .dashboard p{color: #fff; font-family: 'gotham_book', Arial; font-size: 14px; text-align: center;}
+#dashboardBuilder .dashboard p.type{margin-top: 20px; margin-bottom: 50px;}
+#dashboardBuilder .dashboard .dTitle{background: #3e4860; padding: 15px;}
+#dashboardBuilder .dashboard .dTitle p{margin-bottom: 0;}
+#dashboardBuilder .dashboard a.delete{display: block; width: 16px; height: 16px; background: url(../images/icon_dash_delete.png) no-repeat; position: absolute; top: -8px; right: -8px;}
+
+#dashboardBuilder .dashboard.comparison .dTitle{cursor: pointer; position: relative;}
+#dashboardBuilder .dashboard.comparison .dTitle{-webkit-transition: .3s ease all; -moz-transition: .3s ease all; transition: .3s ease all;}
+#dashboardBuilder .dashboard.comparison .dTitle:hover{background: #465270;}
+#dashboardBuilder .dashboard.comparison .dTitle span.fleetcount{position: absolute; top: -10px; right: 15px; display: block; width: 20px; height: 20px; border-radius: 50%; background: #08b5a5; color: #fff;  font-family: 'gotham_book', Arial; font-size: 12px; padding: 2px 0; text-align: center;}
+
+
+
+#dashboardBuilder .dashboard a.drag{display: block;  width: 18px; height: 16px; background: url(../images/icon_drag.png) no-repeat; position: absolute; top: 15px; right:15px;}
+
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector, #dashboardBuilder .dashboardBuilderMain .dashboardArea{-webkit-transition: .5s ease all; transition: .5s ease all; }
+
+#dashboardBuilder .dashboardBuilderMain.open .comparisonSelector{top: 0;}
+#dashboardBuilder .dashboardBuilderMain.open .dashboardArea{top: 500px; background: #212735;}
+
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .container{width: 750px;}
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .column{float: left; margin-left: 50px;}
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector p.title{font-family: "gotham_medium", Arial; font-size:16px; color: #293042; text-transform: uppercase; letter-spacing: 1px;}
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector input[type=text]{width: 100%;}
+
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown{height: 320px; width: 230px; overflow: scroll; border:1px #e7e7ee solid;}
+
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown select{display: block; padding: 5px 0; margin:0 10px; border: 0; outline: none; height: 100%;}
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown option{display: block; padding:13px 10px; font-family: "gotham_medium", Arial; font-size:13px; color: #293042; cursor: pointer; line-height: 100%;}
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown option.selected, #dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown select:-internal-list-box option:checked{background: #f1f3f8;}
+
+
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown ul{display: block; padding: 5px 0; margin:0 10px; border: 0; outline: none; height: 100%;}
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown li{display: block; padding:13px 10px; font-family: "gotham_medium", Arial; font-size:13px; color: #293042; cursor: pointer; line-height: 100%;}
+#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown li.selected{background: #f1f3f8;}
+
+#dashboardBuilder .closeComparisonSelector{display: block; width: 14px; height: 12px; background: url(../images/close.png) no-repeat; position: absolute; top: 20px; right: 15px;}
+
+#dashboardBuilder .comparisonSelector a.submit{margin-top: 40px;}
+
+
+/********************************************************** helper classes */
+
+.btn{display:inline-block;  padding:9px 26px; font-family: "gotham_medium", Arial; font-size:14px; font-weight:normal; cursor:pointer; text-align:center; border-radius:3px; border:0;  background:none;}
+
+.btnBlack{background:#343b44; color:#fff;}
+.btnRed{background:#f15339; color:#fff; }
+.btnBlue{background:#314996; color:#fff;}
+
+/* youtube iframe embed */
+.videoWrapper {position: relative;padding-bottom: 56.25%; padding-top: 25px;height: 0;}
+.videoWrapper iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+
+/* ie8 notice */
+.chromeframe{position:fixed; top:0; left:0; width:100%; background:#bd1215; padding:10px 0; color:#fff; z-index:1500; font-family:"customfont", Helvetic, Arial;}
+.chromeframe a{text-decoration:underline;}
+
+/********************************************************** mobile transitions */
+
+
+/********************************************************** responsive */
+@media (max-width: 1750px){
+	
+	#comparison #comparisonRoundGraph .graph canvas{width: 43%;}
+	
+	.graph.small canvas{width: 60%;}
+	.graph.smaller canvas{width: 49%;}
+	
+}
+
+
+@media (max-width: 1370px){
+	#dashboardMain .graphUpper .title{padding-bottom: 0;}
+	#page h2{font-size: 19px;}
+	#dashboardMain .graphUpper .graphStats li span.value{font-size: 28px;}
+	
+	#dashboardMain .graphLower .infoBlock.table th, #dashboardMain .graphLower .infoBlock.table td{padding: 16px 10px;}
+	
+	#blackouts .fleetWrapper ul{padding:2% 0;}
+}
+
+@media (max-width: 1200px){
+	/*Tablet Landscape/Smaller Desktops*/
+	
+	img{max-width:100%; height:auto;}
+	
+	.container{width:auto; padding:0 15px}
+	
+	#page{height: auto; overflow: auto;}
+	#page.builder, #page.login{height: 100%;}
+	
+		#page h2{font-size: 20px;}
+	#page p.datetime{font-size: 16px;}
+	
+	
+	#dashboardMain .graphUpper{height: 400px;}
+	#dashboardMain .graphLower{height: 400px;}
+	#dashboardMain .graphLower .infoBlock{}
+	
+	
+	#dashboardMain .graphUpper .graphStats li span.value{font-size: 25px;}
+	.graph canvas{width: 70%;}
+	
+	
+	.table{margin-bottom: 0;}
+	
+	#dashboardBuilder .dashboardArea{padding-bottom: 100px;}
+	
+	#blackouts .upper .large{position: relative; top: 0; margin: 50px 0;}
+	#blackouts .fleetWrapper{height: 220px;}
+	#blackouts .fleetWrapper li{padding: 0 15px;}
+	#blackouts .fleetWrapper li span.value{font-size: 50px;}
+	#blackouts .fleetWrapper li span.label{font-size: 10px; padding: 0;}
+	
+	
+}
+
+@media (max-width: 1050px){
+	/*IPAD Landscape*/
+
+	#dashboardMain .graphUpper, #dashboardMain .graphLower{height: auto;}
+	#dashboardMain .graphUpper .mainGraph{height: 270px;}
+	
+	#dashboardMain .graphUpper .graphStats li span.value, #dashboardMain .graphUpper .graphStats li span.label, #dashboardMain .graphUpper .graphStats li span.varianceDiff{padding: 0 20px;}
+
+	
+	#dashboardMain .graphLower .infoBlock{height: 320px;}
+	#dashboardMain .graphLower .infoBlock .inner{padding: 15px;}
+	#dashboardMain .graphLower .infoBlock.table .tableWrap{padding: 0 5px;}
+	
+	#dashboardMain .graphLower .infoBlock.table th, #dashboardMain .graphLower .infoBlock.table td{font-size: 12px;}
+	#dashboardMain .graphLower .infoBlock.table th, #dashboardMain .graphLower .infoBlock.table td{padding: 15px 7px;}
+	#dashboardMain .graphLower .infoBlock.table table .kms{width: 20%;}
+	
+	#dashboardMain .graphLower .infoBlock .stat span.label{font-size: 11px;}
+	#dashboardMain .graphLower .infoBlock .stat span.value{font-size: 15px;}
+	#dashboardMain .graphLower .infoBlock.cpk .cpkGraphWrapper{margin-top: 15px;}
+	
+	.graph.small canvas{width: 90%;}
+	.graph.smaller canvas{width: 73.5%; max-width: 150px;}
+	
+	#dashboardBuilder{}
+	#dashboardBuilder .dashboard{width: 23%;}
+	#dashboardBuilder .dashboard p{font-size: 11px;}
+	
+	#blackouts .fleetWrapper{height: 200px;}
+	#blackouts .fleetWrapper ul{padding:4% 0;}
+	#blackouts .upper .large p.largeText{font-size: 200px; line-height: 150px;}
+	
+	#comparison .lower .inner{overflow: scroll; height: 300px;}
+	#comparison .upper .right{height: 350px;}
+	#dailygraph{margin-bottom: 30px;}
+	
+
+	#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown select{-webkit-appearance: none; background: #fff; display: block;border: 1px #e9e9eb solid;padding: 7px;font-family: "frutiger_roman", Helvetic, Arial;font-size: 13px;border-radius: 2px;color: #293042;}
+	
+}
+
+@media (max-width: 850px){
+	/*IPAD Portrait*/
+	
+	html, body, #page{overflow: auto; height: auto;}
+	
+	/* header */
+	
+	
+	#dashboardBuilder .dashboard{width: 23%;}
+	#dashboardBuilder .dashboard p{font-size: 13px;}
+	
+	#dashboardBuilder .dashboardBuilderMain .comparisonSelector .container{width: auto;}
+
+}
+
+@media (max-width: 720px){
+	/*Mobile Landscape*/
+	
+	
+	p{}
+	h2{}
+	h3{}
+	
+	/* header */
+	
+	#dashboardMain .graphUpper .mainGraph{display: none;}
+	
+	#dashboardMain .graphUpper .title{float: none; padding:30px 15px; padding-top: 10px;}
+	
+	#dashboardMain .graphUpper .graphInfo{height: auto;}
+	#dashboardMain .graphUpper .graphStats{float: none; padding: 10px 0;}
+	#dashboardMain .graphUpper .graphStats li{float: none; margin-bottom: 20px;}
+	#dashboardMain .graphUpper .graphStats li span.value{border: 0; text-align: left;}
+	
+	#dashboardMain .graphUpper .graphStats li span.value, #dashboardMain .graphUpper .graphStats li span.label, #dashboardMain .graphUpper .graphStats li span.varianceDiff{padding: 0 15px;}
+	
+	#dashboardMain .graphLower .infoBlock .stat.daily{bottom: 15px; left: 15px;}
+	#dashboardMain .graphLower .infoBlock .stat.budget{bottom: 15px; right: 15px;}
+	
+	#dashboardMain .graphLower .infoBlock{float: none; width: 100%; height: auto;}
+	#dashboardMain .graphLower .infoBlock .inner, #dashboardMain .graphLower .infoBlock:first-child .inner{border-left:0; border-right: 0;}
+	
+	#dashboardMain .graphLower .infoBlock.cpk{height: 320px;}
+	
+	#dashboardBuilder .comparisonSelector{padding: 40px 0;}
+	#dashboardBuilder .dashboardBuilderMain .comparisonSelector .fleetsDropdown{height: 200px;}
+	#dashboardBuilder .dashboardBuilderMain .comparisonSelector .column{float: none; margin-left: 0; margin-bottom: 30px;}
+	#dashboardBuilder .comparisonSelector a.submit{margin-top: 0;}
+	#dashboardBuilder .dashboard p.type{padding-top: 20px; margin-top: 0; margin-bottom: 30px;}
+	
+	#comparison .upper .left{float: none; width: 100%;}
+	#comparison .upper .right{display: none;}
+	#comparison .lower .inner{height: auto; overflow: auto;}
+	
+	#dailygraph{margin-bottom: 30px;}
+	
+	#dashboardBuilder .dashboardOptions .control{float: none; margin-bottom: 30px;}
+	#dashboardBuilder .dashboardOptions .control.duration .dropdown{border-top: 0; border-bottom: 0;}
+	
+	#dashboardBuilder .dashboard{width: 80%; margin:3% auto; float: none; }
+	#dashboardBuilder .dashboard p{font-size: 12px;}
+	
+	#blackouts .title{padding-top: 0;}
+	
+	#blackouts .upper .large{margin-top: 0;}
+	#blackouts .upper .large p.largeText{font-size: 100px; line-height: 100px;}
+	#blackouts .upper .large p.caption{font-size: 25px;}
+	#blackouts .upper .large p.stat{font-size: 20px;}
+	#blackouts .fleetWrapper{height: auto;}
+	#blackouts .fleetWrapper li{display: block; margin-bottom: 50px; float: none; width: 100%;}
+	#blackouts .fleetWrapper li span.value{width: 50%; margin: 20px auto; font-size: 50px;}
+	#blackouts .fleetWrapper li span.label{font-size: 13px;}
+	
+	#login .formWrapper{top: 30px; left: 0; margin: 0; width: 100%;}
+	
+	#comparison .lower{min-height: 300px;}
+	
+	#fakecanvasdiv{top: 54px;}
+	
+}

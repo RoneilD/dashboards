@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+   <request>export</request>
+   <result>fail</result>
+   <screenErrors><![CDATA[]]></screenErrors>
+   <benchmark>
+      <queries>5</queries>
+      <startTime>1315477005.5331</startTime>
+      <stopTime>1315477005.7953</stopTime>
+      <computingTime>0.26217889785767</computingTime>
+   </benchmark>
+   <data>
+      <error>
+         <reason>The call to method: export is missing parameter responseFormat</reason>
+      </error>
+   </data>
+</response>

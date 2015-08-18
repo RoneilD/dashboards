@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+   <request>/api_request/Report/export?report=85&amp;responseFormat=csv&amp;Start_Date=2015-08-09&amp;Stop_Date=2015-08-10&amp;Fleet=156</request>
+   <result>fail</result>
+   <screenErrors><![CDATA[]]></screenErrors>
+   <benchmark>291438691750.10131438691750.32630.22495198249817</benchmark>
+   <session/>
+   <data>
+      <error>
+         <reason>Tab with id  203 not found.</reason>
+      </error>
+   </data>
+</response>

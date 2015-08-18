@@ -1,0 +1,20 @@
+Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
+T023,4032,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R8,219.86","R1,479.58",387,Yes
+T024,4033,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R8,219.86","R1,479.58",387,No
+T038,4021,T24 - Revenue - Sappi,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T039,4036,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T040,4040,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,No
+T041,4041,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T042,4042,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T043,4043,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R8,609.25","R1,549.67",500,Yes
+T044,4022,T24 - Revenue - Sappi,"",2015-08-25,"R8,609.25","R1,549.67",500,Yes
+T045,4023,T24 - Revenue - Sappi,"",2015-08-25,"R8,609.25","R1,549.67",500,Yes
+T046,4024,T24 - Revenue - Sappi,"",2015-08-25,"R8,609.25","R1,549.67",500,Yes
+T048,4006,T24 - Revenue - Sappi,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T049,4045,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T116,4029,T24 - Revenue - Vryhied Adhoc,"",2015-08-25,"R8,609.25","R1,549.67",500,Yes
+T148,6002,T24 - Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T149,"",T24 - Revenue MPU Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T150,"",T24 - Revenue MPU Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T151,TBA,T24 - Revenue MPU Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes
+T152,"",T24 - Revenue MPU Adhoc,"",2015-08-25,"R7,459.93","R1,342.79",435,Yes

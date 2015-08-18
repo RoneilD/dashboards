@@ -1,0 +1,6 @@
+Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
+399,Metal Corp Trading AG USD,"",2015-08-04 08:00:00,2015-08-04 06:00:00,"52,238.91",2780,2015-08-04 09:00:00,2780
+402,Metal Corp Trading AG USD,"",2015-08-04 12:00:00,(none),"56,206.42",2780,(none),2780
+399,Metal Corp Trading AG USD,"",2015-08-04 08:00:00,(none),"52,238.91",2780,(none),2780
+406,Total USD,"",2015-08-04 16:00:00,(none),"59,972.50",6569,(none),6569
+412,Access Freight (ACC003) ZAR,"",2015-08-04 08:00:00,(none),"1,806.69",80,(none),80

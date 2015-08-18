@@ -1,0 +1,13 @@
+Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
+D25,1299,RE - KZN,"",2015-08-03,"R2,529.16",R262.81,70,Yes
+D26,1296,RE - Cape,"",2015-08-03,"R2,381.60",R273.36,70,Yes
+D27,64,RE- Consolidated,"",2015-08-03,"R2,443.16",R273.36,70,No
+D28,1298,RE - KZN,"",2015-08-03,"R2,252.63",R176.54,70,No
+D585,"",RE - Rental,"",2015-08-03,"R2,288.42",R287.90,70,No
+D586,"",RE - KZN,"",2015-08-03,"R3,011.49",R475.67,70,Yes
+D587,"",RE- Consolidated,"",2015-08-03,"R3,011.49",R475.67,70,Yes
+D588,"",RE - Rental,"",2015-08-03,"R3,183.03",R609.66,70,Yes
+D589,"",RE- Consolidated,"",2015-08-03,"R3,267.67",R609.66,70,Yes
+D591,"",RE- Consolidated,"",2015-08-03,"R2,872.99",R475.67,70,Yes
+D615,"",RE - Rental,"",2015-08-03,"R2,357.67",R287.90,70,Yes
+D615,"",RE - Rental,"",2015-08-03,"R2,372.33",R284.01,70,Yes

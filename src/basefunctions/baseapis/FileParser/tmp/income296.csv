@@ -1,0 +1,4 @@
+Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
+TS1,NCP Chlorochem - Chlorine,Tanker Services,2015-08-03 08:00:00,(none),"23,704.79",2300,(none),2300
+TS2,NCP Chlorochem - Chlorine,Tanker Services,2015-08-03 06:00:00,(none),"7,231.93",600,(none),600
+TS2,NCP Chlorochem - Chlorine,Tanker Services,2015-08-03 00:00:00,(none),"8,940.95",800,(none),800

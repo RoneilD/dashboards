@@ -1,0 +1,4 @@
+[31-May-2012 14:32:51] PHP Warning:  filesize(): stat failed for ../Maxine/ratescalculator/masscalcs/E in /var/www/Maxine/basefunctions/downloadcsv.php on line 10
+[31-May-2012 14:32:51] PHP Warning:  readfile(../Maxine/ratescalculator/masscalcs/E): failed to open stream: No such file or directory in /var/www/Maxine/basefunctions/downloadcsv.php on line 13
+[31-May-2012 14:33:08] PHP Warning:  filesize(): stat failed for ../Maxine/ratescalculator/masscalcs/E in /var/www/Maxine/basefunctions/downloadcsv.php on line 10
+[31-May-2012 14:33:08] PHP Warning:  readfile(../Maxine/ratescalculator/masscalcs/E): failed to open stream: No such file or directory in /var/www/Maxine/basefunctions/downloadcsv.php on line 13

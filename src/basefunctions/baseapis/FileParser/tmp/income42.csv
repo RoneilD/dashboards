@@ -1,0 +1,6 @@
+Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
+238,Buckman New,"",2015-08-03 10:00:00,(none),0.00,160,(none),160
+238,Buckman New,"",2015-08-03 18:00:00,(none),0.00,1300,(none),1300
+E54,Buckman New,"",2015-08-03 15:00:00,(none),0.00,1250,(none),1250
+E55,Buckman New,"",2015-08-03 08:00:00,(none),0.00,200,(none),200
+E78,Buckman New Gauteng FandV,"",2015-08-03 18:00:00,2015-08-03 17:10:00,"9,016.58",151,2015-08-03 17:50:00,151

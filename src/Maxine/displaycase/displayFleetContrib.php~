@@ -1,145 +1,117 @@
 <?PHP
 	// Prep {
 		// Groundwork {
-			$conf = $_POST ? $_POST : $_GET;
-
+			$conf		= $_POST;
+			
 			// Defines and includes {
 				$times				= substr_count($_SERVER['PHP_SELF'],"/");
 				$rootaccess		= "";
 				$i						= 1;
-
+				
 				while ($i < $times) {
 					$rootaccess .= "../";
 					$i++;
 				}
-
+				
 				define("BASE", $rootaccess);
-
+				
 				include_once(BASE."/basefunctions/localdefines.php");
 				include_once(BASE."/basefunctions/dbcontrols.php");
 				include_once(BASE."/basefunctions/baseapis/manapi.php");
 				include_once(BASE."Maxine/api/maxineapi.php");
-
+				
 				require_once(BASE."basefunctions/baseapis/fleetDayHandler.php");
-
-				$link			= mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysqli_error($link));
-
+				
+				$link			= mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysql_error());
+				
 				$fleetdayobj	= new fleetDayHandler();
-				/** returnFleetTruckCount()
-				 * get all fleets truck count
-				 * @return array on success false otherwise
-				 */
-				function returnFleetTruckCount() {
-					require_once(BASE."/basefunctions/baseapis/TableManager.php");
-					$manager = new TableManager("fleet_truck_count");
-					$manager->setCustomIndex("fleet_id");
-					return $manager->selectMultiple();
-				}
-				$truckcount = returnFleetTruckCount();
 			// }
+			/** returnFleetTruckCount()
+			 * get all fleets truck count
+			 * @return array on success false otherwise
+			 */
+			function returnFleetTruckCount() {
+				require_once(BASE."/basefunctions/baseapis/TableManager.php");
+				$manager = new TableManager("fleet_truck_count");
+				$manager->setCustomIndex("fleet_id");
+				return $manager->selectMultiple();
+			}
+			$truckcount = returnFleetTruckCount();
 		// }
-
-		$count	= $conf["fleetcount"];
+		
+		$count		= $conf["fleetcount"];
 		$factor = findPageDimensionFactor((isset($conf["maxwidth"]) ? (int)$conf["maxwidth"] : NULL));
-
-		$fleet	= $fleetdayobj->getFleetById($count);
-		//print('<pre>');print_r($fleet);
-
+		
+		//$count	= 2;
+		
+		$fleet		= $fleetdayobj->getFleetId($count);
+		
 		$today	= date("j");
 		//$today = 30; *TEST
-
+		
 		if($fleet) {
-			$fleetdetails	= $fleetdayobj->getFleetScoreMonth($fleet['id']);
+			$fleetdetails	= $fleetdayobj->getFleetScoreMonth($fleet);
 		}
-		// print('<pre>');print_r($fleetdetails);exit;
-
+		
 		$fleetlist		= $fleetdayobj->getIncomeFleets();
-
-		$totincome		= 0;
-		$subincome		= 0;
+		
+		$totcontrib		= 0;
 		$totbudget		= 0;
 		$totkms				= 0;
-		$subkms				= 0;
-
+		
 		$flashstring	= "";
-
+		
 		if($fleetdetails) {
 			foreach ($fleetdetails as $fleetdaykey=>$fleetday) {
 				if ($fleetday["day"] > $today) {
 					continue;
 				}
-				$totincome		+= $fleetday["income"];
-				$subincome		+= $fleetday['subbie_income'];
-				$totbudget		+= $fleetday["budget"];
-				$totkms			+= $fleetday["kms"];
-				$subkms			+= $fleetday['subbie_kms'];
-
-				$flashstring	.= "&ginput".$fleetdaykey."=".$totincome;
+				$totcontrib		+= $fleetday["contrib"];
+				$totbudget		+= $fleetday["budgetcontrib"];
+				$totkms				+= $fleetday["kms"];
+				
+				$flashstring	.= "&ginput".$fleetdaykey."=".$totcontrib;
 				$flashstring	.= "&tinput".$fleetdaykey."=".$totbudget;
 			}
 		}
-
-		$todaybudget	=	$fleetdetails[$today]["budget"];
-		$variance			= $totincome - $totbudget;
+		
+		$todaybudget	=	$fleetdetails[$today]["budgetcontrib"];
+		$variance			= $totcontrib - $totbudget;
 		if($totkms > 0) {
-			$totcpk	= round($totincome / $totkms, 2);
+			$totcpk	= round($totcontrib / $totkms, 2);
 		} else {
 			$totcpk	= 0;
 		}
 		if($fleetdetails[$today]["kms"] > 0) {
-			$daycpk	= round($fleetdetails[$today]["income"] / $fleetdetails[$today]["kms"], 2);
+			$daycpk	= round($fleetdetails[$today]["contrib"] / $fleetdetails[$today]["kms"], 2);
 		} else {
 			$daycpk	= 0;
 		}
 		if($fleetdetails[$today]["budkms"] > 0) {
-			$budgetcpk	= round($fleetdetails[$today]["budget"] / $fleetdetails[$today]["budkms"], 2);
+			$budgetcpk	= round($fleetdetails[$today]["budgetcontrib"] / $fleetdetails[$today]["budkms"], 2);
 		} else {
 			$budgetcpk	= 0;
 		}
-
+		
 		$slidertop		= $fleetdayobj->calcSliderTop($todaybudget);
+		
 	// }
 
-	
 	
 	$date = date("d");
 	//$date = 30; *TEST
 	
-	if (date("d") < 10) {
+	//: Kms details
+	if (date(d) < 10) {
 		if (isset($fleetdetails[substr(date("d"), 1)]) && $fleetdetails[substr(date("d"), 1)]) {
-			if (array_key_exists('subbie_kms', $fleetdetails[substr(date('d'), 1)]) && ($fleetdetails[substr(date('d'), 1)]['subbie_kms'] > 0))
-			{
-				$trucks = (int)($truckcount[$fleet['id']]["count"]-$truckcount[$fleet['id']]["subbie_count"]);
-				$kms = ($fleetdetails[substr(date("d"), 1)]["kms"] ? round((($fleetdetails[substr(date("d"), 1)]["kms"]-$fleetdetails[substr(date('d'), 1)]['subbie_kms'])/($trucks > 0 ? $trucks : 1)),0) : 0);
-			}
-			else
-			{
-				$trucks = (int)($truckcount[$fleet['id']]["count"]-$truckcount[$fleet['id']]["subbie_count"]);
-				$kms = ($fleetdetails[substr(date("d"), 1)]["kms"] ? round(($fleetdetails[substr(date("d"), 1)]["kms"]/($trucks > 0 ? $trucks : 1)),0) : 0);
-			}
-			$budkms = ($fleetdetails[substr(date("d"), 1)]["budkms"] ? round(($fleetdetails[substr(date("d"), 1)]["budkms"]/($trucks > 0 ? $trucks : 1)),0) : 0);
+			$kms = ($fleetdetails[substr(date("d"), 1)]["kms"] ? round(($fleetdetails[substr(date("d"), 1)]["kms"]/($truckcount[$fleet]["count"]-$truckcount[$fleet]["subbie_count"])),0) : 0);
+			$budkms = ($fleetdetails[substr(date("d"), 1)]["budkms"] ? round(($fleetdetails[substr(date("d"), 1)]["budkms"]/($truckcount[$fleet]["count"]-$truckcount[$fleet]["subbie_count"])),0) : 0);
 		}
 	} else {
 		if (isset($fleetdetails[$date]) && $fleetdetails[$date]) {
-			if (array_key_exists('subbie_kms', $fleetdetails[$date]) && ($fleetdetails[$date]['subbie_kms'] > 0))
-			{
-				$trucks = (int)($truckcount[$fleet['id']]["count"]-$truckcount[$fleet['id']]["subbie_count"]);
-				$kms = ($fleetdetails[$date]["kms"] ? round((($fleetdetails[$date]["kms"]-$fleetdetails[date('d')]['subbie_kms'])/($trucks > 0 ? $trucks : 1)),0) : 0);
-			}
-			else
-			{
-				if (is_string($date) === TRUE)
-				{
-					$trucks = (int)($truckcount[$fleet['id']]["count"]-$truckcount[$fleet['id']]["subbie_count"]);
-			        $kms = ($fleetdetails[$date]["kms"] ? round(($fleetdetails[$date]["kms"]/($trucks > 0 ? $trucks : 1)),0) : 0);
-			    }
-			}
-			if (is_string($date) === TRUE)
-			{
-				$trucks = (int)($truckcount[$fleet['id']]["count"]-$truckcount[$fleet['id']]["subbie_count"]);
-				$budkms = ($fleetdetails[$date]["budkms"] ? round(($fleetdetails[$date]["budkms"]/($trucks > 0 ? $trucks : 1)),0) : 0);
-			}
-		}
+			$kms = ($fleetdetails[$date]["kms"] ? round(($fleetdetails[$date]["kms"]/($truckcount[$fleet]["count"]-$truckcount[$fleet]["subbie_count"])),0) : 0);
+			$budkms = ($fleetdetails[$date]["budkms"] ? round(($fleetdetails[$date]["budkms"]/($truckcount[$fleet]["count"]-$truckcount[$fleet]["subbie_count"])),0) : 0);
+		}		
 	}
 	$totkms = (float)0;
 	$totbudkms = (float)0;
@@ -149,22 +121,22 @@
 			$totbudkms += isset($value["budkms"]) ? $value["budkms"] : 0;
 		}
 	}
-	$fkt = displayFleetKmsTable($fleetdetails[$today]["fleetid"], array(
+	$fkt = displayFleetKmsTable($fleetdetails[1]["fleetid"], array(
 	    "factor"=>$factor,
 	    "kms"=>$kms,
 	    "budkms"=>$budkms,
 	    "totkms"=>$totkms,
 	    "totbudkms"=>$totbudkms,
-	    "truck_count"=>(isset($truckcount[$fleet['id']]) && array_key_exists("count", $truckcount[$fleet['id']]) ? ($truckcount[$fleet['id']]["count"]-$truckcount[$fleet['id']]["subbie_count"]) : NULL)
+	    "truck_count"=>(array_key_exists($fleet, $truckcount) && array_key_exists("count", $truckcount[$fleet]) ? ((int)$truckcount[$fleet]["count"]-(int)$truckcount[$fleet]["subbie_count"]) : NULL)
 	));
 
 	
 	$graph_data = explode("&", $flashstring);
 	
-
 	date_default_timezone_set('Africa/Johannesburg');
+	
 ?>
-            
+
             <div id="dashboardMain">
               
               <div class="graphUpper">
@@ -184,7 +156,7 @@
                   
                   <div class="title">
                     
-                    <h2><?php echo $fleet["name"];?></h2>
+                    <h2><?php echo $fleetlist[$count]["name"];?></h2>
                     
                     <p class="datetime"><?php echo date("d F H:i");?></p>
                     
@@ -196,7 +168,7 @@
                       
                       <li>
                         
-                        <span class="label">Budget</span>
+                        <span class="label">Contribution</span>
                         
                         <span class="value income">R<?php echo (number_format($totbudget));?></span>
                         
@@ -206,7 +178,7 @@
                         
                         <span class="label">Actual</span>
                         
-                        <span class="value actual">R<?php echo (number_format($totincome));?></span>
+                        <span class="value actual">R<?php echo (number_format($totcontrib));?></span>
                         
                       </li>
                       
@@ -215,6 +187,7 @@
                         <span class="label">Variance</span>
 												
 												<?php
+												
 												$prefix = "+R";
 												
 												if (strpos($variance,'-') !== false){
@@ -223,19 +196,19 @@
 												}
 												$variance_value = str_replace("-", "",$variance);
 												
-												$variance_perc = ($totincome / $totbudget) * 100;
+												$variance_perc = ($variance_value / $totbudget) * 100;
+												
 												?>
                         
                         <span class="value variance"><?php echo $prefix.number_format($variance_value);?></span>
 												
-												<span class="varianceDiff <?php if($variance_perc <= 100):?>red<?php endif;?>"><i class="fa fa-caret-<?php if($variance_perc <= 100):?>down<?php else:?>up<?php endif;?>"></i> <?php echo round($variance_perc);?>% of Budget</span>
+												<span class="varianceDiff <?php if($variance_perc <= 100):?>red<?php endif;?>"><i class="fa fa-caret-<?php if($variance_perc <= 100):?>down<?php else:?>up<?php endif;?>"></i> <?php echo round($variance_perc);?>% Below Forecast</span>
                         
                       </li>
                       
                       
                     </ul>
                     
-										<div class="clear"></div>
                     
                   </div><!-- graphStats -->
                   
@@ -248,33 +221,33 @@
               
               <div class="graphLower">
                 
-                <div class="infoBlock daily">
+                
+                <div class="infoBlock">
                   
                   <div class="inner">
                     
-                    <h3>Daily Income</h3>
+                    <h3>Daily Contribution</h3>
                     
                     <div id="incomeGraph">
-											
+																					
 											<?php
 											
 												$perc = ((round(($fleetdetails[$today]["income"]), 0)) / (round($fleetdetails[$today]["budget"], 0))) * 100;
-												
-												$perc_display = $perc;
 											
 												$perc = ($perc <= 100) ? $perc : 100;
 											
 											?>
-		
+											
 												<div id="dailygraph" class="graph large">
 													
-													<div class="percentage"><?php echo (round($perc_display, 0));?>%</div>	
+													<div class="percentage"><?php echo (round($perc, 0));?>%</div>	
 													
 												</div>
+
 												
 												<script>
 													
-															
+																										
 
 														$('#dailygraph').circleProgress({
 																value: <?php echo $perc / 100;?>,
@@ -310,7 +283,7 @@
 														
 												
 												</script>
-												
+ 
                     </div><!-- incomeGraph -->
                     
                     <div class="stat daily">
@@ -333,6 +306,8 @@
                   
                 </div><!-- infoBlock -->
                 
+                
+                
                 <div class="infoBlock table">
                   
                   <div class="inner">
@@ -350,13 +325,15 @@
                           <th class="day">Current Day</th>
                           
                           <th class="mtd">MTD</th>
-													
+
                           <th class="forecast">Forecast</th>
                           
                         </tr>
                         
-                      </thead>                 
-											  
+                        
+                      </thead>
+                      
+                      
                     </table>
                     
                     </div>
@@ -364,8 +341,9 @@
                     <div class="tableWrap content">
                       
                       <table cellpadding="0" cellspacing="0" >
-												
+
                         <tbody>
+                          
                           
                           <tr>
                             
@@ -419,13 +397,11 @@
                         
                       </table>
                         
-                      
                     </div>
                     
                   </div><!-- inner -->
                   
                 </div><!-- infoBlock -->
-                
                 
                 
                 <div class="infoBlock cpk">
@@ -445,19 +421,19 @@
 													<span class="value">R<?php echo  $daycpk;?></span>
 													
 												</div><!-- stat -->
-
+												
 												<?php
 											
 
-													$perc = ($daycpk / $budgetcpk) * 100;
+													$perc = (($daycpk - $budgetcpk) / $budgetcpk) * 100;
 													
 													$symbol = "";
 													
 
-													if($perc < 100){
+													if($perc <= 0){
 														
-														$symbol = "down";
-														$perc = 100-$perc;
+														$symbol = "up";
+														$perc = $perc * -1;
 														
 														$prog = (round($perc, 2) / 100) * 0.5;
 														
@@ -466,8 +442,7 @@
 													}
 													else{
 														
-														$symbol = "up";
-														$perc = $perc-100;
+														$symbol = "down";
 														
 														$prog = (round($perc, 2) / 100) * 0.5;
 														
@@ -489,9 +464,9 @@
 														
 														
 													</div><!-- day budget -->
-													
+												
 												</div><!-- graphWrapper -->
-
+												
 												<script>
 														$('#cpkday').circleProgress({
 																value: <?php echo $prog;?>,
@@ -500,7 +475,7 @@
 																	color: "#21a9e1"
 																},
 																thickness: 15,
-																startAngle: -4.73,
+																startAngle: -4.76,
 																emptyFill: "#353e54",
 																animation: {
 																		duration: 0
@@ -513,15 +488,17 @@
 																	color: "#295573"
 																},
 																thickness: 15,
-																startAngle: -4.73,
+																startAngle: -4.76,
 																emptyFill: "#2c3449",
 																animation: {
 																		duration: 0
 																}
 														});
 												</script>
-													
-											</div><!-- today --> 
+												
+												
+											</div><!-- today -->
+                      
 											
 											<div class="month">
 												
@@ -535,16 +512,16 @@
 												
 												<?php
 											
-													$perc = ($totcpk / $budgetcpk) * 100;
+													$perc = (($totcpk - $budgetcpk) / $budgetcpk) * 100;
 													
 													$symbol = "";
 													
 													
 													
-													if($perc < 100){
+													if($perc <= 0){
 														
-														$symbol = "down";
-														$perc = 100-$perc;
+														$symbol = "up";
+														$perc = $perc * -1;
 														
 														$prog = (round($perc, 2) / 100) * 0.5;
 														
@@ -553,8 +530,7 @@
 													}
 													else{
 														
-														$symbol = "up";
-														$perc = $perc-100;
+														$symbol = "down";
 														
 														$prog = (round($perc, 2) / 100) * 0.5;
 														
@@ -564,10 +540,10 @@
 												
 													
 													
-												?>												
-													
+												?>
+												
 												<div class="graphWrapper">	
-														
+													
 													<div id="cpkmonth" class="graph small">
 														
 														<div class="percentage <?php echo $symbol;?>"><i class="fa fa-caret-<?php echo $symbol;?>"></i> <?php echo round($perc, 0);?>%</div>	
@@ -608,9 +584,13 @@
 																		duration: 0
 																}
 														});
+														
+
 												</script>
 												
+												
 											</div><!-- month -->
+											
 											
 											<div class="clear"></div>
                       
@@ -623,7 +603,8 @@
                       <span class="value">R<?php echo $budgetcpk;?></span>
                       
                     </div><!-- stat -->
-                      
+                    
+                    
                   </div><!-- inner -->
                   
                 </div><!-- infoBlock -->
@@ -648,10 +629,8 @@
 								var budgeted_data = [];
 								
 								<?php
-								
-	
 								$count = 1;
-								for($x = 1; $x < (date('d')*2); $x += 2):
+								for($x = 1; $x < 60; $x += 2):
 									
 								?>
 								
@@ -662,7 +641,6 @@
 								<?php
 									$count++;
 								endfor;
-								
 								
 								?>
 								
@@ -736,12 +714,6 @@
 						
 								
 							}, 200);
-							
-
-							
+								
 						</script>
-						
-<?php
-	//endif;
 	
-	//

@@ -31,7 +31,7 @@
 	
 	require_once(BASE."basefunctions/baseapis/fleetDayHandler.php");
 	
-	$link = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die(mysqli_error($link));
+	$link = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die(mysql_error());
 	$db_selected = mysql_select_db(DB_SCHEMA, $link);
 	
 	$fleetdayobj = new fleetDayHandler;

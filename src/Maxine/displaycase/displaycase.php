@@ -297,11 +297,10 @@
 	 *
 	 */
 	function saveCustomSlide(){
-		$conf			= $_POST["conf"];
+		$conf		 = $_POST["conf"];
 		
 		$fleetdayobj = new fleetDayHandler;
 		if ($conf){
-			
 			if(empty($conf["slide_id"])){//create new slide
 
 				$slider = (array)array(
@@ -310,44 +309,29 @@
 				);
 				
 				if($fleetdayobj->createSlider($slider, (array_key_exists('userid', $_SESSION) ? (int)$_SESSION['userid'] : (int)0))){
-					
 					goHere("/Maxine/?mydashdetails");
-					
 				}				
 				
 			}
 			else{//update slide
-				
 				$slider = (array)array(
 					'id'=>$conf['slide_id'],
 					'slide_name'=>$conf['slide_name'],
 					'fleet_ids'=>$conf['fleet_ids']
 				);
 				$fleetdayobj->updateSlider($slider);
-				
 				goHere("/Maxine/?mydashdetails");
-				
 			}
-
-			
 		}
-			
 	}
 	
 	function deleteCustomSlide(){
-		
 		$slide_id = $_POST["slide_id"];
-		
 		if($slide_id){
-			
 			$fleetdayobj = new fleetDayHandler;
-			
 			$fleetdayobj->deleteSlider($slide_id);
-			
 			goHere("/Maxine/?mydashdetails");
-			
 		}
-	
 	}
 	
 	/** getUserSliders()

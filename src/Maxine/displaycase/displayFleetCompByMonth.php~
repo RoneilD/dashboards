@@ -22,8 +22,7 @@
 				
 				require_once(BASE."basefunctions/baseapis/fleetDayHandler.php");
 				
-				$link					= mysql_connect(DB_HOST, DB_USER, DB_PASS) or die(mysql_error());
-				$db_selected	= mysql_select_db(DB_SCHEMA, $link);
+				$link			= mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysql_error());
 				
 				$fleetdayobj = new fleetDayHandler;
 			// }
@@ -83,12 +82,16 @@
 		
 		// Pull the details for each fleet {
 			foreach ($fleetlist as $fleetkey=>$fleetval) {
-				if($fleetval["displayrasta"] == 1) {
+				if(array_key_exists('displayrasta', $fleetval) && ($fleetval["displayrasta"] == 1)) {
 					$fleetdetails	= $fleetdayobj->getFleetScoreMonth($fleetval["id"]);
 					$fleetid			= $fleetval["id"];
 					
 					$fleetscore[$fleetid]["name"]	= $fleetval["name"];
 					
+					$fleetscore[$fleetid]["income"] = (float)0.00;
+					$fleetscore[$fleetid]["kms"] = (float)0.00;
+					$fleetscore[$fleetid]["budget"] = (float)0.00;
+					$fleetscore[$fleetid]["flashstring"] = (string)'';
 					foreach ($fleetdetails as $daykey=>$dayval) {
 						$fleetscore[$fleetid]["income"]	+= $dayval["income"];
 						$fleetscore[$fleetid]["kms"]		+= $dayval["kms"];
@@ -107,9 +110,8 @@
 					$rowcount++;
 				}
 			}
-			
 			uasort($fleetscore, "cmpScores");
-			$slidertop	= $fleetdayobj->calcSliderTop($fleetscore[29]["budget"]);
+			$slidertop	= $fleetdayobj->calcSliderTop($fleetscore[1]["budget"]);
 		// }
 	// }
 	
@@ -179,6 +181,8 @@ $entiredetails	= $fleetdayobj->getFleetScoreMonth(1);
 $flashstring	= "";
 
 if($entiredetails) {
+	$totincome = (float)0.00;
+	$totbudget = (float)0.00;
 	foreach ($entiredetails as $fleetdaykey=>$fleetday) {
 		if ($fleetday["day"] > $today) {
 			continue;

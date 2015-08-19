@@ -22,26 +22,27 @@
 				
 				require_once(BASE."basefunctions/baseapis/fleetDayHandler.php");
 				
-				$link			= mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysqli_error($link));
+				$link		 = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysql_error());
 				
 				$fleetdayobj = new fleetDayHandler;
 			// }
 		// }
 		
 		// Sort functions {
-			function cmpbudgetcontribs($a, $b) {
+			function cmpContribBudgets($a, $b) {
 				if ($a["Date"] == $b["Date"]) {
 					return 0;
 				}
 				return ($a["Date"] < $b["Date"]) ? -1 : 1;
 			}
 			
-			function cmpScores($a, $b) {
+			function cmpContribScores($a, $b) {
 				if ($a["score"] == $b["score"]) {
 					return 0;
 				}
 				return ($a["score"] > $b["score"]) ? -1 : 1;
 			}
+			
 		// }
 		
 		// Create date strings for query {
@@ -77,13 +78,12 @@
 		} else {
 			$factor	= 1;
 		}
-		
 		$fleetlist	= $fleetdayobj->getIncomeFleets();
 		
 		// Pull the details for each fleet {
 			foreach ($fleetlist as $fleetkey=>$fleetval) {
-				if($fleetval["displayrasta"] == 1) {
-					$fleetdetails	= $fleetdayobj->getFleetScoreMonth($fleetval["id"]);
+				if($fleetval["displayrasta"]==1) {
+					$fleetdetails	= $fleetdayobj->getFleetScoreDay($fleetval["id"]);
 					$fleetid			= $fleetval["id"];
 					
 					$fleetscore[$fleetid]["name"]	= $fleetval["name"];
@@ -103,8 +103,8 @@
 					$rowcount++;
 				}
 			}
-			
-			uasort($fleetscore, "cmpScores");
+		
+			uasort($fleetscore, "cmpContribScores");
 			$slidertop	= $fleetdayobj->calcSliderTop($fleetscore[29]["budgetcontrib"]);
 		// }
 	// }
@@ -113,7 +113,7 @@
 	
 	print("<tr><td align=center colspan=2>");
 	print("<embed src='".BASE."/images/Comp_Heading.swf'
-		FlashVars='heading=MTD Fleet Contrib. Budget Comparison'
+		FlashVars='heading=Daily Fleet Contrib. Budget Comparison'
 		quality='high'
 		width='".(1170 * $factor)."px'
 		height='".(89 * $factor)."px'
@@ -126,11 +126,11 @@
 	print("</td></tr>");
 	
 	print("<tr><td rowspan=".$rowcount." align=right>");
-	print("<embed src='".BASE."/images/Comp_Slider_MTD.swf'
+	print("<embed src='".BASE."/images/Comp_Slider.swf'
 		FlashVars='min=0&max=".$slidertop."&slide=".$fleetscore[29]["contrib"]."&budget=".$fleetscore[29]["budgetcontrib"]."&graph_title=Entire Active Fleet'
 		quality='high'
 		width='".(225 * $factor)."px'
-		height='".(650 * $factor)."px'
+		height='".(675 * $factor)."px'
 		name='slider'
 		wmode='transparent'
 		allowScriptAccess='sameDomain'
@@ -184,7 +184,7 @@
 							$perc = ($perc <= 100) ? $perc : 100;
 						
 						?>
-							
+		
 							<div id="dailygraph" class="graph large">
 								
 								<div class="percentage"><?php echo (round($perc, 0));?>%</div>	
@@ -206,13 +206,13 @@
 											}
 									});
 							</script>	
-																
+															
 							
 					</div><!-- comparisonRoundGraph -->
 					
 					<div class="title">
 		
-							<h2>MTD Fleet Contrib. Budget Comparison</h2>
+							<h2>Daily Fleet Contrib. Budget Comparison</h2>
 					
 							<p class="datetime"><?php echo date("d F H:i");?></p>
 					
@@ -224,8 +224,7 @@
 					
 					<div id="comparisonGraph">
 							
-								
-					</div><!-- comparisonGraph -->			
+					</div><!-- comparisonGraph -->
 					
 			</div><!-- right -->
 			
@@ -242,8 +241,11 @@
 						<?php
 																		
 						foreach ($fleetscore as $fskey=>$fsval):
+						
+						
 							if(($fsval["budget"] > 0) && ($fskey != 29)) :
-							
+
+
 						?>
 							
 							<li>
@@ -278,10 +280,7 @@
 			var data ,options,chart;
 				
 				
-				var actual_data = [
-													 
-													 
-					];
+				var actual_data = [];
 			
 
 				data = [

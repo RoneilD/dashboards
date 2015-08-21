@@ -119,19 +119,15 @@
 							var response	= ajaxRequest.responseText;
 							//document.getElementById('canvassdiv').innerHTML = response;
 								
-								var html = $("#canvassdiv").html();
-								
-								$("#fakecanvasdiv").html(html).show();
-								
-								$("#fakecanvasdiv").fadeOut(1100, "linear", function(){
-										
-								});
-								
-								$("#canvassdiv").html(response);
-								
-
+							$("#canvassdiv").fadeOut(1000, "linear", function(){
+                
+                $("#canvassdiv").html(response).fadeIn(1000);
+                
+                //release
+                response=null;
+                    
+							});
 							
-							//response=null;
 						}
 					}
 		

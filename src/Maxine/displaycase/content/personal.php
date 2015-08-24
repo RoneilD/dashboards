@@ -143,10 +143,12 @@
 								$("#canvassdiv").fadeOut(1000, "linear", function(){
 										
 											$("#canvassdiv").html(response).fadeIn(1000);
+                      
+                      //release variable
+                      response=null;
 										
 								});
 								
-								//response=null;
 								
 						}
 					}

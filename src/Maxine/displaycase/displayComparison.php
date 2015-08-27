@@ -169,7 +169,7 @@
 														
 													<?php
 											
-														$perc = ((round($total_income, 0)) / (round($total_budget, 0))) * 100;
+														$perc = ((round($total_income, 0)) / (round(($total_budget > 0 ? $total_budget : 1), 0))) * 100;
 													
 														$perc = ($perc <= 100) ? $perc : 100;
 													

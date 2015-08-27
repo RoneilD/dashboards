@@ -71,7 +71,11 @@
 							
 							<li><a href="/?mydashdetails">Dashboard Builder</a></li>
 
+							<li><a href="/?importfleetday">Import Day</a></li>
+							
 							<li><a href="/?checkfleetscoreupdates">Fleet Scores</a></li>
+							
+							<li><a href="/?ocddata">OCD Data</a></li>
 							
 							<li><a href="/?logout">Logout</a></li>
 							

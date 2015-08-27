@@ -223,7 +223,7 @@
 												}
 												$variance_value = str_replace("-", "",$variance);
 												
-												$variance_perc = ($totincome / $totbudget) * 100;
+												$variance_perc = ($totincome / ($totbudget > 0 ? $totbudget : 1)) * 100;
 												?>
                         
                         <span class="value variance"><?php echo $prefix.number_format($variance_value);?></span>
@@ -258,7 +258,7 @@
 											
 											<?php
 											
-												$perc = ((round(($fleetdetails[$today]["income"]), 0)) / (round($fleetdetails[$today]["budget"], 0))) * 100;
+												$perc = ((round(($fleetdetails[$today]["income"]), 0)) / (round(($fleetdetails[$today]["budget"] > 0 ? $fleetdetails[$today]["budget"] : 1), 0))) * 100;
 												
 												$perc_display = $perc;
 											
@@ -407,7 +407,7 @@
                             
                             <td class="kms">% of Budget</td>
                             
-                            <td class="day"><?php echo round((($kms / $budkms) * 100), 0);?>%</td>
+                            <td class="day"><?php echo round((($kms / ($budkms > 0 ? $budkms : 1)) * 100), 0);?>%</td>
                             
                             <td class="mtd"><?php echo $fkt["mtd_percent"];?>%</td>
                             
@@ -449,7 +449,7 @@
 												<?php
 											
 
-													$perc = ($daycpk / $budgetcpk) * 100;
+													$perc = ($daycpk / ($budgetcpk > 0 ? $budgetcpk : 1)) * 100;
 													
 													$symbol = "";
 													
@@ -535,7 +535,7 @@
 												
 												<?php
 											
-													$perc = ($totcpk / $budgetcpk) * 100;
+													$perc = ($totcpk / ($budgetcpk > 0 ? $budgetcpk : 1)) * 100;
 													
 													$symbol = "";
 													

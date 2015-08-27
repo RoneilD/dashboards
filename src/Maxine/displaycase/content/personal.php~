@@ -71,6 +71,8 @@
 							
 							<li><a href="/?mydashdetails">Dashboard Builder</a></li>
 
+							<li><a href="/?importfleetday">Import Day</a></li>
+							
 							<li><a href="/?checkfleetscoreupdates">Fleet Scores</a></li>
 							
 							<li><a href="/?logout">Logout</a></li>
@@ -143,10 +145,12 @@
 								$("#canvassdiv").fadeOut(1000, "linear", function(){
 										
 											$("#canvassdiv").html(response).fadeIn(1000);
+                      
+                      //release variable
+                      response=null;
 										
 								});
 								
-								//response=null;
 								
 						}
 					}
@@ -337,4 +341,3 @@
 
     </body>
 </html>
-            

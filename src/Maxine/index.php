@@ -1,5 +1,4 @@
 <?php
-
 ob_start();
 
 //: Preparation
@@ -43,6 +42,8 @@ include_once(FIRSTBASE."/canvass.php");
 include_once(FIRSTBASE."/api/maxineapi.php");
 include_once(FIRSTBASE."/rightscontrol.php");
 include_once(FIRSTBASE."/displaycase/displaycase.php");
+include_once(FIRSTBASE."/displaycase/ImportFleetDay.php");
+include_once(FIRSTBASE."/displaycase/ocdData.php");
 include_once(FIRSTBASE."/displaycase/pullFleetDays.php");
 include_once(FIRSTBASE."/personneldir/usercontrols.php");
 include_once(FIRSTBASE."/api/Users.class.php");
@@ -138,6 +139,8 @@ if (isset($_SESSION) && array_key_exists("userid", $_SESSION) && ($_SESSION["use
 		case "deleteuser":		deleteUser();			break;
 		case "savecustomslide":	saveCustomSlide();		break;
 		case 'getusersliders': getUserSliders(); break;
+		case 'importfleetday': ImportFleetDay(); break;
+		case 'ocddata': ocdData(); break;
 		//: End
         default:                	home();                 	break;
 	}

@@ -637,8 +637,11 @@
         print('</header>');
         print('<nav>');
         print('<ul>');
+        print('<li><a href="/?personal">Dashboard</a></li>');
         print('<li><a href="/?mydashdetails">Dashboard Builder</a></li>');
+        print('<li><a href="/?importfleetday">Import Day</a></li>');
         print('<li><a href="/?checkfleetscoreupdates">Fleet Scores</a></li>');
+        print('<li><a href="/?ocddata">OCD Data</a></li>');
         print('<li><a href="/?logout">Logout</a></li>');
         print('</ul>');
         print('</nav>');

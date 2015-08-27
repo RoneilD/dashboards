@@ -9,7 +9,7 @@
 		print("<tr bgcolor=#BBBBBB><td align='center'>");
 		print("<b>Database list</b>");
 		print("</td></tr>");
-		while ($row = mysql_fetch_object($db_list)) {
+		while ($row = mysqli_fetch_object($link, $db_list)) {
 			print("<tr bgcolor='WHITE'><td align='center'>");
 			print($row->Database);
 			//echo $row->Database . "<br>";
@@ -20,14 +20,14 @@
 		print("<b>Tables</b>");
 		print("</td></tr>");
 		
-		$db_selected = mysql_select_db('maxinedb', $link);
+		$db_selected = mysqli_select_db('maxinedb', $link);
 		
 		$sql = "SHOW TABLES";
-		$result = mysql_query($sql);
+		$result = mysqli_query($link, $sql);
 		
 		if (!$result) {throw new man_exception('MySQL Error: '.mysql_error());}
 		
-		while ($row = mysql_fetch_row($result)) {
+		while ($row = mysqli_fetch_row($link, $result)) {
 			print("<tr bgcolor='WHITE'><td align='center'>");
 			print($row[0]."");
 			print("</td></tr>");
@@ -121,7 +121,7 @@
 			//print($sql);
 			$link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysqli_error($link));
 			if (mysqli_query($link, $sql)) {
-				$newid = mysqli_insert_id();
+				$newid = mysqli_insert_id($link);
 				return $newid;
 			} else {
 				throw new man_exception("Error inserting into SQL Database: ".mysql_error()."\n");

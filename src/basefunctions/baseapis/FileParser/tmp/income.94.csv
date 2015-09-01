@@ -1,6 +1,3 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-M042,Manline Mega Truck Repositioning,"",2015-08-08 16:00:00,2015-08-08 16:00:00,0.01,530,2015-08-08 16:00:00,560
-M065,Barloworld Logistics-Equipment,"",2015-08-07 16:00:00,2015-08-07 16:00:00,"19,176.00",565,2015-08-08 10:50:00,580
-M070,Barloworld Logistics-Equipment,"",2015-08-07 14:00:00,2015-08-07 14:00:00,40.00,580,2015-08-08 14:00:00,580
-M072,Barloworld Logistics-Equipment,"",2015-08-07 15:00:00,2015-08-07 15:00:00,40.00,878,2015-08-08 13:00:00,580
-M077,Barloworld Logistics-Equipment,"",2015-08-07 15:00:00,2015-08-07 15:00:00,40.00,580,2015-08-08 11:00:00,580
+M045,Barloworld Logistics-Equipment,"",2015-08-20 08:00:00,2015-08-20 09:00:00,40.00,2055,2015-08-20 21:31:00,2055
+M067,Manline Mega Truck Repositioning,"",2015-08-20 15:00:00,(none),0.01,1110,(none),1110

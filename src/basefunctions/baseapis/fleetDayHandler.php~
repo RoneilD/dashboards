@@ -32,8 +32,8 @@ class fleetDayHandler {
 		array('id'=>26, 'maxid'=>83, 'name'=>'Ashton Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
 		array('id'=>33, 'maxid'=>33, 'name'=>'Energy (Own)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
 		array('id'=>35, 'maxid'=>77, 'name'=>'Freight Africa', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>38, 'maxid'=>168, 'name'=>'Illovo - Germiston CCC', 'trucks'=>array('D616', 'D617', 'D618'), 'customer'=>array('Coca Cola Canners'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>39, 'maxid'=>168, 'name'=>'Illovo - Germiston F and V', 'trucks'=>array('444069','444070','444071','444072','444073','D550'), 'customer'=>array('Illovo Refined GBD F and V'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('id'=>38, 'maxid'=>487, 'name'=>'Illovo - Germiston CCC', 'trucks'=>array('D616', 'D617', 'D618'), 'customer'=>array('Coca Cola Canners'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('id'=>39, 'maxid'=>487, 'name'=>'Illovo - Germiston F and V', 'trucks'=>array('444069','444070','444071','444072','444073','D550', 'D577'), 'customer'=>array('Illovo Refined GBD F and V'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
 		array('id'=>40, 'maxid'=>113, 'name'=>'Meadow Feeds - PMB', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
 		array('id'=>42, 'maxid'=>168, 'name'=>'Toyota - X Dock', 'trucks'=>array('525199','525200','525201','525250','525251','525252','545249','545250','545251','545252','545253','545254','Hire1','Hire2','Hire3','Hire4'), 'customer'=>array('Toyota X-Dock F & V', 'Toyota X-Dock'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
 		array('id'=>43, 'maxid'=>101, 'name'=>'Toyota Tsusho', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
@@ -123,7 +123,9 @@ class fleetDayHandler {
         array('id'=>146, 'maxid'=>482, 'name'=>'Energy - TSA bridging', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         array('id'=>147, 'maxid'=>481, 'name'=>'Anglo - Polokwane', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         array('id'=>148, 'maxid'=>481, 'name'=>'Anglo - PBS', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>149, 'maxid'=>486, 'name'=>'Goldi-Standerton', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('id'=>149, 'maxid'=>486, 'name'=>'Goldi-Standerton (Catching)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('id'=>150, 'maxid'=>488, 'name'=>'Goldi-Standerton (Hatchery)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('id'=>151, 'maxid'=>487, 'name'=>'Illovo GBD', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         
         //: Fleets that are rolled up need to go right to the end
         //: Freight SA (own)
@@ -214,7 +216,7 @@ class fleetDayHandler {
     	$stopstring   = $stopyear."-".$stopmonth."-".$stopday;
     	//$stopstring = $startyear."-".$startmonth."-".$startday." 23:59";
     	
-    	print($startstring." to ".$stopstring.PHP_EOL);
+    	print($startstring." to ".$stopstring.'<br />'.PHP_EOL);
     	// }
     	
     	// Go through each Income Fleet, checking various details and getting the trips for the day {
@@ -260,7 +262,7 @@ class fleetDayHandler {
     			// Import the trip data {
     			//$tripurl = "http://max.mobilize.biz/m4/2/api_request/Report/export?report=84&responseFormat=csv&Start_Date=2011-02-11&Stop_Date=2011-02-12&Fleet=29"; 
     			$tripurl = $this->_apiurl."report=84&responseFormat=csv&Start_Date=".$startstring."&Stop_Date=".$stopstring."&Fleet=".$incfleetval["maxid"];
-    			print($tripurl.PHP_EOL);
+    			print($tripurl.'<br />'.PHP_EOL);
     			
     			$fileParser = new FileParser($tripurl);
     			$fileParser->setCurlFile("income.".$incfleetval["id"].".csv");

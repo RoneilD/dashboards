@@ -330,6 +330,7 @@
 				}
 				window.onload=fadeHeaderBar;
 				window.onunload = function() {
+					ajaxRequest=null;
 					patternscript=null;
 					cycleCounter=null;
 					cycleduration=null;

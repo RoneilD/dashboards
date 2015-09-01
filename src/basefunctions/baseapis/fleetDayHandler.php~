@@ -126,6 +126,7 @@ class fleetDayHandler {
         array('id'=>149, 'maxid'=>486, 'name'=>'Goldi-Standerton (Catching)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         array('id'=>150, 'maxid'=>488, 'name'=>'Goldi-Standerton (Hatchery)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         array('id'=>151, 'maxid'=>487, 'name'=>'Illovo GBD', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('id'=>152, 'maxid'=>483, 'name'=>'Sime Darby Hudson & Knight', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         
         //: Fleets that are rolled up need to go right to the end
         //: Freight SA (own)
@@ -164,8 +165,9 @@ class fleetDayHandler {
         array('id'=>115, "structure"=>array('Subcontractors', 'Freight SA'), 'maxid'=>9003, 'name'=>'Subcontractors Consolidated', 'fleets'=>array(
         	array(109, 'Freight Subcontractors'),array(111, 'Energy Subcontractors'),array(113, 'Dedicated Subcontractors'),array(114, 'Specialised Subcontractors')
             ), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        /* array("id"=>, 'maxid'=>, "name"=>"", "budget"=>0, "budkms"=>0, "pubhol"=>1, "display"=>1, "displayblackouts"=>0, "displayrasta"=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array("id"=>, 'maxid'=>, "name"=>"", "budget"=>0, "budkms"=>0, "pubhol"=>1, "display"=>1, "displayblackouts"=>0, "displayrasta"=>0, 'kms_limit'=>1500, 'open_time'=>10800), */
+        /* 
+        array('id'=>, 'maxid'=>, 'name'=>'', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800), 
+        */
         );
     protected $_apiurl      = "https://login.max.bwtsgroup.com/api_request/Report/export?";
     // protected $_apiurl   = "http://max.mobilize.biz/api_request/Report/export?";

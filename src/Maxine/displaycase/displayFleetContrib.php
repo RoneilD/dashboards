@@ -698,7 +698,7 @@
 									colors: ["#b2cb35", "#21a9e1"]
 								};
 								
-								if ($(window).width() > 720) {
+								if ($(window).width() > 720 && budgeted_data.length > 0 && actual_data.length > 0) {
 									var plot3 = $.plot($("#graph"), data, options);
 									
 									$(window).resize(function(){

@@ -1,5 +1,6 @@
 $(document).ready(function(e) {
-		
+	var time = new Date().getTime();
+	var timeout = 600000; //10 minutes of inacity
 	
 	init();
 
@@ -395,6 +396,11 @@ $(document).ready(function(e) {
 		init();
 
 	});
+	
+	//Reset the timer whenever the mouse moves or a key is pressed
+	$(document.body).bind("mousemove keypress", function(e) {
+			time = new Date().getTime();
+	});
 
 	/*
 	* Main initialize function
@@ -415,8 +421,27 @@ $(document).ready(function(e) {
 		
 
 		$("#login").css({"height":$(window).height()});
-				
+	
+		//refresh function
+		if ($("#canvassdiv").length > 0) {
+			setTimeout(refresh, 10000);
+    }
 		
+	}
+	
+	/*
+	 * 
+	 *
+	 */
+	function refresh() {
+		
+		//refresh the page when the timeout is reached
+		if(new Date().getTime() - time >= timeout){
+				window.location.reload(true);
+		}
+		else{
+				setTimeout(refresh, 10000);
+		}
 	}
 	
 });

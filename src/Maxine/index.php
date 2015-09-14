@@ -66,17 +66,8 @@ function home()
 
 function login()
 {
-	print("<pre>");
-	print_r($_POST);
-	print(PHP_EOL);
-	# print_r(get_defined_functions());
-	print_r(PHP_EOL);
 	$usermatch = sqlPull(array("table"=>"users", "where"=>"`username`='".$_POST["username"]."'", "onerow"=>"1"));
 	$password = (string)substr(md5(SALT.$_POST["pass_word"]),0 , 30);
-	print($password.PHP_EOL);
-	print("usermatch:");
-	print_r($usermatch);
-	print("</pre>");
 	if (isset($usermatch) && is_array($usermatch) && array_key_exists("username", $usermatch))
 	{
 		if (array_key_exists("password", $usermatch) && ($password === $usermatch["password"]))

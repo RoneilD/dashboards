@@ -166,7 +166,7 @@ class fleetDayHandler {
         	array(109, 'Freight Subcontractors'),array(111, 'Energy Subcontractors'),array(113, 'Dedicated Subcontractors'),array(114, 'Specialised Subcontractors')
             ), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         /* 
-        array('id'=>, 'maxid'=>, 'name'=>'', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800), 
+        array('structure'=>array(), 'id'=>, 'maxid'=>, 'name'=>'', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800), 
         */
         );
     protected $_apiurl      = "https://login.max.bwtsgroup.com/api_request/Report/export?";

@@ -1,12 +1,12 @@
 Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
-T002,4046,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R4,787.65",R861.78,220,Yes
-T003,4047,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R8,704.81","R1,566.87",400,Yes
-T004,4048,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R4,787.65",R861.78,220,Yes
-T005,4049,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R9,575.29","R1,723.55",440,Yes
-T007,4051,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R9,575.29","R1,723.55",440,Yes
-T008,4034,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R4,787.65",R861.78,220,Yes
-T009,4035,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R4,787.65",R861.78,220,Yes
-T110,4010,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R8,704.81","R1,566.87",400,Yes
-T117,4009,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R9,575.29","R1,723.55",440,Yes
-T118,4012,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R9,575.29","R1,723.55",440,Yes
-T120,4031,T24 - Revenue - Merensky,40.000,"",2015-08-20,"R8,704.81","R1,566.87",400,Yes
+T002,4046,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T003,4047,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T004,4048,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T005,4049,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T007,4051,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T008,4034,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T009,4035,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T110,4010,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T117,4009,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T118,4012,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes
+T120,4031,T24 - Revenue - Merensky,40.000,"",2015-09-20,R0.00,R0.00,0,Yes

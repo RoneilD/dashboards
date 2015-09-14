@@ -26,8 +26,7 @@ include_once(BASE."Maxine/api/maxineapi.php");
 
 require_once(BASE."basefunctions/baseapis/fleetDayHandler.php");
 
-$link = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die(mysql_error());
-$db_selected = mysql_select_db(DB_SCHEMA, $link);
+$link			= mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysqli_error($link));
 //: End
 //: Content
 $fleetdayobj = new fleetDayHandler();

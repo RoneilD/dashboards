@@ -1,6 +1,6 @@
 Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
 M042,4090,Manline Mega,50.000,"",2015-09-01,"R5,419.88",R706.94,231,Yes
-M044,4092,Manline Mega,50.000,"",2015-09-01,"R5,419.88",R706.94,231,Yes
+M044,4092,Manline Mega,50.000,"",2015-09-01,"R5,419.88",R706.94,231,No
 M046,4094,Manline Mega,50.000,"",2015-09-01,"R5,740.00",R748.70,205,No
 M052,4098,Manline Mega,50.000,"",2015-09-01,"R4,382.03",R571.57,231,Yes
 M055,4085,Manline Mega,50.000,"",2015-09-01,"R4,382.03",R571.57,231,No

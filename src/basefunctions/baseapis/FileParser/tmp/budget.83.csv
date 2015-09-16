@@ -1,7 +1,4 @@
-Truck,Date,Income,Contribution,Kms,Blackout Status
-104,2015-02-23,"R8,363.75","R2,278.30",428,No
-106,2015-02-23,"R8,363.75","R2,278.30",428,No
-129,2015-02-23,"R8,363.75","R2,278.30",428,No
-133,2015-02-23,"R8,363.75","R2,278.30",428,No
-134,2015-02-23,"R8,363.75","R2,278.30",428,No
-244,2015-02-23,"R8,363.75","R2,278.30",428,No
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+M037,4054,Manline Mega,50.000,"",2015-09-15,"R6,183.33",R806.52,124,Yes
+M061,4080,Manline Mega,50.000,"",2015-09-15,"R7,102.00",R926.35,106,Yes
+M062,4081,Manline Mega,50.000,"",2015-09-15,"R7,102.00",R926.35,106,Yes

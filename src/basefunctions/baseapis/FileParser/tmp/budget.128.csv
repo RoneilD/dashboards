@@ -1,1 +1,2 @@
-Truck,Date,Income,Contribution,Kms,Blackout Status
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+Monteagle,"",Warehousing Freight,"","",2015-09-15,"R30,380.72","R4,557.11",0,Yes

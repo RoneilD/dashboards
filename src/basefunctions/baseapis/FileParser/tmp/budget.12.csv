@@ -1,1 +1,2 @@
-Truck,Date,Income,Contribution,Kms,Blackout Status
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+E85,1308,Energy - NCP Chlorine,40.000,206,2015-09-15,"R8,780.75","R1,775.19",517,No

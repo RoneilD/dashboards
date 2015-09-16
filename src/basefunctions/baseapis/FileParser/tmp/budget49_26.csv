@@ -1,4 +1,5 @@
 Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+444010,9016,PPC - Slurry,40.000,303,2015-09-26,"R8,078.87",R962.19,425,Yes
 444044,5417,PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
 444045,5418,PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
 444046,5419,PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
@@ -13,16 +14,14 @@ Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,
 545243,5345,PPC - Slurry,40.000,303,2015-09-26,"R6,540.42","R1,391.56",276,Yes
 545244,5346,PPC - Slurry,40.000,303,2015-09-26,"R6,540.42","R1,391.56",276,Yes
 E39,291,PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
-Enduro 01,"",PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
-Enduro 02,"",PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
-Enduro 03,"",PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
+Enduro 01,"",Enduro,"","",2015-09-26,"R6,817.12","R1,935.65",333,Yes
+Enduro 02,"",Enduro,"","",2015-09-26,"R6,817.12","R1,935.65",333,Yes
+Enduro 03,"",Enduro,"","",2015-09-26,"R6,817.12","R1,935.65",333,Yes
 Isilungo 01,"",PPC - Slurry,40.000,303,2015-09-26,"R4,693.33",R469.33,104,Yes
 Mabeleng 01,"",PPC - Slurry,40.000,303,2015-09-26,"R4,693.33",R469.33,104,Yes
-Nyangaya 01,"",PPC - Slurry,40.000,303,2015-09-26,"R4,693.33",R469.33,104,Yes
 Seitshiro 01,"",PPC Subcontractors,40.000,"",2015-09-26,"R4,693.33",R469.33,104,Yes
 SN Matjoko 01,"",PPC - Slurry,40.000,303,2015-09-26,"R6,817.12","R1,935.65",333,Yes
 SN Matjoko 02,"",PPC - Slurry,40.000,303,2015-09-26,"R4,693.33",R469.33,104,Yes
-Sub10-1,"",PPC Subcontractors,40.000,"",2015-09-26,"R4,693.33",R469.33,104,Yes
 Xheko 01,"",PPC Subcontractors,40.000,"",2015-09-26,"R4,693.33",R469.33,104,Yes
 Zem 01,"",PPC Subcontractors,40.000,"",2015-09-26,"R4,693.33",R469.33,104,Yes
 Zem 02,9052,PPC Subcontractors,40.000,"",2015-09-26,"R4,693.33",R469.33,104,Yes

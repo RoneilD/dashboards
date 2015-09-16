@@ -1,2 +1,4 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-DS65,Premier Foods-Empangeni,"",(none),(none),"2,276.57",0,2015-09-13 00:00:00,0
+DS65,Premier Foods-Empangeni,"",2015-09-01 06:00:00,2015-09-01 06:00:00,"5,905.27",554,2015-09-01 06:00:00,0
+DS74,Premier Foods-Empangeni,"",2015-09-01 06:00:00,2015-09-01 06:00:00,"3,547.27",194,2015-09-01 06:00:00,0
+DS65,Premier Foods-Empangeni,"",(none),(none),"2,276.57",0,2015-09-02 00:00:00,0

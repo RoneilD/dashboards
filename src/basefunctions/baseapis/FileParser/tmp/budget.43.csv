@@ -1,1 +1,7 @@
-Truck,Date,Income,Contribution,Kms,Blackout Status
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+545236,5069,Toyota Tsusho,"",329,2015-09-15,"R13,505.99","R4,032.37",797,Yes
+C1,5125,Toyota Tsusho,"",329,2015-09-15,"R1,081.62",R322.93,55,Yes
+C3,5127,Toyota Tsusho,"",329,2015-09-15,"R1,081.62",R322.93,55,Yes
+IMV1,5128,Toyota Tsusho,"",329,2015-09-15,"R1,081.62",R322.93,55,Yes
+IMV2,5129,Toyota Tsusho,"",329,2015-09-15,"R1,081.62",R322.93,55,Yes
+IMV3,5068,Toyota Tsusho,"",329,2015-09-15,"R1,081.62",R322.93,55,Yes

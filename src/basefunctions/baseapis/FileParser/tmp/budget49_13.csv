@@ -13,9 +13,9 @@ Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,
 545243,5345,PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
 545244,5346,PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
 E39,291,PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
-Enduro 01,"",PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
-Enduro 02,"",PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
-Enduro 03,"",PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
+Enduro 01,"",Enduro,"","",2015-09-13,R0.00,R0.00,0,Yes
+Enduro 02,"",Enduro,"","",2015-09-13,R0.00,R0.00,0,Yes
+Enduro 03,"",Enduro,"","",2015-09-13,R0.00,R0.00,0,Yes
 Isilungo 01,"",PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
 Mabeleng 01,"",PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes
 Nyangaya 01,"",PPC - Slurry,40.000,303,2015-09-13,R0.00,R0.00,0,Yes

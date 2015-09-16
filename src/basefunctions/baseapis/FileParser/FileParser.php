@@ -93,6 +93,7 @@ class FileParser
     	9=>'string'
         );
     protected $_urlFopen = false;
+    protected $_curlResource;
     
     //: Public functions
     public function checkFileType()
@@ -197,12 +198,31 @@ class FileParser
     * Class Constructor
     * @param string $file full file path to file X
     */
-    public function __construct($file)
+    public function __construct($file = NULL)
     {
-    	if (!$file) {
-    		$this->_errors[] = preg_replace('/%s/', $this->getFile(), self::FILE_DOESNT_EXIST);
-    		return false;
+    	if ($file)
+    	{
+    		$this->doStartUp($file);
     	}
+    	return true;
+    }
+    
+    /** FileParser::__destruct()
+    * Class destructor
+    * removes from memory this class
+    */
+    public function __destruct()
+    {
+    	if (is_resource($this->_curlResource) === TRUE)
+    	{
+    		curl_close($this->_curlResource);
+    	}
+    	unset($this);
+    }
+    //: End
+    
+    public function doStartUp($file)
+    {
     	$this->setFile($file);
     	if (!$this->getFile()) {
     		$this->_errors[] = preg_replace('/%s/', $this->getFile(), self::FILE_DOESNT_EXIST);
@@ -221,18 +241,7 @@ class FileParser
     			return false;
     		}
     	}
-    	return true;
     }
-    
-    /** FileParser::__destruct()
-    * Class destructor
-    * removes from memory this class
-    */
-    public function __destruct()
-    {
-    	unset($this);
-    }
-    //: End
     
     function parseFile() {
     	if ($this->_errors) {return $this->getErrors();}
@@ -365,9 +374,18 @@ class FileParser
     	{
     		$user_config = file_get_contents($uc_file);
     	}
-    	$ch = curl_init();
+    	if (is_resource($this->_curlResource) === TRUE)
+    	{
+    		$ch = $this->_curlResource;
+    	}
+    	else
+    	{
+    		$ch = curl_init();
+    		$this->_curlResource = $ch;
+    	}
     	curl_setopt($ch, CURLOPT_URL, $this->getFile());
     	curl_setopt($ch, CURLOPT_HEADER, false);
+    	curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
     	curl_setopt($ch, CURLOPT_USERPWD, $user_config);
     	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     	
@@ -383,7 +401,6 @@ class FileParser
     	
     	$info = curl_getinfo($ch);
     	
-    	curl_close($ch);
     	fclose($fp);
     	$fp = fopen($output, 'rb');
     	if ($fp === null) {

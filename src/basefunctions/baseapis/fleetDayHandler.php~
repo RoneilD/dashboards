@@ -16,157 +16,157 @@ require_once(BASE."basefunctions/baseapis/FileParser/FileParser.php");
 
 class fleetDayHandler {
 	protected $_incomefleets = array(
-		array('id'=>2, 'maxid'=>28, 'name'=>'Long Distance', 'budget'=>508752, 'budkms'=>44705, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1800, 'open_time'=>10800),
-		array('id'=>3, 'maxid'=>51, 'name'=>'LWT Fleet', 'budget'=>86894, 'budkms'=>7173, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1800, 'open_time'=>28800),
-		array('id'=>7, 'maxid'=>32, 'name'=>'Energy - Tankers', 'budget'=>44016, 'budkms'=>3313, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>8, 'maxid'=>53, 'name'=>'Energy - BHP Tankers', 'budget'=>117358, 'budkms'=>7213, 'pubhol'=>0, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>9, 'maxid'=>86, 'name'=>'Energy - Total Sishen', 'budget'=>0, 'budkms'=>0, 'pubhol'=>0, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>10, 'maxid'=>42, 'name'=>'Energy - Buckman', 'budget'=>43112, 'budkms'=>2962, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>11, 'maxid'=>87, 'name'=>'Energy - Ecosse', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>12, 'maxid'=>121, 'name'=>'Energy - NCP Chlorine', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>13, 'maxid'=>126, 'name'=>'Energy - NCP Other', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>14, 'maxid'=>124, 'name'=>'Energy - NCP Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>15, 'maxid'=>123, 'name'=>'Energy - Easigas', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>18, 'maxid'=>73, 'name'=>'Africa - Copperbelt Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>2600, 'open_time'=>10800),
-		array('id'=>22, 'maxid'=>82, 'name'=>'Wilmar Bulk Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>26, 'maxid'=>83, 'name'=>'Ashton Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>33, 'maxid'=>33, 'name'=>'Energy (Own)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>35, 'maxid'=>77, 'name'=>'Freight Africa', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>38, 'maxid'=>487, 'name'=>'Illovo - Germiston CCC', 'trucks'=>array('D616', 'D617', 'D618'), 'customer'=>array('Coca Cola Canners'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>39, 'maxid'=>487, 'name'=>'Illovo - Germiston F and V', 'trucks'=>array('444069','444070','444071','444072','444073','D550', 'D577'), 'customer'=>array('Illovo Refined GBD F and V'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>40, 'maxid'=>113, 'name'=>'Meadow Feeds - PMB', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>42, 'maxid'=>168, 'name'=>'Toyota - X Dock', 'trucks'=>array('525199','525200','525201','525250','525251','525252','545249','545250','545251','545252','545253','545254','Hire1','Hire2','Hire3','Hire4'), 'customer'=>array('Toyota X-Dock F & V', 'Toyota X-Dock'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>43, 'maxid'=>101, 'name'=>'Toyota Tsusho', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>44, 'maxid'=>106, 'name'=>'Toyota - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>45, 'maxid'=>99, 'name'=>'Illovo - Avoca', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>46, 'maxid'=>114, 'name'=>'PPC - Hercules', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>47, 'maxid'=>115, 'name'=>'PPC - Heriotdale', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>48, 'maxid'=>108, 'name'=>'Meadow Feeds - Paarl', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>49, 'maxid'=>116, 'name'=>'PPC - Slurry', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>50, 'maxid'=>118, 'name'=>'Meadow Feeds - Delmas', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>51, 'maxid'=>100, 'name'=>'Corobrick - Avoca', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>52, 'maxid'=>112, 'name'=>'Meadow Feeds - P.E', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>53, 'maxid'=>109, 'name'=>'PPC - Kraaifontein', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>54, 'maxid'=>110, 'name'=>'PPC - George', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>55, 'maxid'=>111, 'name'=>'PPC - P.E', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>56, 'maxid'=>160, 'name'=>'RE - Cape', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>57, 'maxid'=>159, 'name'=>'RE - Denver', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>58, 'maxid'=>158, 'name'=>'RE - KZN', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>59, 'maxid'=>98, 'name'=>'RE- Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>60, 'maxid'=>117, 'name'=>'PPC - Dwaalboom', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>2000, 'open_time'=>10800),
-		array('id'=>61, 'maxid'=>131, 'name'=>'PPC - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>62, 'maxid'=>150, 'name'=>'Manline Mega', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>63, 'maxid'=>91, 'name'=>'Anglo - Dedicated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>64, 'maxid'=>92, 'name'=>'Anglo - Sub Contractor', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>65, 'maxid'=>93, 'name'=>'Anglo Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>66, 'maxid'=>119, 'name'=>'Meadow Feeds - Randfontein', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>67, 'maxid'=>169, 'name'=>'Meadow Feeds - Standerton', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>68, 'maxid'=>132, 'name'=>'Meadow Feeds - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>69, 'maxid'=>151, 'name'=>'Premier Durban', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>71, 'maxid'=>153, 'name'=>'Premier Empangeni', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>72, 'maxid'=>155, 'name'=>'Premier Newcastle', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>74, 'maxid'=>163, 'name'=>'Premier Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>77, 'maxid'=>328, 'name'=>'T24 - Merensky', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-		array('id'=>78, 'maxid'=>334, 'name'=>'T24 - Mondi', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-		array('id'=>79, 'maxid'=>332, 'name'=>'T24 - Sappi KZN', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-		array('id'=>80, 'maxid'=>165, 'name'=>'Anglo - Mokopane Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>81, 'maxid'=>166, 'name'=>'Anglo - Rustenburg', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>82, 'maxid'=>168, 'name'=>'FMCG', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>83, 'maxid'=>206, 'name'=>'Manline Mega - 75 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>84, 'maxid'=>207, 'name'=>'Manline Mega - 55 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>85, 'maxid'=>208, 'name'=>'Manline Mega - 80/90/100 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>86, 'maxid'=>209, 'name'=>'Manline Mega - 45 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>87, 'maxid'=>210, 'name'=>'Manline Mega - 40 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>88, 'maxid'=>212, 'name'=>'Manline Mega - Standards', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>89, 'maxid'=>211, 'name'=>'Manline Mega - 14 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>90, 'maxid'=>222, 'name'=>'Construction', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>92, 'maxid'=>170, 'name'=>'Idwala', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>93, 'maxid'=>225, 'name'=>'Manline Mega - Fleet 1', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>94, 'maxid'=>224, 'name'=>'Manline Mega - Fleet 2', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>95, 'maxid'=>223, 'name'=>'Manline Mega - Fleet 3', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>96, 'maxid'=>270, 'name'=>'Manline Mega - Own', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
-		array('id'=>97, 'maxid'=>96, 'name'=>'Illovo Refined-Noodesburg', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>98, 'maxid'=>97, 'name'=>'Illovo - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>99, 'maxid'=>275, 'name'=>'FMCG Commercial JHB', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>100, 'maxid'=>276, 'name'=>'Environmental', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>101, 'maxid'=>277, 'name'=>'Pen Bev', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>102, 'maxid'=>282, 'name'=>'Agriculture', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>103, 'maxid'=>283, 'name'=>'Mining', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>106, 'maxid'=>338, 'name'=>'Timber24', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-		array('id'=>119, 'maxid'=>301, 'name'=>'Dedicated (own)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>109, 'maxid'=>144, 'name'=>'Freight Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>111, 'maxid'=>296, 'name'=>'Energy Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-		array('id'=>107, 'maxid'=>397, 'name'=>'Specialised', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>110, 'maxid'=>398, 'name'=>'Specialised (Own)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>113, 'maxid'=>297, 'name'=>'Dedicated Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>114, 'maxid'=>298, 'name'=>'Specialised Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>120, 'maxid'=>302, 'name'=>'Energy Fuel and Gas', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>121, 'maxid'=>303, 'name'=>'Energy Chemicals', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>123, 'maxid'=>281, 'name'=>'Tongaat Hulletts', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>124, 'maxid'=>308, 'name'=>'Mining - Adhoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>125, 'maxid'=>339, 'name'=>'T24 - Revenue - Hfts AdHoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-        array('id'=>126, 'maxid'=>309, 'name'=>'RE - Rental', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>127, 'maxid'=>280, 'name'=>'Warehousing Dedicated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>128, 'maxid'=>234, 'name'=>'Warehousing Freight', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>129, 'maxid'=>300, 'name'=>'Early Bird', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>131, 'maxid'=>271, 'name'=>'Energy - NCP Cato', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>134, 'maxid'=>340, 'name'=>'T24 - Howick Adhoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-        array('id'=>136, 'maxid'=>221, 'name'=>'Freight - FMCG', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>137, 'maxid'=>122, 'name'=>'Africa - General Freight', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>2600, 'open_time'=>10800),
-        array('id'=>138, 'maxid'=>413, 'name'=>'Freight - Volumax Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1800, 'open_time'=>28800),
-        array('id'=>139, 'maxid'=>420, 'name'=>'Africa - Zambia Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>2600, 'open_time'=>10800),
-        array('id'=>141, 'maxid'=>424, 'name'=>'T24 - Revenue Cane', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-        array('id'=>142, 'maxid'=>425, 'name'=>'T24 - Revenue MPU Adhoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
-        array('id'=>143, 'maxid'=>405, 'name'=>'Kumkani', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>144,'maxid'=>449, 'name'=>'Glencore', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>145, 'maxid'=>414, 'name'=>'LWT Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1800, 'open_time'=>28800),
-        array('id'=>146, 'maxid'=>482, 'name'=>'Energy - TSA bridging', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>147, 'maxid'=>481, 'name'=>'Anglo - Polokwane', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>148, 'maxid'=>481, 'name'=>'Anglo - PBS', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>149, 'maxid'=>486, 'name'=>'Goldi-Standerton (Catching)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>150, 'maxid'=>488, 'name'=>'Goldi-Standerton (Hatchery)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>151, 'maxid'=>487, 'name'=>'Illovo GBD', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
-        array('id'=>152, 'maxid'=>483, 'name'=>'Sime Darby Hudson & Knight', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Freight'), 'id'=>2, 'maxid'=>28, 'name'=>'Long Distance', 'budget'=>508752, 'budkms'=>44705, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1800, 'open_time'=>10800),
+		array('structure'=>array('Freight'), 'id'=>3, 'maxid'=>51, 'name'=>'LWT Fleet', 'budget'=>86894, 'budkms'=>7173, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1800, 'open_time'=>28800),
+		array('structure'=>array('Energy'), 'id'=>7, 'maxid'=>32, 'name'=>'Energy - Tankers', 'budget'=>44016, 'budkms'=>3313, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>8, 'maxid'=>53, 'name'=>'Energy - BHP Tankers', 'budget'=>117358, 'budkms'=>7213, 'pubhol'=>0, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>9, 'maxid'=>86, 'name'=>'Energy - Total Sishen', 'budget'=>0, 'budkms'=>0, 'pubhol'=>0, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>10, 'maxid'=>42, 'name'=>'Energy - Buckman', 'budget'=>43112, 'budkms'=>2962, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>1, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>11, 'maxid'=>87, 'name'=>'Energy - Ecosse', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>12, 'maxid'=>121, 'name'=>'Energy - NCP Chlorine', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>13, 'maxid'=>126, 'name'=>'Energy - NCP Other', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>14, 'maxid'=>124, 'name'=>'Energy - NCP Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>15, 'maxid'=>123, 'name'=>'Energy - Easigas', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Freight'), 'id'=>18, 'maxid'=>73, 'name'=>'Africa - Copperbelt Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>0, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>2600, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>22, 'maxid'=>82, 'name'=>'Wilmar Bulk Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Freight'), 'id'=>26, 'maxid'=>83, 'name'=>'Ashton Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>1, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>33, 'maxid'=>33, 'name'=>'Energy (Own)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Freight'), 'id'=>35, 'maxid'=>77, 'name'=>'Freight Africa', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>38, 'maxid'=>487, 'name'=>'Illovo - Germiston CCC', 'trucks'=>array('D616', 'D617', 'D618'), 'customer'=>array('Coca Cola Canners'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>39, 'maxid'=>487, 'name'=>'Illovo - Germiston F and V', 'trucks'=>array('444069','444070','444071','444072','444073','D550', 'D577'), 'customer'=>array('Illovo Refined GBD F and V'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>40, 'maxid'=>113, 'name'=>'Meadow Feeds - PMB', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>42, 'maxid'=>168, 'name'=>'Toyota - X Dock', 'trucks'=>array('525199','525200','525201','525250','525251','525252','545249','545250','545251','545252','545253','545254','Hire1','Hire2','Hire3','Hire4'), 'customer'=>array('Toyota X-Dock F & V', 'Toyota X-Dock'), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Freight'), 'id'=>43, 'maxid'=>101, 'name'=>'Toyota Tsusho', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>44, 'maxid'=>106, 'name'=>'Toyota - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>45, 'maxid'=>99, 'name'=>'Illovo - Avoca', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>46, 'maxid'=>114, 'name'=>'PPC - Hercules', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>47, 'maxid'=>115, 'name'=>'PPC - Heriotdale', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>48, 'maxid'=>108, 'name'=>'Meadow Feeds - Paarl', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>49, 'maxid'=>116, 'name'=>'PPC - Slurry', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>50, 'maxid'=>118, 'name'=>'Meadow Feeds - Delmas', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>51, 'maxid'=>100, 'name'=>'Corobrick - Avoca', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>52, 'maxid'=>112, 'name'=>'Meadow Feeds - P.E', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>53, 'maxid'=>109, 'name'=>'PPC - Kraaifontein', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>54, 'maxid'=>110, 'name'=>'PPC - George', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>55, 'maxid'=>111, 'name'=>'PPC - P.E', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>56, 'maxid'=>160, 'name'=>'RE - Cape', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>57, 'maxid'=>159, 'name'=>'RE - Denver', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>58, 'maxid'=>158, 'name'=>'RE - KZN', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>59, 'maxid'=>98, 'name'=>'RE- Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>60, 'maxid'=>117, 'name'=>'PPC - Dwaalboom', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>2000, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>61, 'maxid'=>131, 'name'=>'PPC - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>62, 'maxid'=>150, 'name'=>'Manline Mega', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Dedicated'), 'id'=>63, 'maxid'=>91, 'name'=>'Anglo - Dedicated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>64, 'maxid'=>92, 'name'=>'Anglo - Sub Contractor', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>65, 'maxid'=>93, 'name'=>'Anglo Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>66, 'maxid'=>119, 'name'=>'Meadow Feeds - Randfontein', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>67, 'maxid'=>169, 'name'=>'Meadow Feeds - Standerton', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>68, 'maxid'=>132, 'name'=>'Meadow Feeds - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>69, 'maxid'=>151, 'name'=>'Premier Durban', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>71, 'maxid'=>153, 'name'=>'Premier Empangeni', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>72, 'maxid'=>155, 'name'=>'Premier Newcastle', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>74, 'maxid'=>163, 'name'=>'Premier Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>77, 'maxid'=>328, 'name'=>'T24 - Merensky', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>78, 'maxid'=>334, 'name'=>'T24 - Mondi', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>79, 'maxid'=>332, 'name'=>'T24 - Sappi KZN', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>80, 'maxid'=>165, 'name'=>'Anglo - Mokopane Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>81, 'maxid'=>166, 'name'=>'Anglo - Rustenburg', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>82, 'maxid'=>168, 'name'=>'Commercial', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>83, 'maxid'=>206, 'name'=>'Manline Mega - 75 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>84, 'maxid'=>207, 'name'=>'Manline Mega - 55 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>85, 'maxid'=>208, 'name'=>'Manline Mega - 80/90/100 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>86, 'maxid'=>209, 'name'=>'Manline Mega - 45 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>87, 'maxid'=>210, 'name'=>'Manline Mega - 40 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>88, 'maxid'=>212, 'name'=>'Manline Mega - Standards', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>89, 'maxid'=>211, 'name'=>'Manline Mega - 14 Tons', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Dedicated'), 'id'=>90, 'maxid'=>222, 'name'=>'Construction', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>92, 'maxid'=>170, 'name'=>'Idwala', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>93, 'maxid'=>225, 'name'=>'Manline Mega - Fleet 1', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>94, 'maxid'=>224, 'name'=>'Manline Mega - Fleet 2', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>95, 'maxid'=>223, 'name'=>'Manline Mega - Fleet 3', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Specialised'), 'id'=>96, 'maxid'=>270, 'name'=>'Manline Mega - Own', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>43200),
+		array('structure'=>array('Dedicated'), 'id'=>97, 'maxid'=>96, 'name'=>'Illovo Refined-Noodesburg', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>98, 'maxid'=>97, 'name'=>'Illovo - Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>99, 'maxid'=>275, 'name'=>'FMCG Commercial JHB', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>100, 'maxid'=>276, 'name'=>'Environmental', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>101, 'maxid'=>277, 'name'=>'Pen Bev', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>102, 'maxid'=>282, 'name'=>'Agriculture', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>103, 'maxid'=>283, 'name'=>'Mining', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>106, 'maxid'=>338, 'name'=>'Timber24', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+		array('structure'=>array('Dedicated'), 'id'=>119, 'maxid'=>301, 'name'=>'Dedicated (own)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Freight'), 'id'=>109, 'maxid'=>144, 'name'=>'Freight Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Energy'), 'id'=>111, 'maxid'=>296, 'name'=>'Energy Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+		array('structure'=>array('Specialised'), 'id'=>107, 'maxid'=>397, 'name'=>'Specialised', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Specialised'), 'id'=>110, 'maxid'=>398, 'name'=>'Specialised (Own)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>113, 'maxid'=>297, 'name'=>'Dedicated Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Specialised'), 'id'=>114, 'maxid'=>298, 'name'=>'Specialised Subcontractors', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Energy'), 'id'=>120, 'maxid'=>302, 'name'=>'Energy Fuel and Gas', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Energy'), 'id'=>121, 'maxid'=>303, 'name'=>'Energy Chemicals', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>123, 'maxid'=>281, 'name'=>'Tongaat Hulletts', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>124, 'maxid'=>308, 'name'=>'Mining - Adhoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Specialised'), 'id'=>125, 'maxid'=>339, 'name'=>'T24 - Revenue - Hfts AdHoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>126, 'maxid'=>309, 'name'=>'RE - Rental', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>127, 'maxid'=>280, 'name'=>'Warehousing Dedicated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Freight'), 'id'=>128, 'maxid'=>234, 'name'=>'Warehousing Freight', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>129, 'maxid'=>300, 'name'=>'Festive', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Energy'), 'id'=>131, 'maxid'=>271, 'name'=>'Energy - NCP Cato', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Specialised'), 'id'=>134, 'maxid'=>340, 'name'=>'T24 - Howick Adhoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+        array('structure'=>array('Freight'), 'id'=>136, 'maxid'=>221, 'name'=>'Freight - FMCG', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Freight'), 'id'=>137, 'maxid'=>122, 'name'=>'Africa - General Freight', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>2600, 'open_time'=>10800),
+        array('structure'=>array('Freight'), 'id'=>138, 'maxid'=>413, 'name'=>'Freight - Volumax Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1800, 'open_time'=>28800),
+        array('structure'=>array('Freight'), 'id'=>139, 'maxid'=>420, 'name'=>'Africa - Zambia Fleet', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>2600, 'open_time'=>10800),
+        array('structure'=>array('Specialised'), 'id'=>141, 'maxid'=>424, 'name'=>'T24 - Revenue Cane', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+        array('structure'=>array('Specialised'), 'id'=>142, 'maxid'=>425, 'name'=>'T24 - Revenue MPU Adhoc', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>600, 'open_time'=>10800),
+        array('structure'=>array('Specialised'), 'id'=>143, 'maxid'=>405, 'name'=>'Kumkani', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>144,'maxid'=>449, 'name'=>'Glencore', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Freight'), 'id'=>145, 'maxid'=>414, 'name'=>'LWT Consolidated', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1800, 'open_time'=>28800),
+        array('structure'=>array('Energy'), 'id'=>146, 'maxid'=>482, 'name'=>'Energy - TSA bridging', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>147, 'maxid'=>481, 'name'=>'Anglo - Polokwane', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>148, 'maxid'=>481, 'name'=>'Anglo - PBS', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>149, 'maxid'=>486, 'name'=>'Goldi-Standerton (Catching)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>150, 'maxid'=>488, 'name'=>'Goldi-Standerton (Hatchery)', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>151, 'maxid'=>487, 'name'=>'Illovo GBD', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
+        array('structure'=>array('Dedicated'), 'id'=>152, 'maxid'=>483, 'name'=>'Sime Darby Hudson & Knight', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         
         //: Fleets that are rolled up need to go right to the end
         //: Freight SA (own)
-        array('id'=>34, "maxid"=>76, "name"=>"Freight SA (Own)", 'fleets'=>array(
+        array('structure'=>array('Freight'), 'id'=>34, "maxid"=>76, "name"=>"Freight SA (Own)", 'fleets'=>array(
         	array(2, 'Long Distance'),array(3, 'LWT Fleet'),array(138, 'Freight - Volumax Fleet'),array(26, 'Ashton Fleet'),array(128, 'Warehousing Freight')
         	), "budget"=>0, "budkms"=>0, "pubhol"=>1, "display"=>1, "displayblackouts"=>0, "displayrasta"=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: Freight SA
-        array("id"=>122, 'maxid'=>304, "name"=>"Freight SA", 'fleets'=>array(
+        array('structure'=>array('Freight'), "id"=>122, 'maxid'=>304, "name"=>"Freight SA", 'fleets'=>array(
         	array(2, 'Long Distance'),array(3, 'LWT Fleet'),array(138, 'Freight - Volumax Fleet'),array(26, 'Ashton Fleet'),array(128, 'Warehousing Freight'),array(109, 'Freight Subcontractors')
         	), "budget"=>0, "budkms"=>0, "pubhol"=>1, "display"=>1, "displayblackouts"=>0, "displayrasta"=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: Freight (own)
-		array('id'=>118, 'maxid'=>305, 'name'=>'Freight (Own)', 'fleets'=>array(
+		array('structure'=>array('Freight'), 'id'=>118, 'maxid'=>305, 'name'=>'Freight (Own)', 'fleets'=>array(
 			array(139,'Africa - Zambia Fleet'),array(128,'Warehousing Freight'),array(138,'Freight - Volumax Fleet'),array(137,'Africa - General Freight'),array(2,'Long Distance'),array(3,'LWT Fleet'),array(26,'Ashton Fleet'),array(18,'Africa - Copperbelt Fleet')
 			), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: Freight
-        array('id'=>117, 'maxid'=>306, 'name'=>'Freight', 'fleets'=>array(
+        array('structure'=>array('Freight'), 'id'=>117, 'maxid'=>306, 'name'=>'Freight', 'fleets'=>array(
         	array(109,'Freight Subcontractors'),array(139,'Africa - Zambia Fleet'),array(128,'Warehousing Freight'),array(138,'Freight - Volumax Fleet'),array(137,'Africa - General Freight'),array(2,'Long Distance'),array(3,'LWT Fleet'),array(26,'Ashton Fleet'),array(18,'Africa - Copperbelt Fleet')
         	), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: Energy
-        array("id"=>116, 'maxid'=>299, "name"=>"Energy", 'fleets'=>array(
+        array('structure'=>array('Energy'), "id"=>116, 'maxid'=>299, "name"=>"Energy", 'fleets'=>array(
         	array(120, 'Energy Fuel and Gas'), array(121, 'Energy Chemicals')
         	), "budget"=>0, "budkms"=>0, "pubhol"=>1, "display"=>1, "displayblackouts"=>0, "displayrasta"=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: Dedicated
-        array('id'=>104, 'maxid'=>284, 'name'=>'Dedicated', 'fleets'=>array(
+        array('structure'=>array('Dedicated'), 'id'=>104, 'maxid'=>284, 'name'=>'Dedicated', 'fleets'=>array(
         	array(102, 'Agriculture'),array(90, 'Construction'),array(100, 'Environmental'),array(82, 'FMCG'),array(103, 'Mining')
         	), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: BWT
-        array('id'=>108, "structure"=>array('BWT'), 'maxid'=>9002, 'name'=>'BWT Group', 'fleets'=>array(
+        array('structure'=>array('Barloworld Transport'), 'id'=>108, "structure"=>array('BWT'), 'maxid'=>9002, 'name'=>'BWT Group', 'fleets'=>array(
 			array(106, 'Timber24'), array(62, 'Manline Mega'), array(104, 'Dedicated'), array(33, 'Energy (Own)'), array(34, 'Freight SA (Own)'), array(35, 'Freight Africa'), array(109, 'Freight Subcontractors'), array(111, 'Energy Subcontractors')
             ), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: Bwt (Own)
-        array('id'=>112, "structure"=>array('BWT'), 'maxid'=>9003, 'name'=>'BWT Group (Own)', 'fleets'=>array(
+        array('structure'=>array('Barloworld Transport'), 'id'=>112, "structure"=>array('BWT'), 'maxid'=>9003, 'name'=>'BWT Group (Own)', 'fleets'=>array(
         	array(106, 'Timber24'), array(96, 'Manline Mega - Own'), array(119, 'Dedicated (own)'), array(33, 'Energy (own)'), array(34, 'Freight SA (Own)'), array(35, 'Freight Africa')
             ), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         //: Subbies Consolidated
-        array('id'=>115, "structure"=>array('Subcontractors', 'Freight SA'), 'maxid'=>9003, 'name'=>'Subcontractors Consolidated', 'fleets'=>array(
+        array('structure'=>array('Barloworld Transport'), 'id'=>115, "structure"=>array('Subcontractors', 'Freight SA'), 'maxid'=>9003, 'name'=>'Subcontractors Consolidated', 'fleets'=>array(
         	array(109, 'Freight Subcontractors'),array(111, 'Energy Subcontractors'),array(113, 'Dedicated Subcontractors'),array(114, 'Specialised Subcontractors')
             ), 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800),
         /* 
-        array('id'=>, 'maxid'=>, 'name'=>'', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800), 
+        array('structure'=>array(), 'id'=>, 'maxid'=>, 'name'=>'', 'budget'=>0, 'budkms'=>0, 'pubhol'=>1, 'display'=>1, 'displayblackouts'=>0, 'displayrasta'=>0, 'kms_limit'=>1500, 'open_time'=>10800), 
         */
         );
     protected $_apiurl      = "https://login.max.bwtsgroup.com/api_request/Report/export?";
@@ -222,7 +222,18 @@ class fleetDayHandler {
     	// }
     	
     	// Go through each Income Fleet, checking various details and getting the trips for the day {
-    	foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
+    	$key = array_keys($this->_incomefleets);
+    	$size = sizeOf($key);
+    	// foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
+    	for ($i=0; $i<$size; $i++)
+    	{
+    		$incfleetkey = $key[$i];
+    		if (array_key_exists($key[$i], $this->_incomefleets) === FALSE)
+    		{
+    			syslog(LOG_INFO, "Line 233: Trying to get income for a non-exsistent array key: ".$incfleetkey);
+    			continue;
+    		}
+    		$incfleetval = $this->_incomefleets[$key[$i]];
     		if (array_key_exists('fleets', $incfleetval))
     		{
     			$fleetscore[$incfleetval["id"]]["fleetid"] = $incfleetval["id"];
@@ -233,8 +244,28 @@ class fleetDayHandler {
     			$fleetscore[$incfleetval["id"]]["day"] = $this->_day;
     			$fleetscore[$incfleetval["id"]]["date"] = $this->_date;
     			$fleetscore[$incfleetval["id"]]["updated"] = date("U");
-    			foreach ($incfleetval['fleets'] as $key=>$val)
+    			$fleet_key = array_keys($incfleetval['fleets']);
+    			print('<pre>'.PHP_EOL);
+				print_r($fleet_key);
+				print('</pre>'.PHP_EOL);
+    			$fleet_size = sizeOf($key);
+    			//foreach ($incfleetval['fleets'] as $key=>$val)
+    			for ($j=0; $j<$fleet_size; $j++)
     			{
+    				if (array_key_exists($j, $fleet_key) === FALSE)
+    				{
+    					syslog(LOG_INFO, "Line 257: Key doesn't exist in array: ".$j);
+    					continue;
+    				}
+    				if (array_key_exists($j, $fleet_key) === TRUE)
+    				{
+    					if (array_key_exists($fleet_key[$j], $incfleetval['fleets']) === FALSE)
+    					{
+    						syslog(LOG_INFO, "Line 264: Trying to get income for a non-exsistent array key: ".$fleet_key[$j]);
+    						continue;
+    					}
+    				}
+    				$val = $incfleetval['fleets'][$fleet_key[$j]];
     				// print_r($val);
     				$record = sqlPull(array(
     					"onerow"=>TRUE,
@@ -409,7 +440,18 @@ class fleetDayHandler {
     	// }
     	
     	// Go through each Income Fleet, checking various details and getting the trips for the day {
-    	foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
+    	$key = array_keys($this->_incomefleets);
+    	$size = sizeOf($key);
+    	// foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
+    	for ($i=0; $i<$size; $i++)
+    	{
+    		$incfleetkey = $key[$i];
+    		if (array_key_exists($key[$i], $this->_incomefleets) === FALSE)
+    		{
+    			syslog(LOG_INFO, "Trying to get contribution for a non-exsistent array key: ".$incfleetkey);
+    			continue;
+    		}
+    		$incfleetval = $this->_incomefleets[$key[$i]];
     		if (array_key_exists('fleets', $incfleetval))
     		{
     			$fleetscore[$incfleetval["id"]]["fleetid"] = $incfleetval["id"];
@@ -417,8 +459,25 @@ class fleetDayHandler {
     			$fleetscore[$incfleetval["id"]]["day"] = $this->_day;
     			$fleetscore[$incfleetval["id"]]["date"] = $this->_date;
     			$fleetscore[$incfleetval["id"]]["contribupdated"]     = date("U");
-    			foreach ($incfleetval['fleets'] as $key=>$val)
+    			$fleet_key = array_keys($incfleetval['fleets']);
+    			$fleet_size = sizeOf($key);
+    			//foreach ($incfleetval['fleets'] as $key=>$val)
+    			for ($j=0; $j<$fleet_size; $j++)
     			{
+    				if (array_key_exists($j, $fleet_key) === FALSE)
+    				{
+    					syslog(LOG_INFO, "Line 469: Key doesn't exist in array: ".$j);
+    					continue;
+    				}
+    				if (array_key_exists($j, $fleet_key) === TRUE)
+    				{
+    					if (array_key_exists($fleet_key[$j], $incfleetval['fleets']) === FALSE)
+    					{
+    						syslog(LOG_INFO, "Line 476: Trying to get income for a non-exsistent array key: ".$fleet_key[$j]);
+    						continue;
+    					}
+    				}
+    				$val = $incfleetval['fleets'][$fleet_key[$j]];
     				//print_r($val);
     				$record = sqlPull(array(
     					"onerow"=>TRUE,
@@ -539,7 +598,18 @@ class fleetDayHandler {
     * @return FALSE on failure NULL otherwise
     */
     public function importOrders() {
-    	foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
+    	$key = array_keys($this->_incomefleets);
+    	$size = sizeOf($key);
+    	// foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
+    	for ($i=0; $i<$size; $i++)
+    	{
+    		$incfleetkey = $key[$i];
+    		if (array_key_exists($key[$i], $this->_incomefleets) === FALSE)
+    		{
+    			syslog(LOG_INFO, "Trying to get orders for a non-exsistent array key: ".$incfleetkey);
+    			continue;
+    		}
+    		$incfleetval = $this->_incomefleets[$key[$i]];
     		if (array_key_exists("t24", $incfleetval))
     		{
     			continue;
@@ -550,8 +620,25 @@ class fleetDayHandler {
     		if (array_key_exists('fleets', $incfleetval))
     		{
     			$fleetscore["blackouts"] = $blackoutcount;
-    			foreach ($incfleetval['fleets'] as $key=>$val)
+    			$fleet_key = array_keys($incfleetval['fleets']);
+    			$fleet_size = sizeOf($key);
+    			//foreach ($incfleetval['fleets'] as $key=>$val)
+    			for ($j=0; $j<$fleet_size; $j++)
     			{
+    				if (array_key_exists($j, $fleet_key) === FALSE)
+    				{
+    					syslog(LOG_INFO, "Line 630: Key doesn't exist in array: ".$j);
+    					continue;
+    				}
+    				if (array_key_exists($j, $fleet_key) === TRUE)
+    				{
+    					if (array_key_exists($fleet_key[$j], $incfleetval['fleets']) === FALSE)
+    					{
+    						syslog(LOG_INFO, "Line 637: Trying to get income for a non-exsistent array key: ".$fleet_key[$j]);
+    						continue;
+    					}
+    				}
+    				$val = $incfleetval['fleets'][$fleet_key[$j]];
     				//print_r($val);
     				$record = sqlPull(array(
     					"onerow"=>TRUE,
@@ -663,7 +750,18 @@ class fleetDayHandler {
     */
     public function importBudget($fleet = NULL) {
     	for ($i=1;$i<=date("t");$i++) {
-    		foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
+    		$key = array_keys($this->_incomefleets);
+    		$size = sizeOf($key);
+    		// foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
+    		for ($j=0; $j<$size; $j++)
+    		{
+    			$incfleetkey = $key[$j];
+    			if (array_key_exists($key[$j], $this->_incomefleets) === FALSE)
+    			{
+    				syslog(LOG_INFO, "Trying to get budget for a non-exsistent array key: ".$incfleetkey);
+    				continue;
+    			}
+    			$incfleetval = $this->_incomefleets[$key[$j]];
     			if (isset($fleet) && $fleet)
     			{
     				if ($fleet != $incfleetval["id"])
@@ -680,8 +778,25 @@ class fleetDayHandler {
     				$fleetscore["blackouts"] = (float)0;
     				$fleetscore["day"] = $i;
     				$fleetscore["date"] = strtotime(date("Y-m-".(strlen($i) === 1 ? "0".$i : $i)));
-    				foreach ($incfleetval['fleets'] as $key=>$val)
+    				$fleet_key = array_keys($incfleetval['fleets']);
+    				$fleet_size = sizeOf($key);
+    				//foreach ($incfleetval['fleets'] as $key=>$val)
+    				for ($k=0; $k<$fleet_size; $k++)
     				{
+    					if (array_key_exists($k, $fleet_key) === FALSE)
+    					{
+    						syslog(LOG_INFO, "Line 788: Key doesn't exist in array: ".$j);
+    						continue;
+    					}
+    					if (array_key_exists($k, $fleet_key) === TRUE)
+    					{
+    						if (array_key_exists($fleet_key[$k], $incfleetval['fleets']) === FALSE)
+    						{
+    							syslog(LOG_INFO, "Line 795: Trying to get income for a non-exsistent array key: ".$fleet_key[$k]);
+    							continue;
+    						}
+    					}
+    					$val = $incfleetval['fleets'][$fleet_key[$k]];
     					//print_r($val);
     					$record = sqlPull(array(
     						"onerow"=>TRUE,

@@ -1,7 +1,6 @@
-Truck,Date,Income,Contribution,Kms,Blackout Status
-144000,2015-02-23,"R15,822.17","R2,847.99",871,Yes
-144002,2015-02-23,"R15,822.17","R2,847.99",871,Yes
-144003,2015-02-23,"R15,822.17","R2,847.99",871,Yes
-644251,2015-02-23,"R7,156.60","R1,288.19",237,Yes
-D550,2015-02-23,"R8,836.61","R1,590.59",263,Yes
-ILLOVO SUB  23283,2015-02-23,R0.01,R0.00,0,Yes
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+ILLOVO SUB  23283,"",Illovo Refined-Noodesburg,"",332,2015-09-15,"R14,982.85","R2,696.91",778,Yes
+ILLOVO SUB 23263,"",Illovo Refined-Noodesburg,"",332,2015-09-15,"R14,982.85","R2,696.91",778,Yes
+ILLOVO SUB 23265,"",Illovo Refined-Noodesburg,"",332,2015-09-15,"R14,982.85","R2,696.91",778,Yes
+Illovo Sub 23271/2,"",Illovo Refined-Noodesburg,"",332,2015-09-15,"R14,982.85","R2,696.91",778,Yes
+ILLOVO SUB 23289,"",Illovo Refined-Noodesburg,"",332,2015-09-15,"R14,982.85","R2,696.91",778,Yes

@@ -1,4 +1,5 @@
 Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+444010,9016,PPC - Slurry,40.000,303,2015-09-27,"R8,078.87",R962.19,425,Yes
 444044,5417,PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
 444045,5418,PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
 444046,5419,PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
@@ -13,16 +14,14 @@ Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,
 545243,5345,PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
 545244,5346,PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
 E39,291,PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
-Enduro 01,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
-Enduro 02,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
-Enduro 03,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
+Enduro 01,"",Enduro,"","",2015-09-27,R0.00,R0.00,0,Yes
+Enduro 02,"",Enduro,"","",2015-09-27,R0.00,R0.00,0,Yes
+Enduro 03,"",Enduro,"","",2015-09-27,R0.00,R0.00,0,Yes
 Isilungo 01,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
 Mabeleng 01,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
-Nyangaya 01,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
 Seitshiro 01,"",PPC Subcontractors,40.000,"",2015-09-27,R0.00,R0.00,0,Yes
 SN Matjoko 01,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
 SN Matjoko 02,"",PPC - Slurry,40.000,303,2015-09-27,R0.00,R0.00,0,Yes
-Sub10-1,"",PPC Subcontractors,40.000,"",2015-09-27,R0.00,R0.00,0,Yes
 Xheko 01,"",PPC Subcontractors,40.000,"",2015-09-27,R0.00,R0.00,0,Yes
 Zem 01,"",PPC Subcontractors,40.000,"",2015-09-27,R0.00,R0.00,0,Yes
 Zem 02,9052,PPC Subcontractors,40.000,"",2015-09-27,R0.00,R0.00,0,Yes

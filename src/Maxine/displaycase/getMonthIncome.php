@@ -1,5 +1,4 @@
 <?php
-//: Preparation and includes
 $realPath = realpath(dirname(__FILE__));
 $maxine = substr($realPath, 0, strrpos($realPath, DIRECTORY_SEPARATOR));
 $rootaccess = substr($maxine, 0, strrpos($maxine, DIRECTORY_SEPARATOR)+1);
@@ -50,7 +49,8 @@ class getMonthIncome
 		}
 		$link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysqli_error($link));
 		$fleetdayobj = new fleetDayHandler();
-		for ($i=1; $i<=date('d', strtotime('-2 days')); $i++) {
+		$end = (int)date('d', strtotime('-4 days'));
+		for ($i=1; $i<=$end; $i++) {
 			print('Pulling for day: '.$i.PHP_EOL);
 			$fleetscore = $fleetdayobj->pullFleetDay($i);
 			$fleetdayobj->saveFleetDay($fleetscore);

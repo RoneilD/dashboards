@@ -1,9 +1,9 @@
 Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
 anglo-subbies,"",Anglo - Sub Contractor,40.000,314,2015-09-16,"R133,333.33","R24,000.00",9192,Yes
 corobrick-subbies,"",Corobrick - Avoca,40.000,312,2015-09-16,"R10,862.88","R2,607.09",0,Yes
-Enduro 01,"",PPC - Slurry,40.000,303,2015-09-16,"R6,817.12","R1,935.65",333,Yes
-Enduro 02,"",PPC - Slurry,40.000,303,2015-09-16,"R6,817.12","R1,935.65",333,Yes
-Enduro 03,"",PPC - Slurry,40.000,303,2015-09-16,"R6,817.12","R1,935.65",333,Yes
+Enduro 01,"",Enduro,"","",2015-09-16,"R6,817.12","R1,935.65",333,Yes
+Enduro 02,"",Enduro,"","",2015-09-16,"R6,817.12","R1,935.65",333,Yes
+Enduro 03,"",Enduro,"","",2015-09-16,"R6,817.12","R1,935.65",333,Yes
 ILLOVO SUB 23257,"",Illovo - Avoca,40.000,330,2015-09-16,R0.07,R0.01,0,Yes
 ILLOVO SUB 23259,"",Illovo - Avoca,40.000,330,2015-09-16,R0.07,R0.01,0,Yes
 Illovo Sub 23271/2,"",Illovo Refined-Noodesburg,"",332,2015-09-16,"R14,982.85","R2,696.91",778,Yes
@@ -11,7 +11,6 @@ ILLOVO SUB 23299,"",Illovo - Avoca,40.000,330,2015-09-16,R0.07,R0.01,0,Yes
 ILLOVO SUB 23301,"",Illovo - Avoca,40.000,330,2015-09-16,R0.07,R0.01,0,Yes
 Isilungo 01,"",PPC - Slurry,40.000,303,2015-09-16,"R4,693.33",R469.33,104,Yes
 Mabeleng 01,"",PPC - Slurry,40.000,303,2015-09-16,"R4,693.33",R469.33,104,Yes
-Nyangaya 01,"",PPC - Slurry,40.000,303,2015-09-16,"R4,693.33",R469.33,104,Yes
 PPCDwaalboom Subbies,"",PPC Subcontractors,40.000,"",2015-09-16,"R96,717.59","R14,507.64",7308,Yes
 SN Matjoko 01,"",PPC - Slurry,40.000,303,2015-09-16,"R6,817.12","R1,935.65",333,Yes
 SN Matjoko 02,"",PPC - Slurry,40.000,303,2015-09-16,"R4,693.33",R469.33,104,Yes

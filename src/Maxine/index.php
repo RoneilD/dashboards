@@ -66,8 +66,8 @@ function home()
 
 function login()
 {
-	$usermatch = sqlPull(array("table"=>"users", "where"=>"`username`='".$_POST["username"]."'", "onerow"=>"1"));
-	$password = (string)substr(md5(SALT.$_POST["pass_word"]),0 , 30);
+	$usermatch = sqlPull(array("table"=>"users", "where"=>"`username`='".(string)filter_var($_POST["username"], FILTER_SANITIZE_FULL_SPECIAL_CHARS)."'", "onerow"=>"1"));
+	$password = (string)substr(md5(SALT.(string)filter_var($_POST["pass_word"], FILTER_SANITIZE_FULL_SPECIAL_CHARS)),0 , 30);
 	if (isset($usermatch) && is_array($usermatch) && array_key_exists("username", $usermatch))
 	{
 		if (array_key_exists("password", $usermatch) && ($password === $usermatch["password"]))

@@ -1,3 +1,12 @@
-Truck,Date,Income,Contribution,Kms,Blackout Status
-127,2015-02-23,"R7,230.79",R772.79,440,No
-265,2015-02-23,"R7,063.04",R789.75,452,No
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+145001,5390,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+145002,5396,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+145003,5391,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+145004,5392,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+145005,5394,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+145006,5393,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+145007,5395,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+541002,5165,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+545245,5377,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+545247,5376,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes
+545248,5379,Meadow Feeds - Standerton,"","",2015-09-15,"R8,039.92",R661.03,262,Yes

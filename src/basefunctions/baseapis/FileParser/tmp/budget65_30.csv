@@ -4,7 +4,6 @@ Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,
 444007,9015,Anglo - Dedicated,36.000,314,2015-09-30,"R8,078.87",R962.19,425,Yes
 444008,9007,Anglo - Dedicated,36.000,314,2015-09-30,"R8,078.87",R962.19,425,Yes
 444009,9005,Anglo - Dedicated,36.000,314,2015-09-30,"R8,078.87",R962.19,425,Yes
-444010,9016,Anglo - Dedicated,36.000,314,2015-09-30,"R8,078.87",R962.19,425,Yes
 444011,9008,Anglo - Dedicated,36.000,314,2015-09-30,"R8,078.87",R962.19,425,Yes
 444012,9020,Anglo - Dedicated,36.000,314,2015-09-30,"R8,078.87",R962.19,425,Yes
 444013,9010,Anglo - Dedicated,36.000,314,2015-09-30,"R8,078.87",R962.19,425,Yes
@@ -39,7 +38,7 @@ Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,
 anglo-subbies,"",Anglo - Sub Contractor,40.000,314,2015-09-30,"R133,333.33","R24,000.00",9192,Yes
 D608,30388,Anglo - Dedicated,36.000,314,2015-09-30,"R8,478.47","R8,478.47",425,Yes
 D609,30384,Anglo - Dedicated,36.000,314,2015-09-30,"R8,478.47","R8,478.47",425,Yes
-D610,30385,Anglo - Dedicated,36.000,314,2015-09-30,"R8,478.47","R8,478.47",425,Yes
+D610,30385,Anglo - Dedicated,36.000,314,2015-09-30,"R8,478.47","R8,478.47",425,No
 D611,30386,Anglo - Dedicated,36.000,314,2015-09-30,"R8,478.47","R8,478.47",425,Yes
 D612,30389,Anglo - Dedicated,36.000,314,2015-09-30,"R8,478.47","R8,478.47",425,Yes
 D613,30387,Anglo - Dedicated,36.000,314,2015-09-30,"R8,478.47","R8,478.47",425,Yes

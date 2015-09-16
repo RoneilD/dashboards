@@ -1,1 +1,11 @@
-Truck,Date,Income,Contribution,Kms,Blackout Status
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+541003,5176,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541004,5177,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541005,5178,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,No
+541006,5179,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541008,5180,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541009,5181,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541012,5169,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541015,5184,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541023,5188,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes
+541024,5189,Meadow Feeds - Randfontein,40.000,319,2015-09-15,"R9,994.23","R1,244.01",539,Yes

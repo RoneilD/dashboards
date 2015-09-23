@@ -1,42 +1,13 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-BWB002,Anglo American New,"",2015-09-01 10:00:00,(none),"14,026.40",760,(none),760
-BWB004,Anglo American New,"",2015-09-01 10:00:00,(none),"14,026.40",760,(none),760
-BWB005,Anglo American New,"",2015-09-01 10:00:00,(none),"14,026.40",760,(none),760
-BWB006,Anglo American New,"",2015-09-01 10:00:00,(none),"14,026.40",760,(none),760
-BWS08,Anglo American New,"",2015-09-01 06:00:00,(none),"2,781.82",96,(none),96
-BWS08,Anglo American New,"",2015-09-01 10:00:00,(none),"2,804.24",96,(none),96
-BWS08,Anglo American New,"",2015-09-01 15:00:00,(none),"2,659.25",96,(none),96
-BWBT02,Anglo American New,"",2015-09-01 06:00:00,(none),"2,772.85",96,(none),96
-BWBT02,Anglo American New,"",2015-09-01 10:00:00,(none),"2,630.85",96,(none),96
-BWBT03,Anglo American New,"",2015-09-01 06:00:00,(none),633.59,24,(none),24
-BWBT03,Anglo American New,"",2015-09-01 12:00:00,(none),653.03,24,(none),24
-BWBT04,Anglo American New,"",2015-09-01 06:00:00,(none),"2,893.61",100,(none),100
-BWBT04,Anglo American New,"",2015-09-01 10:00:00,(none),"2,896.72",100,(none),100
-BWC002,Anglo American New,"",2015-09-01 10:00:00,(none),"14,026.40",760,(none),760
-BWBT05,Anglo American New,"",2015-09-01 06:00:00,(none),"2,915.36",100,(none),100
-BWBT05,Anglo American New,"",2015-09-01 10:00:00,(none),"2,874.97",100,(none),100
-BWBT05,Anglo American New,"",2015-09-01 16:00:00,(none),670.60,24,(none),24
-BWBT05,Anglo American New,"",2015-09-01 21:00:00,(none),650.04,24,(none),24
-BWS01,Anglo American New,"",2015-09-01 06:00:00,2015-09-01 06:15:00,"2,686.16",96,2015-09-01 06:45:00,96
-BWS01,Anglo American New,"",2015-09-01 11:00:00,(none),"2,665.23",96,(none),96
-BWS01,Anglo American New,"",2015-09-01 16:00:00,(none),"2,666.72",96,(none),96
-BWS02,Anglo American New,"",2015-09-01 06:00:00,(none),"2,771.36",96,(none),96
-BWS02,Anglo American New,"",2015-09-01 12:00:00,(none),"2,627.86",96,(none),96
-BWS02,Anglo American New,"",2015-09-01 16:00:00,(none),"2,651.78",96,(none),96
-BWS28,Anglo American New,Stetner Enterprises,2015-09-01 06:00:00,(none),"2,603.94",96,(none),96
-BWS28,Anglo American New,Stetner Enterprises,2015-09-01 10:00:00,(none),"2,716.05",96,(none),96
-BWS25,Xstrata Eland,"",2015-09-01 06:00:00,(none),"4,357.69",140,(none),140
-BWS04,Anglo American New,"",2015-09-01 06:00:00,(none),"2,672.70",96,(none),96
-BWS04,Anglo American New,"",2015-09-01 10:00:00,(none),"2,735.48",96,(none),96
-BWS04,Anglo American New,"",2015-09-01 14:00:00,(none),"2,745.95",96,(none),96
-BWS04,Anglo American New,"",2015-09-01 18:00:00,(none),"2,717.55",96,(none),96
-BWS04,Anglo American New,"",2015-09-01 22:00:00,(none),"2,763.89",96,(none),96
-BWS06,Anglo American New,"",2015-09-01 06:00:00,(none),"2,591.98",96,(none),96
-BWS06,Anglo American New,"",2015-09-01 10:00:00,(none),"2,729.50",96,(none),96
-BWS05,Anglo American New,"",2015-09-01 06:00:00,(none),"2,599.46",96,(none),96
-BWS05,Anglo American New,"",2015-09-01 11:00:00,(none),"2,786.31",96,(none),96
-BWS07,Anglo American New,"",2015-09-01 06:00:00,(none),"2,754.92",96,(none),96
-BWS07,Anglo American New,"",2015-09-01 10:00:00,(none),"2,719.04",96,(none),96
-BWS07,Anglo American New,"",2015-09-01 15:00:00,(none),"2,704.09",96,(none),96
-BWS10,Anglo American New,"",2015-09-01 06:00:00,(none),"2,584.51",96,(none),96
-BWS10,Anglo American New,"",2015-09-01 10:00:00,(none),"2,662.24",96,(none),96
+BWB003,Anglo American New,"",2015-09-22 02:00:00,(none),"11,811.60",640,(none),640
+BWB004,Anglo American New,"",2015-09-22 10:00:00,(none),"11,627.20",630,(none),630
+BWB006,Anglo American New,"",2015-09-22 09:00:00,(none),"11,627.20",630,(none),630
+BWS11,Anglo American New,"",2015-09-22 12:00:00,(none),654.15,24,(none),24
+BWC002,Anglo American New,"",2015-09-22 02:00:00,(none),"11,627.20",630,(none),630
+BWS01,Anglo American New,"",2015-09-22 03:00:00,(none),"11,627.20",630,(none),630
+BWS28,Anglo American New,Stetner Enterprises,2015-09-22 02:00:00,(none),"10,335.15",640,(none),640
+BWS25,Anglo American New,"",2015-09-22 12:00:00,(none),654.15,24,(none),24
+BWS25,Anglo American New,"",2015-09-22 16:00:00,(none),650.04,24,(none),24
+BWS25,Anglo American New,"",2015-09-22 19:00:00,(none),654.15,24,(none),24
+BWS04,Anglo American New,"",2015-09-22 00:00:00,(none),"11,811.60",640,(none),640
+BWS10,Anglo American New,"",2015-09-22 02:00:00,(none),"11,811.60",640,(none),640

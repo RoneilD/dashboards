@@ -49,7 +49,7 @@ class getMonthIncome
 		}
 		$link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysqli_error($link));
 		$fleetdayobj = new fleetDayHandler();
-		$end = (int)date('d', strtotime('-3 days'));
+		$end = (int)date('d', strtotime('-4 days'));
 		for ($i=1; $i<=$end; $i++) {
 			print('Pulling for day: '.$i.PHP_EOL);
 			$fleetscore = $fleetdayobj->pullFleetDay($i);

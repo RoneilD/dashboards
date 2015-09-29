@@ -386,7 +386,7 @@ class FileParser
     	curl_setopt($ch, CURLOPT_URL, $this->getFile());
     	curl_setopt($ch, CURLOPT_HEADER, false);
     	curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
-    	curl_setopt($ch, CURLOPT_USERPWD, $user_config);
+    	curl_setopt($ch, CURLOPT_USERPWD, trim($user_config));
     	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     	
     	if ($this->getCurlTimeout() && is_int($this->getCurlTimeout())) {

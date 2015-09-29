@@ -1,13 +1,22 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-BWB003,Anglo American New,"",2015-09-22 02:00:00,(none),"11,811.60",640,(none),640
-BWB004,Anglo American New,"",2015-09-22 10:00:00,(none),"11,627.20",630,(none),630
-BWB006,Anglo American New,"",2015-09-22 09:00:00,(none),"11,627.20",630,(none),630
-BWS11,Anglo American New,"",2015-09-22 12:00:00,(none),654.15,24,(none),24
-BWC002,Anglo American New,"",2015-09-22 02:00:00,(none),"11,627.20",630,(none),630
-BWS01,Anglo American New,"",2015-09-22 03:00:00,(none),"11,627.20",630,(none),630
-BWS28,Anglo American New,Stetner Enterprises,2015-09-22 02:00:00,(none),"10,335.15",640,(none),640
-BWS25,Anglo American New,"",2015-09-22 12:00:00,(none),654.15,24,(none),24
-BWS25,Anglo American New,"",2015-09-22 16:00:00,(none),650.04,24,(none),24
-BWS25,Anglo American New,"",2015-09-22 19:00:00,(none),654.15,24,(none),24
-BWS04,Anglo American New,"",2015-09-22 00:00:00,(none),"11,811.60",640,(none),640
-BWS10,Anglo American New,"",2015-09-22 02:00:00,(none),"11,811.60",640,(none),640
+BWB002,Anglo American New,"",2015-09-24 03:00:00,(none),"11,627.20",630,(none),630
+BWB004,Anglo American New,"",2015-09-24 02:00:00,(none),"11,627.20",630,(none),630
+BWB006,Anglo American New,"",2015-09-24 03:00:00,(none),"11,627.20",630,(none),630
+BWBT01,Anglo American New,"",2015-09-24 03:00:00,(none),"12,918.80",700,(none),700
+BWBT03,Anglo American New,"",2015-09-24 06:00:00,(none),654.15,24,(none),24
+BWBT03,Anglo American New,"",2015-09-24 10:00:00,(none),654.15,24,(none),24
+BWBT03,Anglo American New,"",2015-09-24 15:00:00,(none),"3,106.40",100,(none),100
+BWBT03,Anglo American New,"",2015-09-24 20:30:00,(none),747.60,24,(none),24
+BWBT04,Anglo American New,"",2015-09-24 04:00:00,(none),"3,106.40",100,(none),100
+BWBT04,Anglo American New,"",2015-09-24 09:00:00,(none),"2,718.10",100,(none),100
+BWBT04,Anglo American New,"",2015-09-24 17:00:00,(none),"3,106.40",100,(none),100
+BWBT06,Anglo American New,"",2015-09-24 07:00:00,(none),654.15,24,(none),24
+BWS27,Anglo American New,"",2015-09-24 07:00:00,(none),"2,718.10",100,(none),100
+MMT047,Anglo American New,"",2015-09-24 16:00:00,(none),"3,063.60",104,(none),104
+MMT058,Anglo American New,MicroMatica Transport,2015-09-24 16:00:00,(none),"3,063.60",104,(none),104
+BWS28,Anglo American New,Stetner Enterprises,2015-09-24 16:00:00,(none),"10,173.80",630,(none),630
+BWS25,Anglo American New,"",2015-09-24 06:00:00,(none),654.15,24,(none),24
+BWS25,Anglo American New,"",2015-09-24 19:30:00,(none),"3,106.40",100,(none),100
+BWS03,Anglo American New,"",2015-09-24 11:00:00,(none),"12,918.80",700,(none),700
+BWS06,Anglo American New,"",2015-09-24 08:00:00,(none),"10,464.48",630,(none),630
+BWS10,Anglo American New,"",2015-09-24 20:00:00,(none),"11,627.20",630,(none),630

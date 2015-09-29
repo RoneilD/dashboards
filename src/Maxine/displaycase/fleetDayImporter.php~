@@ -31,7 +31,17 @@ $link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_SCHEMA) or die(mysqli_error
 $fleetdayobj = new fleetDayHandler();
 $today	= date("d");
 
+$day = (int)0;
+if (array_key_exists(1, $argv))
+{
+	$day = (int)$argv[1];
+}
+
 $customday = 0;
+if ($day)
+{
+	$customday = $day;
+}
 
 if($customday > 0) {
 	$fleetscore = $fleetdayobj->pullFleetDay($customday);

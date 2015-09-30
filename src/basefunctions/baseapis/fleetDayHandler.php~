@@ -173,6 +173,7 @@ class fleetDayHandler {
     // protected $_apiurl   = "http://max.mobilize.biz/api_request/Report/export?";
     protected $_day               = 0;
     protected $_date        = 0;
+    protected $_fileParser;
     
     // Getters, or functions which return protected variables or details from them {
     public function getIncomeFleets() {
@@ -245,9 +246,6 @@ class fleetDayHandler {
     			$fleetscore[$incfleetval["id"]]["date"] = $this->_date;
     			$fleetscore[$incfleetval["id"]]["updated"] = date("U");
     			$fleet_key = array_keys($incfleetval['fleets']);
-    			print('<pre>'.PHP_EOL);
-				print_r($fleet_key);
-				print('</pre>'.PHP_EOL);
     			$fleet_size = sizeOf($key);
     			//foreach ($incfleetval['fleets'] as $key=>$val)
     			for ($j=0; $j<$fleet_size; $j++)
@@ -296,22 +294,11 @@ class fleetDayHandler {
     			//$tripurl = "http://max.mobilize.biz/m4/2/api_request/Report/export?report=84&responseFormat=csv&Start_Date=2011-02-11&Stop_Date=2011-02-12&Fleet=29"; 
     			$tripurl = $this->_apiurl."report=84&responseFormat=csv&Start_Date=".$startstring."&Stop_Date=".$stopstring."&Fleet=".$incfleetval["maxid"];
     			print($tripurl.'<br />'.PHP_EOL);
-    			
-    			$fileParser = new FileParser($tripurl);
-    			$fileParser->setCurlFile("income.".$incfleetval["id"].".csv");
-    			$tripdata = $fileParser->parseFile();
+    			$tripdata = $this->getDataFromFile($tripurl, "income.".$incfleetval["id"].".csv");
     			
     			if ($tripdata === false) {
-    				print("<pre style='font-family:verdana;font-size:13'>");
-    				print_r($fileParser->getErrors());
-    				print("</pre>");
-    				return;
-    				
-    				print("<pre style='font-family:verdana;font-size:13'>errors");
-    				print_r($fileParser->getErrors());
-    				print("</pre>");
-    				
-    				print("<br>");
+    				syslog(LOG_INFO, "Line 305: No data returned from fleetDayHandler::getDataFromFile()");
+    				continue;
     			}
     			// }
     			
@@ -505,22 +492,11 @@ class fleetDayHandler {
     			//$tripurl = "http://max.mobilize.biz/m4/2/api_request/Report/export?report=84&responseFormat=csv&Start_Date=2011-02-11&Stop_Date=2011-02-12&Fleet=29"; 
     			$tripurl = $this->_apiurl."report=138&responseFormat=csv&Start_Date=".$startstring."&Stop_Date=".$stopstring."&Fleet=".$incfleetval["maxid"];
     			print($tripurl.PHP_EOL);
-    			
-    			$fileParser = new FileParser($tripurl);
-    			$fileParser->setCurlFile("contrib.".$incfleetval["id"].".csv");
-    			$tripdata = $fileParser->parseFile();
+    			$tripdata = $this->getDataFromFile($tripurl, "contrib.".$incfleetval["id"].".csv");
     			
     			if ($tripdata === false) {
-    				print("<pre style='font-family:verdana;font-size:13'>");
-    				print_r($fileParser->getErrors());
-    				print("</pre>");
-    				return;
-    				
-    				print("<pre style='font-family:verdana;font-size:13'>errors");
-    				print_r($fileParser->getErrors());
-    				print("</pre>");
-    				
-    				print("<br>");
+    				syslog(LOG_INFO, "Line 498: No data returned from fleetDayHandler::getDataFromFile()");
+    				continue;
     			}
     			// }
     			
@@ -661,18 +637,10 @@ class fleetDayHandler {
     			//: Confirm the budgeted blackouts
     			$budgeturl = $this->_apiurl."report=85&responseFormat=csv&Start_Date=".date("Y-m-d")."&Stop_Date=".date("Y-m-d", strtotime("+1 day"))."&Fleet=".$incfleetval["maxid"];
     			// print("budgeturl: ".$budgeturl.PHP_EOL);
-    			$fileParser = new FileParser($budgeturl);
-    			$fileParser->setCurlFile("budget.".$incfleetval["id"].".csv");
-    			$budgetdata = $fileParser->parseFile();
+    			$budgetdata = $this->getDataFromFile($budgeturl, "budget.".$incfleetval["id"].".csv");
     			if ($budgetdata === false) {
-    				print("<pre style='font-family:verdana;font-size:13'>");
-    				print_r($fileParser->getErrors());
-    				print("</pre>");
-    				return;
-    				print("<pre style='font-family:verdana;font-size:13'>errors");
-    				print_r($fileParser->getErrors());
-    				print("</pre>");
-    				print("<br />");
+    				syslog(LOG_INFO, "Line 642: No data returned from fleetDayHandler::getDataFromFile()");
+    				continue;
     			}
     			//: Collate
     			foreach ($budgetdata as $budgetkey=>$budgetval) {
@@ -845,18 +813,10 @@ class fleetDayHandler {
     				    				
     				$budgeturl = $this->_apiurl."report=85&responseFormat=csv&Start_Date=".$startDate."&Stop_Date=".$stopDate."&Fleet=".$incfleetval["maxid"];
     				print("budgeturl: ".$budgeturl.PHP_EOL);
-    				$fileParser = new FileParser($budgeturl);
-    				$fileParser->setCurlFile("budget".$incfleetval["id"].'_'.date('d', strtotime($startDate)).".csv");
-    				$budgetdata = $fileParser->parseFile();
+    				$budgetdata = $this->getDataFromFile($budgeturl, "budget".$incfleetval["id"].'_'.date('d', strtotime($startDate)).".csv");
     				if ($budgetdata === false) {
-    					print("<pre style='font-family:verdana;font-size:13'>");
-    					print_r($fileParser->getErrors());
-    					print("</pre>");
-    					return;
-    					print("<pre style='font-family:verdana;font-size:13'>errors");
-    					print_r($fileParser->getErrors());
-    					print("</pre>");
-    					print("<br />");
+    					syslog(LOG_INFO, "Line 818: No data returned from fleetDayHandler::getDataFromFile()");
+    					continue;
     				}
     				//: key the array on the truck fleet number so that we remove any duplicated trucks in output
     				$interim = (array)array();
@@ -927,12 +887,6 @@ class fleetDayHandler {
     			}
     			//: End
     		}
-    		//: Testing
-    		/* if ($i > 3)
-    		{
-    			break;
-    		} */
-    		//: End
     	}
     }
     //: End
@@ -1542,6 +1496,32 @@ class fleetDayHandler {
     		}
     	}
     	return TRUE;
+    }
+    
+    private function getDataFromFile($url, $file=NULL)
+    {
+    	if ($this->_fileParser)
+    	{
+    		$fileParser = $this->_fileParser;
+    	}
+    	else
+    	{
+    		$fileParser = new FileParser();
+    		$this->_fileParser = $fileParser;
+    	}
+    	$fileParser->doStartUp($url);
+    	if ($file)
+    	{
+    		$fileParser->setCurlFile($file);
+    	}
+    	$data = $fileParser->parseFile();
+    	if ($data === FALSE) {
+    		print("<pre style='font-family:verdana;font-size:13'>");
+    		print_r($fileParser->getErrors());
+    		print("</pre>");
+    		return;
+    	}
+    	return $data;
     }
     
     private function useArtificialBudgets($fleet, $fleetdays) {

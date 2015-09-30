@@ -1,20 +1,13 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-E81,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"12,326.40",601,(none),601
-E84,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"8,808.40",600,(none),600
-E86,NCP Chlorochem - Chlorine,"",2015-09-24 00:00:00,2015-09-24 01:00:00,"6,420.25",363,2015-09-24 01:40:00,500
-E86,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"4,178.80",200,(none),200
-E87,NCP Chlorochem - Chlorine,"",2015-09-24 00:00:00,(none),"14,060.26",1400,(none),1400
-E88,NCP Chlorochem - Chlorine,"",2015-09-24 00:00:00,(none),"22,549.16",2400,(none),2400
-E89,NCP Chlorochem - Chlorine,"",2015-09-24 06:00:00,2015-09-24 07:50:00,"4,520.55",157,2015-09-24 08:55:00,200
-E89,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"9,588.39",800,(none),800
-E90,NCP Chlorochem - Chlorine,"",2015-09-24 00:00:00,2015-09-24 10:05:00,"10,169.28",298,2015-09-24 10:45:00,601
-E92,NCP Chlorochem - Chlorine,"",2015-09-24 00:00:00,(none),"12,326.40",601,(none),601
-E96,NCP Chlorochem - Chlorine,"",2015-09-24 06:00:00,2015-09-24 07:20:00,"6,420.25",349,2015-09-24 07:45:00,500
-E96,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"6,420.25",500,(none),500
-E97,NCP Chlorochem - Chlorine,"",2015-09-23 22:00:00,2015-09-24 00:00:00,"4,178.80",130,2015-09-24 00:30:00,200
-E97,NCP Chlorochem - Chlorine,"",2015-09-24 06:00:00,(none),"4,178.80",200,(none),200
-E97,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"6,420.25",500,(none),500
-E145,NCP Chlorochem - Chlorine,"",2015-09-24 00:00:00,(none),"25,721.14",2400,(none),2400
-E145,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"25,721.14",2400,(none),2400
-E147,NCP Chlorochem - Chlorine,"",2015-09-25 00:00:00,(none),"25,721.14",2400,(none),2400
-E149,NCP Chlorochem - Chlorine,"",2015-09-24 01:00:00,(none),0.00,0,(none),0
+E83,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,(none),"5,417.55",200,(none),200
+E84,NCP Chlorochem - Chlorine,"",2015-09-29 13:00:00,(none),"5,417.55",200,(none),200
+E92,NCP Chlorochem - Chlorine,"",2015-09-29 19:00:00,(none),"17,213.60",600,(none),600
+E145,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,(none),"15,385.58",1300,(none),1300
+E145,NCP Chlorochem - Chlorine,"",2015-09-30 00:00:00,(none),"7,868.80",250,(none),250
+E146,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,2015-09-29 00:45:00,"8,686.85",517,2015-09-29 01:00:00,700
+E146,NCP Chlorochem - Chlorine,"",2015-09-29 23:00:00,(none),"4,520.55",200,(none),200
+E147,NCP Chlorochem - Chlorine,"",2015-09-29 21:00:00,(none),"10,687.59",800,(none),800
+E148,NCP Chlorochem - Chlorine,"",2015-09-29 13:00:00,2015-09-29 14:55:00,"7,868.80",244,2015-09-29 20:00:00,250
+E149,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,2015-09-29 00:30:00,"5,818.54",105,2015-09-29 01:05:00,200
+E149,NCP Chlorochem - Chlorine,"",2015-09-29 13:00:00,(none),"4,696.24",100,(none),100
+E149,NCP Chlorochem - Chlorine,"",2015-09-29 20:00:00,(none),"11,084.32",800,(none),800

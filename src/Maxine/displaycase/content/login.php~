@@ -11,9 +11,9 @@
         <title>Dashboards - Barloworld Transport</title>
 
        	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
+       	<link href="favicon.ico" rel="shortcut icon" />
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo BASE;?>/basefunctions/scripts/font-awesome.min.css" rel="stylesheet">
         
         <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/fonts.css">
         <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/main.css">
@@ -68,7 +68,7 @@
                     
                     <li>
                       
-                      <input type="password" value="" placeholder="Password" name="pass_word"/> 
+                      <input type="password" value="" placeholder="Password" name="pass_word" AUTOCOMPLETE='OFF' /> 
                       
                     </li>
                     

@@ -56,16 +56,16 @@ function ImportFleetDay()
 	print('<title>Dashboards - Barloworld Transport</title>');
 	print('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />');
 	print('<link href="favicon.ico" rel="shortcut icon" />');
-	print('<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">');
-	print('<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">');
+	print('<link rel="stylesheet" href="'.BASE.'basefunctions/scripts/bootstrap.min.css">');
+	print('<link href="'.BASE.'basefunctions/scripts/font-awesome.min.css" rel="stylesheet">');
 	print('<link rel="stylesheet" href="'.BASE.'Maxine/displaycase/content/site/css/fonts.css">');
 	print('<link rel="stylesheet" href="'.BASE.'Maxine/displaycase/content/site/css/main.css">');
 	print('<script src="'.BASE.'Maxine/displaycase/content/site/js/vendor/modernizr-2.6.2.min.js"></script>');
-	print('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>');
-	print('<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>');
+	print('<script src="'.BASE.'basefunctions/scripts/jquery.min.js"></script>');
+	print('<script src="'.BASE.'basefunctions/scripts/jquery.ui.touch-punch.min.js"></script>');
 	print('<!--[if lt IE 9]>');
-	print('<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>');
-	print('<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>');
+	print('<script src="'.BASE.'basefunctions/scripts/html5shiv.min.js"></script>');
+	print('<script src="'.BASE.'basefunctions/scripts/respond.js"></script>');
 	print('<![endif]-->');
 	print('<script src="'.BASE.'Maxine/displaycase/content/site/js/vendor/jcircle.js"></script>');
 	print('<script src="'.BASE.'Maxine/displaycase/content/site/js/vendor/jquery.flot/jquery.flot.js"></script>');
@@ -126,7 +126,7 @@ function ImportFleetDay()
 	//: End
 	//: End Page
 	print('<script>window.jQuery || document.write("<script src=\"'.BASE.'Maxine/displaycase/content/site/js/vendor/jquery-1.9.1.min.js\"><\/script>")</script>');
-	print('<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>');
+	print('<script src="'.BASE.'basefunctions/scripts/jquery.color.min.js"></script>');
 	print('<script src="'.BASE.'Maxine/displaycase/content/site/js/plugins.js"></script>');
 	print('<script src="'.BASE.'Maxine/displaycase/content/site/js/styling.js"></script>');     
 	print('<script src="'.BASE.'Maxine/displaycase/content/site/js/main.js"></script>');

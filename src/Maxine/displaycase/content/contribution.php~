@@ -12,8 +12,8 @@
        	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        
+        <link href="<?php echo BASE;?>/basefunctions/scripts/font-awesome.min.css" rel="stylesheet">
+        <link href="favicon.ico" rel="shortcut icon" />
         <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/fonts.css">
         <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/main.css">
 				
@@ -121,17 +121,15 @@
 							var response	= ajaxRequest.responseText;
 							//document.getElementById('canvassdiv').innerHTML = response;
 							
-							var html = $("#canvassdiv").html();
-              
-							$("#fakecanvasdiv").html(html).show();
-              
-							$("#fakecanvasdiv").fadeOut(1100, "linear", function(){
-								$(this).empty();	
+							$("#canvassdiv").fadeOut(1000, "linear", function(){
+                
+                $("#canvassdiv").html(response).fadeIn(1000);
+                
+                //release
+                response=null;
+                    
 							});
               
-              $("#canvassdiv").html(response);
-							
-							response=null;
 						}
 					}
 					

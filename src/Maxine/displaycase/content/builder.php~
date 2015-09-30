@@ -16,7 +16,7 @@ print('</pre>'); */
 <title>Dashboards - Barloworld Transport</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
+<link href="favicon.ico" rel="shortcut icon" />
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
@@ -362,13 +362,13 @@ else
 	$slidedata = $fleetdayobj->getSlideFleets($patternval);
 	$slidefleetsdata = $slidedata["fleets"];
 	$fleets = "";
-	$count = 0;
-	
+	// $count = 0;
+	$cnt = (int)0;
 	foreach($slidefleetsdata as $f){
 		
 		$fleets .= $f["fleet_id"].",";
 		$count++;
-		
+		$cnt++;
 	}
 	
 	?>
@@ -390,7 +390,7 @@ else
 	
 	<p><?php echo $fleetdayobj->getSliderName($patternval);?></p>
 	
-	<span class="fleetcount"><?php echo $count;?></span>
+	<span class="fleetcount"><?php echo $cnt;?></span>
 	
 	</div><!-- dTitle -->
 	

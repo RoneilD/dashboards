@@ -57,7 +57,7 @@ function ImportFleetDay()
 	print('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />');
 	print('<link href="favicon.ico" rel="shortcut icon" />');
 	print('<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">');
-	print('<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">');
+	print('<link href="'.BASE.'basefunctions/scripts/font-awesome.min.css" rel="stylesheet">');
 	print('<link rel="stylesheet" href="'.BASE.'Maxine/displaycase/content/site/css/fonts.css">');
 	print('<link rel="stylesheet" href="'.BASE.'Maxine/displaycase/content/site/css/main.css">');
 	print('<script src="'.BASE.'Maxine/displaycase/content/site/js/vendor/modernizr-2.6.2.min.js"></script>');
@@ -82,6 +82,7 @@ function ImportFleetDay()
 	print('</header>');
 	print('<nav>');
 	print('<ul>');
+	print('<li><a href="/?personal">Dashboard</a></li>');
 	print('<li><a href="/?mydashdetails">Dashboard Builder</a></li>');
 	print('<li><a href="/?importfleetday">Import Day</a></li>');
 	print('<li><a href="/?checkfleetscoreupdates">Fleet Scores</a></li>');

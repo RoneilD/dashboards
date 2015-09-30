@@ -11,8 +11,8 @@
 
        	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo BASE;?>/basefunctions/scripts/bootstrap.min.css">
+        <link href="<?php echo BASE;?>/basefunctions/scripts/font-awesome.min.css" rel="stylesheet">
         <link href="favicon.ico" rel="shortcut icon" />
         <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/fonts.css">
         <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/main.css">
@@ -26,13 +26,13 @@
 				
         <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/modernizr-2.6.2.min.js"></script>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="<?php echo BASE;?>/basefunctions/scripts/jquery.min.js"></script>
 				
-				<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+        <script src="<?php echo BASE;?>/basefunctions/scripts/jquery.ui.touch-punch.min.js"></script>
         
         <!--[if lt IE 9]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <script src="<?php echo BASE;?>/basefunctions/scripts/html5shiv.min.js"></script>
+        <script src="<?php echo BASE;?>/basefunctions/scripts/respond.js"></script>
         <![endif]-->
 				
 				<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jcircle.js"></script>
@@ -71,7 +71,7 @@
 
         <script>window.jQuery || document.write('<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+        <script src="<?php echo BASE;?>/basefunctions/scripts/jquery.color.min.js"></script>
 
         <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/plugins.js"></script>     
         <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/styling.js"></script>     

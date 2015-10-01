@@ -203,7 +203,6 @@
 				$scriptstr		.= "patternscript[0]=0;";
 			}
 		// }
-		
 		//HTML
 		include("./displaycase/content/personal.php");
 		

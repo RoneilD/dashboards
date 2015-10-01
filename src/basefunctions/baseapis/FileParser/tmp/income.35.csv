@@ -1,14 +1,11 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-301,Metal Corp Trading AG USD,"",2015-10-01 12:00:00,(none),"62,890.80",2780,(none),2780
-310,Metal Corp Trading AG USD,"",2015-10-01 08:00:00,(none),"62,890.80",2780,(none),2780
-148,Metal Corp Trading AG USD,"",2015-10-01 12:00:00,(none),"64,687.68",2780,(none),2780
-163,Metal Corp Trading AG USD,"",2015-10-01 12:00:00,(none),"62,890.80",2780,(none),2780
-165,Metal Corp Trading AG USD,"",2015-10-01 12:00:00,(none),"62,890.80",2780,(none),2780
-390,Willowton Logistics,"",2015-10-01 07:00:00,(none),"7,650.00",630,(none),630
-404,Metal Corp Trading AG USD,"",2015-10-01 12:00:00,(none),"62,890.80",2780,(none),2780
-405,A2B Transport Pty Ltd,"",2015-10-01 12:00:00,(none),"50,571.63",2098,(none),2098
-371,Metal Corp Trading AG USD,"",2015-10-01 07:00:00,(none),"62,890.80",2780,(none),2780
-411,Metal Corp Trading AG USD,"",2015-10-01 14:00:00,(none),"62,890.80",2780,(none),2780
-149,Metal Corp Trading AG USD,"",2015-10-01 08:00:00,(none),"62,890.80",2780,(none),2780
-346,Metal Corp Trading AG USD,"",2015-10-01 09:00:00,(none),"62,890.80",2780,(none),2780
-369,SAPPI SA Pty Ltd,"",2015-10-01 12:00:00,(none),"12,954.00",593,(none),593
+306,Metal Corp Trading AG USD,"",2015-10-02 08:00:00,(none),"62,890.80",2780,(none),2780
+47,Metal Corp Trading AG USD,"",2015-10-02 12:00:00,(none),"64,687.68",2780,(none),2780
+148,Metal Corp Trading AG USD,"",2015-10-02 12:00:00,(none),"64,687.68",2780,(none),2780
+374,Metal Corp Trading AG USD,"",2015-10-02 12:00:00,(none),"64,687.68",2780,(none),2780
+388,Metal Corp Trading AG USD,"",2015-10-02 07:00:00,(none),"62,890.80",2780,(none),2780
+389,Metal Corp Trading AG USD,"",2015-10-02 07:00:00,(none),"62,890.80",2780,(none),2780
+390,A2B Transport Pty Ltd,"",2015-10-02 08:00:00,(none),"50,432.69",2098,(none),2098
+395,Metal Corp Trading AG USD,"",2015-10-02 08:00:00,(none),"62,890.80",2780,(none),2780
+399,Metal Corp Trading AG USD,"",2015-10-02 08:00:00,(none),"62,890.80",2780,(none),2780
+425,Metal Corp Trading AG USD,"",2015-10-02 14:00:00,(none),"64,687.68",2780,(none),2780

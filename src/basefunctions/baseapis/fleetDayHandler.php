@@ -173,7 +173,6 @@ class fleetDayHandler {
     // protected $_apiurl   = "http://max.mobilize.biz/api_request/Report/export?";
     protected $_day               = 0;
     protected $_date        = 0;
-    protected $_fileParser;
     
     // Getters, or functions which return protected variables or details from them {
     public function getIncomeFleets() {
@@ -223,7 +222,7 @@ class fleetDayHandler {
     	// }
     	
     	// Go through each Income Fleet, checking various details and getting the trips for the day {
-    	foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
+    	foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
     		if (array_key_exists('fleets', $incfleetval))
     		{
     			$fleetscore[$incfleetval["id"]]["fleetid"] = $incfleetval["id"];
@@ -235,18 +234,20 @@ class fleetDayHandler {
     			$fleetscore[$incfleetval["id"]]["date"] = $this->_date;
     			$fleetscore[$incfleetval["id"]]["updated"] = date("U");
     			foreach ($incfleetval['fleets'] as $key=>$val)
-    				// print_r($val);
-    			$record = sqlPull(array(
-    				"onerow"=>TRUE,
-    				"table"=>"fleet_scores",
-    				"where"=>"`fleetid`=".$val[0]." AND `date`=".$this->_date
-    				));
-    			if ($record)
     			{
-    				$fleetscore[$incfleetval["id"]]["income"] += $record['income'];
-    				$fleetscore[$incfleetval["id"]]["kms"] += $record['kms'];
-    				$fleetscore[$incfleetval["id"]]["subbie_income"] += $record['subbie_income'];
-    				$fleetscore[$incfleetval["id"]]["subbie_kms"] += $record['subbie_kms'];
+    				// print_r($val);
+    				$record = sqlPull(array(
+    					"onerow"=>TRUE,
+    					"table"=>"fleet_scores",
+    					"where"=>"`fleetid`=".$val[0]." AND `date`=".$this->_date
+    					));
+    				if ($record)
+    				{
+    					$fleetscore[$incfleetval["id"]]["income"] += $record['income'];
+    					$fleetscore[$incfleetval["id"]]["kms"] += $record['kms'];
+    					$fleetscore[$incfleetval["id"]]["subbie_income"] += $record['subbie_income'];
+    					$fleetscore[$incfleetval["id"]]["subbie_kms"] += $record['subbie_kms'];
+    				}
     			}
     		}
     		else
@@ -264,11 +265,22 @@ class fleetDayHandler {
     			//$tripurl = "http://max.mobilize.biz/m4/2/api_request/Report/export?report=84&responseFormat=csv&Start_Date=2011-02-11&Stop_Date=2011-02-12&Fleet=29"; 
     			$tripurl = $this->_apiurl."report=84&responseFormat=csv&Start_Date=".$startstring."&Stop_Date=".$stopstring."&Fleet=".$incfleetval["maxid"];
     			print($tripurl.'<br />'.PHP_EOL);
-    			$tripdata = $this->getDataFromFile($tripurl, "income.".$incfleetval["id"].".csv");
+    			
+    			$fileParser = new FileParser($tripurl);
+    			$fileParser->setCurlFile("income.".$incfleetval["id"].".csv");
+    			$tripdata = $fileParser->parseFile();
     			
     			if ($tripdata === false) {
-    				syslog(LOG_INFO, "Line 305: No data returned from fleetDayHandler::getDataFromFile()");
-    				continue;
+    				print("<pre style='font-family:verdana;font-size:13'>");
+    				print_r($fileParser->getErrors());
+    				print("</pre>");
+    				return;
+    				
+    				print("<pre style='font-family:verdana;font-size:13'>errors");
+    				print_r($fileParser->getErrors());
+    				print("</pre>");
+    				
+    				print("<br>");
     			}
     			// }
     			
@@ -334,9 +346,10 @@ class fleetDayHandler {
     			$fleetscore[$incfleetval["id"]]["updated"] = date("U");
     			// }
     		}
-    		// }
-    		
-    		return $fleetscore;
+    	}
+    	// }
+    	
+    	return $fleetscore;
     }
     
     public function findBackDay($today) {
@@ -396,18 +409,7 @@ class fleetDayHandler {
     	// }
     	
     	// Go through each Income Fleet, checking various details and getting the trips for the day {
-    	$key = array_keys($this->_incomefleets);
-    	$size = sizeOf($key);
-    	// foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
-    	for ($i=0; $i<$size; $i++)
-    	{
-    		$incfleetkey = $key[$i];
-    		if (array_key_exists($key[$i], $this->_incomefleets) === FALSE)
-    		{
-    			syslog(LOG_INFO, "Trying to get contribution for a non-exsistent array key: ".$incfleetkey);
-    			continue;
-    		}
-    		$incfleetval = $this->_incomefleets[$key[$i]];
+    	foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
     		if (array_key_exists('fleets', $incfleetval))
     		{
     			$fleetscore[$incfleetval["id"]]["fleetid"] = $incfleetval["id"];
@@ -415,25 +417,8 @@ class fleetDayHandler {
     			$fleetscore[$incfleetval["id"]]["day"] = $this->_day;
     			$fleetscore[$incfleetval["id"]]["date"] = $this->_date;
     			$fleetscore[$incfleetval["id"]]["contribupdated"]     = date("U");
-    			$fleet_key = array_keys($incfleetval['fleets']);
-    			$fleet_size = sizeOf($key);
-    			//foreach ($incfleetval['fleets'] as $key=>$val)
-    			for ($j=0; $j<$fleet_size; $j++)
+    			foreach ($incfleetval['fleets'] as $key=>$val)
     			{
-    				if (array_key_exists($j, $fleet_key) === FALSE)
-    				{
-    					syslog(LOG_INFO, "Line 469: Key doesn't exist in array: ".$j);
-    					continue;
-    				}
-    				if (array_key_exists($j, $fleet_key) === TRUE)
-    				{
-    					if (array_key_exists($fleet_key[$j], $incfleetval['fleets']) === FALSE)
-    					{
-    						syslog(LOG_INFO, "Line 476: Trying to get income for a non-exsistent array key: ".$fleet_key[$j]);
-    						continue;
-    					}
-    				}
-    				$val = $incfleetval['fleets'][$fleet_key[$j]];
     				//print_r($val);
     				$record = sqlPull(array(
     					"onerow"=>TRUE,
@@ -461,11 +446,22 @@ class fleetDayHandler {
     			//$tripurl = "http://max.mobilize.biz/m4/2/api_request/Report/export?report=84&responseFormat=csv&Start_Date=2011-02-11&Stop_Date=2011-02-12&Fleet=29"; 
     			$tripurl = $this->_apiurl."report=138&responseFormat=csv&Start_Date=".$startstring."&Stop_Date=".$stopstring."&Fleet=".$incfleetval["maxid"];
     			print($tripurl.PHP_EOL);
-    			$tripdata = $this->getDataFromFile($tripurl, "contrib.".$incfleetval["id"].".csv");
+    			
+    			$fileParser = new FileParser($tripurl);
+    			$fileParser->setCurlFile("contrib.".$incfleetval["id"].".csv");
+    			$tripdata = $fileParser->parseFile();
     			
     			if ($tripdata === false) {
-    				syslog(LOG_INFO, "Line 498: No data returned from fleetDayHandler::getDataFromFile()");
-    				continue;
+    				print("<pre style='font-family:verdana;font-size:13'>");
+    				print_r($fileParser->getErrors());
+    				print("</pre>");
+    				return;
+    				
+    				print("<pre style='font-family:verdana;font-size:13'>errors");
+    				print_r($fileParser->getErrors());
+    				print("</pre>");
+    				
+    				print("<br>");
     			}
     			// }
     			
@@ -543,18 +539,7 @@ class fleetDayHandler {
     * @return FALSE on failure NULL otherwise
     */
     public function importOrders() {
-    	$key = array_keys($this->_incomefleets);
-    	$size = sizeOf($key);
-    	// foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
-    	for ($i=0; $i<$size; $i++)
-    	{
-    		$incfleetkey = $key[$i];
-    		if (array_key_exists($key[$i], $this->_incomefleets) === FALSE)
-    		{
-    			syslog(LOG_INFO, "Trying to get orders for a non-exsistent array key: ".$incfleetkey);
-    			continue;
-    		}
-    		$incfleetval = $this->_incomefleets[$key[$i]];
+    	foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
     		if (array_key_exists("t24", $incfleetval))
     		{
     			continue;
@@ -565,25 +550,8 @@ class fleetDayHandler {
     		if (array_key_exists('fleets', $incfleetval))
     		{
     			$fleetscore["blackouts"] = $blackoutcount;
-    			$fleet_key = array_keys($incfleetval['fleets']);
-    			$fleet_size = sizeOf($key);
-    			//foreach ($incfleetval['fleets'] as $key=>$val)
-    			for ($j=0; $j<$fleet_size; $j++)
+    			foreach ($incfleetval['fleets'] as $key=>$val)
     			{
-    				if (array_key_exists($j, $fleet_key) === FALSE)
-    				{
-    					syslog(LOG_INFO, "Line 630: Key doesn't exist in array: ".$j);
-    					continue;
-    				}
-    				if (array_key_exists($j, $fleet_key) === TRUE)
-    				{
-    					if (array_key_exists($fleet_key[$j], $incfleetval['fleets']) === FALSE)
-    					{
-    						syslog(LOG_INFO, "Line 637: Trying to get income for a non-exsistent array key: ".$fleet_key[$j]);
-    						continue;
-    					}
-    				}
-    				$val = $incfleetval['fleets'][$fleet_key[$j]];
     				//print_r($val);
     				$record = sqlPull(array(
     					"onerow"=>TRUE,
@@ -606,10 +574,18 @@ class fleetDayHandler {
     			//: Confirm the budgeted blackouts
     			$budgeturl = $this->_apiurl."report=85&responseFormat=csv&Start_Date=".date("Y-m-d")."&Stop_Date=".date("Y-m-d", strtotime("+1 day"))."&Fleet=".$incfleetval["maxid"];
     			// print("budgeturl: ".$budgeturl.PHP_EOL);
-    			$budgetdata = $this->getDataFromFile($budgeturl, "budget.".$incfleetval["id"].".csv");
+    			$fileParser = new FileParser($budgeturl);
+    			$fileParser->setCurlFile("budget.".$incfleetval["id"].".csv");
+    			$budgetdata = $fileParser->parseFile();
     			if ($budgetdata === false) {
-    				syslog(LOG_INFO, "Line 642: No data returned from fleetDayHandler::getDataFromFile()");
-    				continue;
+    				print("<pre style='font-family:verdana;font-size:13'>");
+    				print_r($fileParser->getErrors());
+    				print("</pre>");
+    				return;
+    				print("<pre style='font-family:verdana;font-size:13'>errors");
+    				print_r($fileParser->getErrors());
+    				print("</pre>");
+    				print("<br />");
     			}
     			//: Collate
     			foreach ($budgetdata as $budgetkey=>$budgetval) {
@@ -687,8 +663,7 @@ class fleetDayHandler {
     */
     public function importBudget($fleet = NULL) {
     	for ($i=1;$i<=date("t");$i++) {
-    		foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
-    		{
+    		foreach ($this->_incomefleets as $incfleetkey=>$incfleetval) {
     			if (isset($fleet) && $fleet)
     			{
     				if ($fleet != $incfleetval["id"])
@@ -706,19 +681,23 @@ class fleetDayHandler {
     				$fleetscore["day"] = $i;
     				$fleetscore["date"] = strtotime(date("Y-m-".(strlen($i) === 1 ? "0".$i : $i)));
     				foreach ($incfleetval['fleets'] as $key=>$val)
-    					//print_r($val);
-    				$record = sqlPull(array(
-    					"onerow"=>TRUE,
-    					"table"=>"fleet_scores",
-    					"where"=>"`fleetid`=".$val[0]." AND `date`=".strtotime(date("Y-m-".(strlen($i) === 1 ? "0".$i : $i)))
-    					));
-    				if ($record)
     				{
-    					$fleetscore["budget"] += $record['budget'];
-    					$fleetscore["budgetcontrib"] += $record['budgetcontrib'];
-    					$fleetscore["budkms"] += $record['budkms'];
-    					$fleetscore["blackouts"] += $record['blackouts'];
+    					//print_r($val);
+    					$record = sqlPull(array(
+    						"onerow"=>TRUE,
+    						"table"=>"fleet_scores",
+    						"where"=>"`fleetid`=".$val[0]." AND `date`=".strtotime(date("Y-m-".(strlen($i) === 1 ? "0".$i : $i)))
+    						));
+    					print_r($record);
+    					if ($record)
+    					{
+    						$fleetscore["budget"] += $record['budget'];
+    						$fleetscore["budgetcontrib"] += $record['budgetcontrib'];
+    						$fleetscore["budkms"] += $record['budkms'];
+    						$fleetscore["blackouts"] += $record['blackouts'];
+    					}
     				}
+    				// print_r($fleetscore);
     			}
     			else
     			{
@@ -748,13 +727,21 @@ class fleetDayHandler {
     						$stopDate = date("Y-m-".(strlen($i) === 1 ? "0".($i+1) : $i+1));
     					}
     				}
-    				
+    				    				
     				$budgeturl = $this->_apiurl."report=85&responseFormat=csv&Start_Date=".$startDate."&Stop_Date=".$stopDate."&Fleet=".$incfleetval["maxid"];
     				print("budgeturl: ".$budgeturl.PHP_EOL);
-    				$budgetdata = $this->getDataFromFile($budgeturl, "budget".$incfleetval["id"].'_'.date('d', strtotime($startDate)).".csv");
+    				$fileParser = new FileParser($budgeturl);
+    				$fileParser->setCurlFile("budget".$incfleetval["id"].'_'.date('d', strtotime($startDate)).".csv");
+    				$budgetdata = $fileParser->parseFile();
     				if ($budgetdata === false) {
-    					syslog(LOG_INFO, "Line 818: No data returned from fleetDayHandler::getDataFromFile()");
-    					continue;
+    					print("<pre style='font-family:verdana;font-size:13'>");
+    					print_r($fileParser->getErrors());
+    					print("</pre>");
+    					return;
+    					print("<pre style='font-family:verdana;font-size:13'>errors");
+    					print_r($fileParser->getErrors());
+    					print("</pre>");
+    					print("<br />");
     				}
     				//: key the array on the truck fleet number so that we remove any duplicated trucks in output
     				$interim = (array)array();
@@ -825,6 +812,12 @@ class fleetDayHandler {
     			}
     			//: End
     		}
+    		//: Testing
+    		/* if ($i > 3)
+    		{
+    			break;
+    		} */
+    		//: End
     	}
     }
     //: End
@@ -966,7 +959,7 @@ class fleetDayHandler {
     	//: End
     	//: Delete all of the linked fleets
     	sqlDelete(array('table'=>'sliders_fleets', 'where'=>'slider_id='.$data['id']));
-    	
+        
     	//: End
     	//: Create new slider fleets
     	$fleets = preg_split('/,/', $data['fleet_ids']);
@@ -1436,32 +1429,6 @@ class fleetDayHandler {
     	return TRUE;
     }
     
-    private function getDataFromFile($url, $file=NULL)
-    {
-    	if ($this->_fileParser)
-    	{
-    		$fileParser = $this->_fileParser;
-    	}
-    	else
-    	{
-    		$fileParser = new FileParser();
-    		$this->_fileParser = $fileParser;
-    	}
-    	$fileParser->doStartUp($url);
-    	if ($file)
-    	{
-    		$fileParser->setCurlFile($file);
-    	}
-    	$data = $fileParser->parseFile();
-    	if ($data === FALSE) {
-    		print("<pre style='font-family:verdana;font-size:13'>");
-    		print_r($fileParser->getErrors());
-    		print("</pre>");
-    		return;
-    	}
-    	return $data;
-    }
-    
     private function useArtificialBudgets($fleet, $fleetdays) {
     	$pubholidays      = array(41=>41);
     	
@@ -1476,19 +1443,19 @@ class fleetDayHandler {
     	
     	foreach ($fleetdays as $daykey=>$dayval) {
     		$day  = $dayval["day"];
-    		
+            
     		$weekday          = date("w", mktime(0,0,1,$month,$day,$year));
-    		
+            
     		$daybudget  = 0;
     		$daybudget  = $this->_incomefleets[$fleetnumber]["budget"];
-    		
-    		
+            
+            
     		if(($this->_incomefleets[$fleetnumber]["pubhol"] == 1) && ($pubholidays[$day])) {
     			$daybudget  = 0; // This fleet is not budgetted to make income on Public holidays
     		} else if(($weekday == 6) || ($weekday == 0)) {
     			$daybudget  = ($daybudget / 2);
     		}
-    		
+            
     		$fleetdays[$daykey]["budget"] = $daybudget;
     		$fleetdays[$daykey]["budkms"] = $this->_incomefleets[$fleetnumber]["budkms"];
     	}

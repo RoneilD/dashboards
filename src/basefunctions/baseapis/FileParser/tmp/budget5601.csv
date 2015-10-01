@@ -1,3 +1,6 @@
-Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
-D02,1273,RE - KZN,"",2015-08-01,"R2,260.28",R194.03,87,Yes
-D07,1279,RE - KZN,"",2015-08-01,"R3,310.05",R289.28,252,Yes
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+D02,1273,RE - Cape,34.000,"",2015-10-01,"R2,133.63",R194.03,75,Yes
+D07,1279,RE - Cape,34.000,"",2015-10-01,"R2,692.06",R277.47,137,Yes
+D27,64,RE - Cape,34.000,"",2015-10-01,"R2,725.10",R262.98,98,Yes
+D588,9169,RE - Cape,34.000,"",2015-10-01,"R3,727.77",R572.30,137,Yes
+D615,30038,RE - Cape,34.000,"",2015-10-01,"R2,708.89",R277.63,104,Yes

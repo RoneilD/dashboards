@@ -102,7 +102,6 @@ function ajaxTicker() {
 	} */ else if(cyclecount == 6) {
 		uri='./displaycase/displayblackouts.php';
 	} else if (fleetcount == maxFleetCount) {
-		
 		uri='./displaycase/displayImage.php';
 		fleetcount++;
 	} else {

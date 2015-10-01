@@ -1,8 +1,6 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-387,Bester Feed & Grain,"",2015-09-29 08:00:00,2015-09-30 07:00:00,"31,500.00",1500,(none),1500
-396,Access Freight (ACC003) ZAR,"",2015-09-29 11:00:00,(none),"54,000.00",2184,(none),2184
-408,Quality Sugars(PTY)Ltd,"",2015-09-28 16:00:00,2015-09-28 17:00:00,"9,758.00",449,2015-09-29 03:50:00,517
-353,SAPPI SA Pty Ltd,"",2015-09-29 18:00:00,(none),"12,954.00",593,(none),593
-352,Access Freight (ACC003) ZAR,"",2015-09-29 14:00:00,2015-09-29 10:00:00,"54,000.00",2184,2015-09-29 16:00:00,2184
-407,Access Freight (ACC003) ZAR,"",2015-09-29 14:00:00,(none),"54,000.00",2184,(none),2184
-412,Access Freight (ACC003) ZAR,"",2015-09-29 14:00:00,(none),"54,000.00",2184,(none),2184
+388,Metal Corp Trading AG USD,"",2015-10-02 07:00:00,(none),"62,890.80",2780,(none),2780
+389,Metal Corp Trading AG USD,"",2015-10-02 07:00:00,(none),"62,890.80",2780,(none),2780
+390,A2B Transport Pty Ltd,"",2015-10-02 08:00:00,(none),"50,432.69",2098,(none),2098
+395,Metal Corp Trading AG USD,"",2015-10-02 08:00:00,(none),"62,890.80",2780,(none),2780
+399,Metal Corp Trading AG USD,"",2015-10-02 08:00:00,(none),"62,890.80",2780,(none),2780

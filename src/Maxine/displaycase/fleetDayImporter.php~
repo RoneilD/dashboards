@@ -37,7 +37,7 @@ if (array_key_exists(1, $argv))
 	$day = (int)$argv[1];
 }
 
-$customday = 0;
+$customday = (int)0;
 if ($day)
 {
 	$customday = $day;

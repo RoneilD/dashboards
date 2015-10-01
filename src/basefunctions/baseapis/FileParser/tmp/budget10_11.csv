@@ -1,10 +1,10 @@
 Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
-2,34,Energy - Buckman,25.000,204,2015-09-11,"R2,465.53",R531.17,121,Yes
-236,373,Energy - Buckman,25.000,204,2015-09-11,"R5,124.53","R1,104.03",320,Yes
-237,374,Energy - Buckman,25.000,204,2015-09-11,"R5,124.53","R1,104.03",320,Yes
-238,375,Energy - Buckman,25.000,204,2015-09-11,"R5,124.53","R1,104.03",320,Yes
-D-06,75,Energy - Buckman,25.000,204,2015-09-11,"R2,188.59",R471.51,100,Yes
-E54,1120,Energy - Buckman,25.000,204,2015-09-11,"R5,124.53","R1,104.03",320,No
-E55,1246,Energy - Buckman,25.000,204,2015-09-11,"R5,932.80","R1,278.16",200,Yes
-E57,1245,Energy - Buckman,25.000,204,2015-09-11,"R5,124.53","R1,104.03",320,Yes
-E78,1301,Energy - Buckman,25.000,204,2015-09-11,"R5,124.53","R1,104.03",320,Yes
+2,34,Energy - Buckman,25.000,204,2015-10-11,R0.01,R0.01,0,Yes
+236,373,Energy - Buckman,25.000,204,2015-10-11,R0.01,R0.01,0,Yes
+237,374,Energy - Buckman,25.000,204,2015-10-11,R0.01,R0.01,0,Yes
+238,375,Energy - Buckman,25.000,204,2015-10-11,R0.01,R0.01,0,Yes
+D-06,75,Energy - Buckman,25.000,204,2015-10-11,R0.01,R0.01,0,Yes
+E54,1120,Energy - Buckman,25.000,204,2015-10-11,R0.01,R0.01,0,Yes
+E55,1246,Energy - Buckman,25.000,204,2015-10-11,"R2,386.00",R516.49,194,Yes
+E57,1245,Energy - Buckman,25.000,204,2015-10-11,R0.01,R0.01,0,Yes
+E78,1301,Energy - Buckman,25.000,204,2015-10-11,"R5,574.19","R1,206.63",310,Yes

@@ -1,3 +1,2 @@
-Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
-Honeydew,"",Warehousing Freight,"",2015-08-01,R483.87,R72.58,0,Yes
-Monteagle,"",Warehousing Freight,"",2015-08-01,"R24,500.58","R3,675.09",0,Yes
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+Monteagle,"",Warehousing Freight,"","",2015-10-01,"R28,130.30","R4,219.54",0,Yes

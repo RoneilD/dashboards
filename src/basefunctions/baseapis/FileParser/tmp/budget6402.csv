@@ -1,2 +1,2 @@
-Truck,FM ID,Primary Fleet,Function Code,Date,Income,Contribution,Kms,Blackout Status
-anglo-subbies,"",Anglo - Sub Contractor,314,2015-08-02,"R129,032.26","R23,225.81",8895,Yes
+Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
+anglo-subbies,"",Anglo - Sub Contractor,40.000,314,2015-10-02,"R129,032.26","R23,225.81",8895,Yes

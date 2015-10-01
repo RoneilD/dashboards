@@ -46,10 +46,6 @@ if ($day)
 if($customday > 0) {
 	$fleetscore = $fleetdayobj->pullFleetDay($customday);
 	$fleetdayobj->saveFleetDay($fleetscore);
-	
-	print("<pre style='font-family:verdana;font-size:13'>");
-	print_r($fleetscore);
-	print("</pre>");
 } else {
 	print("Pulling today.<br>");
 	$fleetscore = $fleetdayobj->pullFleetDay($today);

@@ -3,179 +3,140 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
- 
-        <title>Maxine</title>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-       	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-       	<link href="favicon.ico" rel="shortcut icon" />
-        <link rel="stylesheet" href="<?php echo BASE;?>/basefunctions/scripts/bootstrap.min.css">
-        <link href="<?php echo BASE;?>/basefunctions/scripts/font-awesome.min.css" rel="stylesheet">
-        
-        <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/fonts.css">
-        <link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/main.css">
-				
+<title>Maxine</title>
 
-				
-				<!--
-				<link href='<?php echo BASE;?>/basefunctions/scripts/manline.css' media='all' rel='stylesheet' type='text/css' />
-        -->
-				
-        <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/modernizr-2.6.2.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link href="favicon.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="<?php echo BASE;?>/basefunctions/scripts/bootstrap.min.css">
+<link href="<?php echo BASE;?>/basefunctions/scripts/font-awesome.min.css" rel="stylesheet">
 
-        <script src="<?php echo BASE;?>/basefunctions/scripts/jquery.min.js"></script>
-				
-        <script src="<?php echo BASE;?>/basefunctions/scripts/jquery.ui.touch-punch.min.js"></script>
-        
-        <!--[if lt IE 9]>
-        <script src="<?php echo BASE;?>/basefunctions/scripts/html5shiv.min.js"></script>
-        <script src="<?php echo BASE;?>/basefunctions/scripts/respond.js"></script>
-        <![endif]-->
-				
-				<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jcircle.js"></script>
-        
-        <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery.flot/jquery.flot.js"></script>
-        <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery.flot/jquery.flot.time.js"></script>
-        <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery.flot/jquery.flot.tooltip.js"></script>
-                
-    </head>
-    <body>
-    	
-        <div id="root"></div>
-    
-        <div id="page">
-          
-          <header>
-            
-            <div class="controlsWrapper">
-              
-            
-              
-            </div><!-- controlsWrapper -->
-            
-          </header>
-        	
-          <div id="canvassdiv">
+<link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/fonts.css">
+<link rel="stylesheet" href="<?php echo BASE;?>Maxine/displaycase/content/site/css/main.css">
 
-					
-          </div><!-- canvassdiv -->
-          
-          <div id="fakecanvasdiv">
-            
-          </div><!-- canvassdiv -->
-        
-        </div><!-- end page -->
 
-        <script>window.jQuery || document.write('<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
-        <script src="<?php echo BASE;?>/basefunctions/scripts/jquery.color.min.js"></script>
+<!--
+<link href='<?php echo BASE;?>/basefunctions/scripts/manline.css' media='all' rel='stylesheet' type='text/css' />
+-->
 
-        <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/plugins.js"></script>     
-        <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/styling.js"></script>     
-        <script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/main.js"></script>
-        
-        <script type='text/javascript' language='javascript' src='<?php echo BASE;?>/basefunctions/scripts/manline.js'></script>
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/modernizr-2.6.2.min.js"></script>
 
-				<script>
-				var cyclecount	= 0;
-				var fleetcount	= 0;
-				var greencount	= 0;
-				var screenwidth	= screen.width;
-				var interval1	= setInterval('ajaxTicker()', 30000);
-				ajaxTicker();
-				
-				function ajaxTicker() {
-					var ajaxRequest,maxFleetCount=17;  // The variable that makes Ajax possible!
-					
-					// Rip the records variables into a string for Posting {
-						var params	= 'fleetcount='+fleetcount;
-						params		+= '&maxwidth='+screenwidth;
-						//params		+= '&test=A';
-					// }
-					
-					try {
-						// Opera 8.0+, Firefox, Safari
-						ajaxRequest = new XMLHttpRequest();
-					} catch (e) {
-						// Internet Explorer Browsers
-						try {
-							ajaxRequest = new ActiveXObject('Msxml2.XMLHTTP');
-						} catch (e) {
-							try{
-								ajaxRequest = new ActiveXObject('Microsoft.XMLHTTP');
-							} catch (e){
-								// Something went wrong
-								alert('Your browser broke!');
-								return false;
-							}
-						}
-					}
-					
-					// Create a function that will receive data sent from the server
-					ajaxRequest.onreadystatechange = function(){
-						if(ajaxRequest.readyState == 4){
-							var response	= ajaxRequest.responseText;
-							//document.getElementById('canvassdiv').innerHTML = response;
-								
-							$("#canvassdiv").fadeOut(1000, "linear", function(){
-                
-                $("#canvassdiv").html(response).fadeIn(1000);
-                
-                //release
-                response=null;
-                    
-							});
-							
-						}
-					}
+<script src="<?php echo BASE;?>/basefunctions/scripts/jquery.min.js"></script>
+
+<script src="<?php echo BASE;?>/basefunctions/scripts/jquery.ui.touch-punch.min.js"></script>
+
+<!--[if lt IE 9]>
+<script src="<?php echo BASE;?>/basefunctions/scripts/html5shiv.min.js"></script>
+<script src="<?php echo BASE;?>/basefunctions/scripts/respond.js"></script>
+<![endif]-->
+
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jcircle.js"></script>
+
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery.flot/jquery.flot.js"></script>
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery.flot/jquery.flot.time.js"></script>
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery.flot/jquery.flot.tooltip.js"></script>
+
+</head>
+<body>
+
+<div id="root"></div>
+
+<div id="page">
+
+<header>
+
+<div class="controlsWrapper">
+
+
+
+</div><!-- controlsWrapper -->
+
+</header>
+
+<div id="canvassdiv">
+
+
+</div><!-- canvassdiv -->
+
+<div id="fakecanvasdiv">
+
+</div><!-- canvassdiv -->
+
+</div><!-- end page -->
+
+<script>window.jQuery || document.write('<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<script src="<?php echo BASE;?>/basefunctions/scripts/jquery.color.min.js"></script>
+
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/plugins.js"></script>     
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/styling.js"></script>     
+<script src="<?php echo BASE;?>Maxine/displaycase/content/site/js/main.js"></script>
+
+<script type='text/javascript' language='javascript' src='<?php echo BASE;?>/basefunctions/scripts/manline.js'></script>
+
+<script>
+var cyclecount	= 0;
+var fleetcount	= 0;
+var greencount	= 0;
+var screenwidth	= screen.width;
+var interval1	= setInterval('ajaxTicker()', 30000);
+ajaxTicker();
+
+function ajaxTicker() {
+	// Rip the records variables into a string for Posting {
+	var maxFleetCount=17,uri,params	= 'fleetcount='+fleetcount;
+	params		+= '&maxwidth='+screenwidth;
+	//params		+= '&test=A';
+	// }
+	
+	if(cyclecount == 2) {
+		uri='./displaycase/displayFleetCompByDay.php';
+	} else if(cyclecount == 5) {
+		uri='./displaycase/displayFleetCompByMonth.php';
+	} /* else if(cyclecount == 6) {
+	uri='./displaycase/displayFleetPositions.php';
+	} */ else if(cyclecount == 6) {
+		uri='./displaycase/displayblackouts.php';
+	} else if (fleetcount == maxFleetCount) {
 		
-					if(cyclecount == 2) {
-						ajaxRequest.open('POST', './displaycase/displayFleetCompByDay.php', true);
-					} else if(cyclecount == 5) {
-						ajaxRequest.open('POST', './displaycase/displayFleetCompByMonth.php', true);
-					} /* else if(cyclecount == 6) {
-						ajaxRequest.open('POST', './displaycase/displayFleetPositions.php', true);
-					} */ else if(cyclecount == 6) {
-						ajaxRequest.open('POST', './displaycase/displayblackouts.php', true);
-					} else if (fleetcount == maxFleetCount) {
-						
-						ajaxRequest.open('POST', './displaycase/displayImage.php', true);
-						fleetcount++;
-					} else {
-						ajaxRequest.open('POST', './displaycase/displayFleetDetails.php', true);
-						fleetcount++;
-					}
-					
-					//Send the proper header information along with the request
-					ajaxRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-					ajaxRequest.setRequestHeader('Content-length', params.length);
-					ajaxRequest.setRequestHeader('Connection', 'close');
-					
-					ajaxRequest.send(params);
-					cyclecount++;
-					if(cyclecount > 7) {
-						cyclecount	= 0;
-					}
-					if(fleetcount > maxFleetCount) {
-						fleetcount = 0;
-					}
-					if(greencount > 1) {
-						greencount	= 0;
-					}
-					params=null;
-				}
-				window.onunload = function() {
-					cyclecount=null;
-					fleetcount=null;
-					greencount=null;
-					screenwidth=null;
-					window.clearInterval(interval1);
-					interval1=null;
-				};
-			</script>
+		uri='./displaycase/displayImage.php';
+		fleetcount++;
+	} else {
+		uri='./displaycase/displayFleetDetails.php';
+		fleetcount++;
+	}
+	$.post(uri, params, function(data){
+			$("#canvassdiv").fadeOut(1000, "linear", function(){
+					$("#canvassdiv").html(data).fadeIn(1000);
+					//release
+					data=null;
+			});
+	});
+	cyclecount++;
+	if(cyclecount > 7) {
+		cyclecount	= 0;
+	}
+	if(fleetcount > maxFleetCount) {
+		fleetcount = 0;
+	}
+	if(greencount > 1) {
+		greencount	= 0;
+	}
+	params=null;
+}
+window.onunload = function() {
+	cyclecount=null;
+	fleetcount=null;
+	greencount=null;
+	screenwidth=null;
+	window.clearInterval(interval1);
+	interval1=null;
+};
+</script>
 
-    </body>
+</body>
 </html>
-            

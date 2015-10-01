@@ -10,7 +10,7 @@ DS16,1054,Premier Durban,"","",2015-09-02,"R2,729.32",R491.28,97,Yes
 DS21,1207,Premier Durban,"","",2015-09-02,"R1,786.34",R321.54,66,Yes
 DS23,1208,Premier Durban,"","",2015-09-02,"R1,786.34",R321.54,66,Yes
 DS25,1206,Premier Durban,"","",2015-09-02,"R1,786.34",R321.54,66,Yes
-DS37,230,Premier Newcastle,"","",2015-09-02,"R3,239.05",R583.03,240,No
+DS37,230,Premier Newcastle,"","",2015-09-02,"R3,239.05",R583.03,240,Yes
 DS39,208,Premier Durban,"","",2015-09-02,"R2,729.32",R491.28,97,Yes
 DS41,209,Premier Durban,"","",2015-09-02,"R2,729.32",R491.28,97,Yes
 DS43,210,Premier Durban,"","",2015-09-02,"R2,729.32",R491.28,97,Yes
@@ -27,4 +27,4 @@ DS72,229,Premier Durban,"","",2015-09-02,"R2,729.32",R491.28,97,Yes
 DS73,235N,Premier Durban,"","",2015-09-02,"R2,729.32",R491.28,97,Yes
 DS74,211ZA,Premier Empangeni,"","",2015-09-02,"R3,200.68",R576.12,233,Yes
 DS75,236IJ,Premier Durban,"","",2015-09-02,"R2,729.32",R491.28,97,Yes
-DS76,237GH,Premier Newcastle,"","",2015-09-02,"R3,239.05",R583.03,240,No
+DS76,237GH,Premier Newcastle,"","",2015-09-02,"R3,239.05",R583.03,240,Yes

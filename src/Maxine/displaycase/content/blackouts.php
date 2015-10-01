@@ -87,52 +87,19 @@ var interval1	= setInterval('ajaxTicker()', 30000);
 ajaxTicker();
 
 function ajaxTicker() {
-	var ajaxRequest;  // The variable that makes Ajax possible!
-	
 	// Rip the records variables into a string for Posting {
-	var params	= '&maxwidth='+screenwidth;
+	var uri,params	= '&maxwidth='+screenwidth;
 	// }
 	
-	try {
-		// Opera 8.0+, Firefox, Safari
-		ajaxRequest = new XMLHttpRequest();
-	} catch (e) {
-		// Internet Explorer Browsers
-		try {
-			ajaxRequest = new ActiveXObject('Msxml2.XMLHTTP');
-		} catch (e) {
-			try{
-				ajaxRequest = new ActiveXObject('Microsoft.XMLHTTP');
-			} catch (e){
-				// Something went wrong
-				alert('Your browser broke!');
-				return false;
-			}
-		}
-	}
-	
-	// Create a function that will receive data sent from the server
-	ajaxRequest.onreadystatechange = function(){
-		if(ajaxRequest.readyState == 4){
-			var response	= ajaxRequest.responseText;
-			
-			document.getElementById('canvassdiv').innerHTML = response;
-			response=null;
-		}
-	}
-	
 	if(cyclecount == 1) {
-		ajaxRequest.open('POST', './Maxine/displaycase/displayFleetPositions.php', true);
+		uri='./Maxine/displaycase/displayFleetPositions.php';
 	} else {
-		ajaxRequest.open('POST', './Maxine/displaycase/displayblackouts.php', true);
+		uri='./Maxine/displaycase/displayblackouts.php';
 	}
-	
-	//Send the proper header information along with the request
-	ajaxRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-	ajaxRequest.setRequestHeader('Content-length', params.length);
-	ajaxRequest.setRequestHeader('Connection', 'close');
-	
-	ajaxRequest.send(params);
+	$.post(uri, params, function(data){
+			$("#canvassdiv").html(data).fadeIn(1000);
+			data=null;
+	});
 	
 	cyclecount++;
 	if(cyclecount > 1) {
@@ -148,7 +115,5 @@ window.onunload = function() {
 	interval1=null;
 };
 </script>
-
-
 </body>
 </html>        

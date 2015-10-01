@@ -687,18 +687,8 @@ class fleetDayHandler {
     */
     public function importBudget($fleet = NULL) {
     	for ($i=1;$i<=date("t");$i++) {
-    		$key = array_keys($this->_incomefleets);
-    		$size = sizeOf($key);
-    		// foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
-    		for ($j=0; $j<$size; $j++)
+    		foreach ($this->_incomefleets as $incfleetkey=>$incfleetval)
     		{
-    			$incfleetkey = $key[$j];
-    			if (array_key_exists($key[$j], $this->_incomefleets) === FALSE)
-    			{
-    				syslog(LOG_INFO, "Trying to get budget for a non-exsistent array key: ".$incfleetkey);
-    				continue;
-    			}
-    			$incfleetval = $this->_incomefleets[$key[$j]];
     			if (isset($fleet) && $fleet)
     			{
     				if ($fleet != $incfleetval["id"])
@@ -715,41 +705,20 @@ class fleetDayHandler {
     				$fleetscore["blackouts"] = (float)0;
     				$fleetscore["day"] = $i;
     				$fleetscore["date"] = strtotime(date("Y-m-".(strlen($i) === 1 ? "0".$i : $i)));
-    				$fleet_key = array_keys($incfleetval['fleets']);
-    				$fleet_size = sizeOf($key);
-    				//foreach ($incfleetval['fleets'] as $key=>$val)
-    				for ($k=0; $k<$fleet_size; $k++)
-    				{
-    					if (array_key_exists($k, $fleet_key) === FALSE)
-    					{
-    						syslog(LOG_INFO, "Line 788: Key doesn't exist in array: ".$j);
-    						continue;
-    					}
-    					if (array_key_exists($k, $fleet_key) === TRUE)
-    					{
-    						if (array_key_exists($fleet_key[$k], $incfleetval['fleets']) === FALSE)
-    						{
-    							syslog(LOG_INFO, "Line 795: Trying to get income for a non-exsistent array key: ".$fleet_key[$k]);
-    							continue;
-    						}
-    					}
-    					$val = $incfleetval['fleets'][$fleet_key[$k]];
+    				foreach ($incfleetval['fleets'] as $key=>$val)
     					//print_r($val);
-    					$record = sqlPull(array(
-    						"onerow"=>TRUE,
-    						"table"=>"fleet_scores",
-    						"where"=>"`fleetid`=".$val[0]." AND `date`=".strtotime(date("Y-m-".(strlen($i) === 1 ? "0".$i : $i)))
-    						));
-    					print_r($record);
-    					if ($record)
-    					{
-    						$fleetscore["budget"] += $record['budget'];
-    						$fleetscore["budgetcontrib"] += $record['budgetcontrib'];
-    						$fleetscore["budkms"] += $record['budkms'];
-    						$fleetscore["blackouts"] += $record['blackouts'];
-    					}
+    				$record = sqlPull(array(
+    					"onerow"=>TRUE,
+    					"table"=>"fleet_scores",
+    					"where"=>"`fleetid`=".$val[0]." AND `date`=".strtotime(date("Y-m-".(strlen($i) === 1 ? "0".$i : $i)))
+    					));
+    				if ($record)
+    				{
+    					$fleetscore["budget"] += $record['budget'];
+    					$fleetscore["budgetcontrib"] += $record['budgetcontrib'];
+    					$fleetscore["budkms"] += $record['budkms'];
+    					$fleetscore["blackouts"] += $record['blackouts'];
     				}
-    				// print_r($fleetscore);
     			}
     			else
     			{
@@ -997,7 +966,7 @@ class fleetDayHandler {
     	//: End
     	//: Delete all of the linked fleets
     	sqlDelete(array('table'=>'sliders_fleets', 'where'=>'slider_id='.$data['id']));
-        
+    	
     	//: End
     	//: Create new slider fleets
     	$fleets = preg_split('/,/', $data['fleet_ids']);
@@ -1507,19 +1476,19 @@ class fleetDayHandler {
     	
     	foreach ($fleetdays as $daykey=>$dayval) {
     		$day  = $dayval["day"];
-            
+    		
     		$weekday          = date("w", mktime(0,0,1,$month,$day,$year));
-            
+    		
     		$daybudget  = 0;
     		$daybudget  = $this->_incomefleets[$fleetnumber]["budget"];
-            
-            
+    		
+    		
     		if(($this->_incomefleets[$fleetnumber]["pubhol"] == 1) && ($pubholidays[$day])) {
     			$daybudget  = 0; // This fleet is not budgetted to make income on Public holidays
     		} else if(($weekday == 6) || ($weekday == 0)) {
     			$daybudget  = ($daybudget / 2);
     		}
-            
+    		
     		$fleetdays[$daykey]["budget"] = $daybudget;
     		$fleetdays[$daykey]["budkms"] = $this->_incomefleets[$fleetnumber]["budkms"];
     	}

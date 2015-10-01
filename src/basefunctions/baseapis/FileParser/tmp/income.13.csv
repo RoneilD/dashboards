@@ -1,13 +1,2 @@
 Truck,Customer,Subcontractor,Loading ETA,Loading Arrival,Tripleg Income,Total Kms,Loading Started,Expected Total Kms
-E83,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,(none),"5,417.55",200,(none),200
-E84,NCP Chlorochem - Chlorine,"",2015-09-29 13:00:00,(none),"5,417.55",200,(none),200
-E92,NCP Chlorochem - Chlorine,"",2015-09-29 19:00:00,(none),"17,213.60",600,(none),600
-E145,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,(none),"15,385.58",1300,(none),1300
-E145,NCP Chlorochem - Chlorine,"",2015-09-30 00:00:00,(none),"7,868.80",250,(none),250
-E146,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,2015-09-29 00:45:00,"8,686.85",517,2015-09-29 01:00:00,700
-E146,NCP Chlorochem - Chlorine,"",2015-09-29 23:00:00,(none),"4,520.55",200,(none),200
-E147,NCP Chlorochem - Chlorine,"",2015-09-29 21:00:00,(none),"10,687.59",800,(none),800
-E148,NCP Chlorochem - Chlorine,"",2015-09-29 13:00:00,2015-09-29 14:55:00,"7,868.80",244,2015-09-29 20:00:00,250
-E149,NCP Chlorochem - Chlorine,"",2015-09-29 00:00:00,2015-09-29 00:30:00,"5,818.54",105,2015-09-29 01:05:00,200
-E149,NCP Chlorochem - Chlorine,"",2015-09-29 13:00:00,(none),"4,696.24",100,(none),100
-E149,NCP Chlorochem - Chlorine,"",2015-09-29 20:00:00,(none),"11,084.32",800,(none),800
+E89,NCP Chlorochem - Chlorine,"",2015-10-01 10:00:00,(none),"6,883.77",500,(none),500

@@ -1,5 +1,5 @@
 Truck,FM ID,Primary Fleet,Fleet Tonnages,Function Code,Date,Income,Contribution,Kms,Blackout Status
-E079,5103,Energy - Easigas,40.000,203,2015-09-02,"R6,823.33",R598.86,333,Yes
-E080,5102,Energy - Easigas,40.000,203,2015-09-02,"R6,823.33",R598.86,333,Yes
+E079,5103,Energy - Easigas,40.000,203,2015-09-02,"R7,248.39","R1,238.67",323,Yes
+E080,5102,Energy - Easigas,40.000,203,2015-09-02,"R7,248.39","R1,238.67",323,Yes
 E094,30011,Energy - Easigas,40.000,203,2015-09-02,"R6,823.33",R598.86,333,Yes
-E095,30012,Energy - Easigas,40.000,203,2015-09-02,"R6,823.33",R598.86,333,No
+E095,30012,Energy - Easigas,40.000,203,2015-09-02,"R6,823.33",R598.86,333,Yes
